@@ -42,7 +42,10 @@ implementation {
   App.MilliTimer -> TimerMilliC;
 
   //Fake Sensor read
-  App.Read -> FakeSensorC;
+  App.TempRead -> FakeSensorC.TempRead;
+  App.HumRead -> FakeSensorC.HumRead;
+  App.LumRead -> FakeSensorC.LumRead;
+
 
 }
 

@@ -29,22 +29,16 @@ module clientC {
   uses {
 
 	interface Boot;
-
     	interface AMPacket;
-
 	interface Packet;
-
 	interface PacketAcknowledgements;
-
     	interface AMSend;
-
     	interface SplitControl;
-
     	interface Receive;
-
     	interface Timer<TMilli> as MilliTimer;
-
-	interface Read<uint16_t>;
+        interface Read<uint16_t> as TempRead;
+	interface Read<uint16_t> as HumRead;
+	interface Read<uint16_t> as LumRead;
 
   }
 
@@ -83,7 +77,7 @@ module clientC {
 	dbg("boot","Application booted.\n");
 
 	printf("%d node Booted\n",TOS_NODE_ID);
-
+	call TempRead.read();
 	call SplitControl.start();
 
   }
@@ -164,56 +158,20 @@ module clientC {
 
   //************************* Read interface **********************//
 
-  event void Read.readDone(error_t result, uint16_t data) {
-
-
-
-	my_msg_t* mess=(my_msg_t*)(call Packet.getPayload(&packet,sizeof(my_msg_t)));
-
-	mess->msg_type = RESP;
-
-	mess->msg_id = rec_id;
-
-	mess->value = data;
-
-	  
-
-	dbg("radio_send", "Try to send a response to node 1 at time %s \n", sim_time_string());
-
-	call PacketAcknowledgements.requestAck( &packet );
-
-	if(call AMSend.send(1,&packet,sizeof(my_msg_t)) == SUCCESS){
-
-		
-
-	  dbg("radio_send", "Packet passed to lower layer successfully!\n");
-
-	  dbg("radio_pack",">>>Pack\n \t Payload length %hhu \n", call Packet.payloadLength( &packet ) );
-
-	  dbg_clear("radio_pack","\t Source: %hhu \n ", call AMPacket.source( &packet ) );
-
-	  dbg_clear("radio_pack","\t Destination: %hhu \n ", call AMPacket.destination( &packet ) );
-
-	  dbg_clear("radio_pack","\t AM Type: %hhu \n ", call AMPacket.type( &packet ) );
-
-	  dbg_clear("radio_pack","\t\t Payload \n" );
-
-	  dbg_clear("radio_pack", "\t\t msg_type: %hhu \n ", mess->msg_type);
-
-	  dbg_clear("radio_pack", "\t\t msg_id: %hhu \n", mess->msg_id);
-
-	  dbg_clear("radio_pack", "\t\t value: %hhu \n", mess->value);
-
-	  dbg_clear("radio_send", "\n ");
-
-	  dbg_clear("radio_pack", "\n");
-
-
-
-        }
-
-
-
+  event void TempRead.readDone(error_t result, uint16_t data)
+  {
+	printf("Temperature read: %d \n",data);	
+	call HumRead.read();
+  }
+  event void LumRead.readDone(error_t result, uint16_t data)
+  {
+	printf("Luminosity read: %d \n",data);
+	call TempRead.read();
+  }
+  event void HumRead.readDone(error_t result, uint16_t data)
+  {
+	printf("Humidity read: %d \n",data);
+	call LumRead.read();
   }
 
 

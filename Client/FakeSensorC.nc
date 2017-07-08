@@ -7,22 +7,32 @@
  
 generic configuration FakeSensorC() {
 
-	provides interface Read<uint16_t>;
+	provides interface Read<uint16_t> as TempRead;
+	provides interface Read<uint16_t> as HumRead;
+	provides interface Read<uint16_t> as LumRead;
 
 } implementation {
 
 	components MainC, RandomC;
 	components new FakeSensorP();
-	components new TimerMilliC();
+	components new TimerMilliC() as ReadTempTimer;
+	components new TimerMilliC() as ReadHumTimer;
+	components new TimerMilliC() as ReadLumTimer;
 	
 	//Connects the provided interface
-	Read = FakeSensorP;
+	
+	TempRead = FakeSensorP.TempRead;
+	HumRead = FakeSensorP.HumRead;
+	LumRead = FakeSensorP.LumRead;
+	
 	
 	//Random interface and its initialization	
 	FakeSensorP.Random -> RandomC;
 	RandomC <- MainC.SoftwareInit;
 	
 	//Timer interface	
-	FakeSensorP.Timer0 -> TimerMilliC;
+	FakeSensorP.TimerReadTemp -> ReadTempTimer;
+	FakeSensorP.TimerReadHum -> ReadHumTimer;
+	FakeSensorP.TimerReadLum -> ReadLumTimer;
 
 }
