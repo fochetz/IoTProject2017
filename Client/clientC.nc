@@ -39,7 +39,6 @@ module clientC {
         interface Read<uint16_t> as TempRead;
 	interface Read<uint16_t> as HumRead;
 	interface Read<uint16_t> as LumRead;
-	interface ConfirmableMessageModule as ConnectionModule;
 
   }
 
@@ -83,9 +82,7 @@ module clientC {
 
   }
 
-  event void ConnectionModule.confirmationReceived(uint8_t id) {
-   printf("YOLO");
-}
+
 
   //***************** SplitControl interface ********************//
 
