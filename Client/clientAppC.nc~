@@ -22,7 +22,6 @@ implementation {
   components new FakeSensorC();
   components SerialPrintfC;
   components SerialStartC;
-  components new ConfirmableMessageModuleC(0,1) as ConnectionModule;
 
   //Boot interface
   App.Boot -> MainC.Boot;
@@ -46,7 +45,6 @@ implementation {
   App.TempRead -> FakeSensorC.TempRead;
   App.HumRead -> FakeSensorC.HumRead;
   App.LumRead -> FakeSensorC.LumRead;
-  App.ConnectionModule -> ConnectionModule;
 
 
 }

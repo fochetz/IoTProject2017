@@ -83,7 +83,7 @@ module clientC {
 
   }
 
-  event void ConnectionModule.confirmationReceived(uint8_t id) {
+  event void ConnectionModule.confirmationReceived() {
    printf("YOLO");
 }
 
