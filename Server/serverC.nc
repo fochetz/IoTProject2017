@@ -63,11 +63,11 @@ module serverC {
   //***************** Function send connack ********************//
 
   void sendConnack(uint8_t client) {
-	my_msg_t* mess;
-	mess=(my_msg_t*)(call Packet.getPayload(&packet,sizeof(my_msg_t)));
+	con_msg_t* mess;
+	mess=(con_msg_t*)(call Packet.getPayload(&packet,sizeof(con_msg_t)));
 	mess->msg_type = CONNACK;
-	mess->msg_id = counter++;
-	if(call AMSend.send(client,&packet,sizeof(my_msg_t)) == SUCCESS){
+	mess->sender_id = TOS_NODE_ID;
+	if(call AMSend.send(client,&packet,sizeof(con_msg_t)) == SUCCESS){
 		printf("Server successfully sent connack message!");
 		
 	}
@@ -133,28 +133,33 @@ module serverC {
 
   }
 
+void handle_con_message(void* payload)
+{
+	uint8_t addr;
+	con_msg_t* mess=(con_msg_t*)payload;
+     if ( mess->msg_type == CONNECT ) {
+		printf("Server: received Connect request \n");
+		addr = mess->sender_id;
+		sendConnack(addr);
+	       }	
+
+}
 
 
   //***************************** Receive interface *****************//
 
   event message_t* Receive.receive(message_t* buf,void* payload, uint8_t len) {
-
-
-	uint8_t addr;
-	my_msg_t* mess=(my_msg_t*)payload;
-	rec_id = mess->msg_id;
-     if ( mess->msg_type == CONNECT ) {
-		printf("Server: received Connect request \n");
-		addr = mess->sender_id;
-		sendConnack(addr);
-		/*printf("%d \n",addr);
-		mes=(my_msg_t*)(call Packet.getPayload(&packet,sizeof(my_msg_t)));
-		mes->msg_type = CONNACK;
-		mes->msg_id = counter++;
-		if(call AMSend.send(addr,&packet,sizeof(my_msg_t)) == SUCCESS){
-			printf("Server successfully sent connack message!");
-		}*/
-      }	
+	printf("Server: %d Len, %d ConMSGT\n",len,sizeof(con_msg_t));
+	switch(len)
+	{
+		case sizeof(con_msg_t):
+			handle_con_message(payload);
+			break;
+		default:
+			printf("Server: Packet not recognized\n");
+			break;
+	}
+	
     return buf;
 }	
 
@@ -163,27 +168,6 @@ module serverC {
   //************************* Read interface **********************//
 
   event void Read.readDone(error_t result, uint16_t data) {
-
-
-
-	my_msg_t* mess=(my_msg_t*)(call Packet.getPayload(&packet,sizeof(my_msg_t)));
-
-	mess->msg_type = RESP;
-
-	mess->msg_id = rec_id;
-
-	mess->value = data;
-
-	  
-
-	dbg("radio_send", "Try to send a response to node 1 at time %s \n", sim_time_string());
-
-	call PacketAcknowledgements.requestAck( &packet );
-
-	if(call AMSend.send(1,&packet,sizeof(my_msg_t)) == SUCCESS){
-        }
-
-
 
   }
 

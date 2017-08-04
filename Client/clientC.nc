@@ -61,11 +61,10 @@ module clientC {
   ----------------------------------------------------------------*/
   task void sendConnect()
   {
-	my_msg_t* mess=(my_msg_t*)(call Packet.getPayload(&packet,sizeof(my_msg_t)));
+	con_msg_t* mess=(con_msg_t*)(call Packet.getPayload(&packet,sizeof(con_msg_t)));
 	mess->msg_type = CONNECT;
 	mess->sender_id = TOS_NODE_ID;
-	mess->msg_id = counter++;
-	if(call AMSend.send(SERVER_NODE_ID,&packet,sizeof(my_msg_t)) == SUCCESS){
+	if(call AMSend.send(SERVER_NODE_ID,&packet,sizeof(con_msg_t)) == SUCCESS){
 		printf("Node %d: Succesfully send connect message to MQTT!\n",TOS_NODE_ID);
     }
 
@@ -136,20 +135,28 @@ module clientC {
 
   }
 
+void handle_con_message(void* payload)
+{
+	con_msg_t* mess = (con_msg_t*)payload;
+	if ( mess->msg_type == CONNACK ) {
+		printf("Client Node %d: received connack\n", TOS_NODE_ID);
+		call MilliTimer.stop();
+	}
+	
+}
 
 
   //***************************** Receive interface *****************//
 
   event message_t* Receive.receive(message_t* buf,void* payload, uint8_t len) {
-
-
-
-	my_msg_t* mess=(my_msg_t*)payload;
-
-	rec_id = mess->msg_id;
-	if ( mess->msg_type == CONNACK ) {
-		printf("Client Node %d: received connack\n", TOS_NODE_ID);
-		call MilliTimer.stop();
+	switch(len)
+	{
+		case sizeof(con_msg_t):
+			handle_con_message(payload);			
+			break;
+		default:
+			printf("%d: Packet not recognized!\n",TOS_NODE_ID);
+			break;
 	}
     return buf;
   }
