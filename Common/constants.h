@@ -1,0 +1,13 @@
+#ifndef CONSTANTS_H
+#define CONSTANTS_H
+enum {
+	UNUSED,
+	CONNECT_AM,
+	CONNACK_AM,
+	SUBSCRIBE_AM,
+	SUBACK_AM,
+	PUBLISH_AM,
+	PUBACK_AM
+};
+
+#endif

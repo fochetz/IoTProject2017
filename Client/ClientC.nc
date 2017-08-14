@@ -1,28 +1,13 @@
-/**
-
- *  Source file for implementation of module sendAckC in which
-
- *  the node 1 send a request to node 2 until it receives a response.
-
- *  The reply message contains a reading from the Fake Sensor.
-
- *
-
- *  @author Luca Pietro Borsani
-
- */
-
-
-
 #include "client.h"
 
 #include "Timer.h"
+#include "packets.h"
 
 #include "printf.h"
 
 
 
-module clientC {
+module ClientC {
 
 
 
@@ -61,11 +46,11 @@ module clientC {
   ----------------------------------------------------------------*/
   task void sendConnect()
   {
-	con_msg_t* mess=(con_msg_t*)(call Packet.getPayload(&packet,sizeof(con_msg_t)));
-	mess->msg_type = CONNECT;
+	simple_msg_t* mess=(simple_msg_t*)(call Packet.getPayload(&packet,sizeof(simple_msg_t)));
 	mess->sender_id = TOS_NODE_ID;
-	if(call AMSend.send(SERVER_NODE_ID,&packet,sizeof(con_msg_t)) == SUCCESS){
+	if(call AMSend.send(1,&packet,sizeof(simple_msg_t)) == SUCCESS){
 		printf("Node %d: Succesfully send connect message to MQTT!\n",TOS_NODE_ID);
+	printf("Message type: %d\n", call AMPacket.type(&packet));
     }
 
   }
@@ -75,8 +60,8 @@ module clientC {
 
 	dbg("boot","Application booted.\n");
 
-	printf("%d node Booted\n",TOS_NODE_ID);
-	call TempRead.read();
+	printf("|Node %d| Booted\n",TOS_NODE_ID);
+	//call TempRead.read();
 	call SplitControl.start();
 
   }
@@ -90,7 +75,7 @@ module clientC {
       
 
     if(err == SUCCESS) {
-	printf("Client Node %d, Radio ON!\n", TOS_NODE_ID);
+	printf("|Node %d| Radio ON.\n", TOS_NODE_ID);
     call MilliTimer.startPeriodic( 800 );
     }
     else

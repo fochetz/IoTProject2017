@@ -1,5 +1,6 @@
-COMPONENT=serverAppC
+COMPONENT=ServerAppC
 CFLAGS += -I$(TOSDIR)/lib/printf
+CFLAGS += -I../Common
 #CFLAGS += -DNEW_PRINTF_SEMANTICS
 
 include $(MAKERULES)

@@ -1,32 +1,16 @@
-/**
-
- *  Source file for implementation of module sendAckC in which
-
- *  the node 1 send a request to node 2 until it receives a response.
-
- *  The reply message contains a reading from the Fake Sensor.
-
- *
-
- *  @author Luca Pietro Borsani
-
- */
-
-
-
 #include "server.h"
-
+#include "packets.h"
 #include "Timer.h"
 
 #include "printf.h"
 
 
 
-module serverC {
+module ServerC {
 
 
 
-  uses {
+  uses { 
 
 	interface Boot;
 
@@ -40,7 +24,9 @@ module serverC {
 
     	interface SplitControl;
 
-    	interface Receive;
+	//interface Receive as SubscriptionReceive;
+    	interface Receive as ConnectionReceive;
+	interface Receive as PublicationReceive;
 
     	interface Timer<TMilli> as MilliTimer;
 
@@ -78,7 +64,7 @@ module serverC {
   //***************** Boot interface ********************//
 
   event void Boot.booted() {
-	printf("This is my tos ID: %u\n", TOS_NODE_ID);
+	printf("|PANC| Booted. TOS ID: %u\n", TOS_NODE_ID);
 	call SplitControl.start();
 
   }
@@ -87,23 +73,15 @@ module serverC {
 
   //***************** SplitControl interface ********************//
 
-  event void SplitControl.startDone(error_t err){
-
-      
+  event void SplitControl.startDone(error_t err){   
 
     if(err == SUCCESS) {
-		printf("Server successfully started radio! \n");
+		printf("|PANC| Radio ON.\n");
 
     }
-
     else{
-
 	call SplitControl.start();
-
     }
-
-
-
   }
 
   
@@ -145,23 +123,21 @@ void handle_con_message(void* payload)
 
 }
 
-
-  //***************************** Receive interface *****************//
-
-  event message_t* Receive.receive(message_t* buf,void* payload, uint8_t len) {
-	printf("Server: %d Len, %d ConMSGT\n",len,sizeof(con_msg_t));
-	switch(len)
-	{
-		case sizeof(con_msg_t):
-			handle_con_message(payload);
-			break;
-		default:
-			printf("Server: Packet not recognized\n");
-			break;
+   event message_t* ConnectionReceive.receive(message_t* buf, void* payload, uint8_t len) {
+	if (len!=sizeof(simple_msg_t)){
+		printf("|PANC| Something wrong in CONNECT packet");
 	}
-	
-    return buf;
-}	
+	else {
+		simple_msg_t* mess = (simple_msg_t*)payload;
+		printf("|PANC| CONNECT received from %d\n", mess->sender_id);
+	}
+	return buf;
+}
+
+   event message_t* PublicationReceive.receive(message_t* buf, void* payload, uint8_t len) {
+	printf("|PANC| PUBLISH received\n");
+	return buf;
+}
 
   
 
