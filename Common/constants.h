@@ -10,4 +10,7 @@ enum {
 	PUBACK_AM
 };
 
+#define N_NODES 8
+
+
 #endif
