@@ -1,5 +1,3 @@
-#include "server.h"
-
 #define NEW_PRINTF_SEMANTICS
 #include "printf.h"
 #include "constants.h"

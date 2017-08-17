@@ -1,6 +1,6 @@
 interface ConnectionModule {
 
-	event void OnConnackReceived();
+	event void OnConnectedToPanc();
  	bool command isConnected();
 	void command sendConnect();	
 		

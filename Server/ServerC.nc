@@ -1,4 +1,3 @@
-#include "server.h"
 #include "packets.h"
 #include "Timer.h"
 
@@ -28,8 +27,8 @@ module ServerC {
 
 	event void ConnectionModule.OnNewDeviceConnected(uint8_t nodeId) {
 
-		printf("|PANC| New device connected: %d\n", nodeId);
-		call ConnectionModule.sendAck(nodeId);
+		printf("|PANC| Node %d connected\n", nodeId);
+		
 
 	}
 
@@ -43,7 +42,7 @@ module ServerC {
 
 	event void Boot.booted() {
 
-		printf("|PANC| Booted. TOS ID: %u\n", TOS_NODE_ID);
+		printf("DEBUG: Booted. TOS ID: %u\n", TOS_NODE_ID);
 		call SplitControl.start();
 
 	}	
@@ -53,8 +52,8 @@ module ServerC {
 	event void SplitControl.startDone(error_t err){   
 
 		if(err == SUCCESS) {
-			printf("|PANC| Radio ON.\n");
-
+			printf("DEBUG: Radio ON.\n");
+			printf("|PANC| Device ready\n");
 		}
 		else {
 			call SplitControl.start();

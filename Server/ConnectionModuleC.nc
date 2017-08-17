@@ -17,21 +17,40 @@ implementation
 
 	bool connectedDevices[N_NODES];
 	message_t packet;
-	
+	bool radioBusy = FALSE;
+
+	void command ConnectionModule.addConnectedDevice(uint8_t device) {
+
+		connectedDevices[device-2]=1;
+		signal ConnectionModule.OnNewDeviceConnected(device);
+
+
+	}
+
 	void command ConnectionModule.sendAck(uint8_t destinationId) {
 
-		//printf("|PANC| <ConnectionModule> Sending ack to %d\n", destinationId);
 		simple_msg_t* mess=(simple_msg_t*)(call Packet.getPayload(&packet,sizeof(simple_msg_t)));
 		mess->senderId = TOS_NODE_ID;
-		if(call ConnackSender.send(destinationId,&packet,sizeof(simple_msg_t)) == SUCCESS){
-		printf("|PANC| <ConnectionModule> Sending CONNACK to %d\n", destinationId);
-		
+
+		if (radioBusy == FALSE) {
+			radioBusy = TRUE;
+			switch (call ConnackSender.send(destinationId,&packet,sizeof(simple_msg_t))) 				{
+				case SUCCESS: call ConnectionModule.addConnectedDevice(destinationId); break;
+				default: break;
+			}
+		}
+		else {
+			//printf("BUSY\n");
 
 		}
+		
+
 	}
 
 	bool command ConnectionModule.isConnected(uint8_t id) {
-		return connectedDevices[id];
+
+		return connectedDevices[id-2];
+
 	}
 
 
@@ -39,17 +58,18 @@ implementation
 	event message_t* ConnectionReceive.receive(message_t* buf, void* payload, uint8_t len) {
 
 		if (len!=sizeof(simple_msg_t)){
-			printf("|PANC| <ConnectionModule> Something wrong in CONNECT packet\n");
+			printf("DEBUG: <CM> Something wrong in CONNECT packet\n");
 		}
 		else {
 			simple_msg_t* mess = (simple_msg_t*)payload;
-			printf("|PANC| <ConnectionModule> CONNECT received from %d\n", mess->senderId);
+			printf("DEBUG: <CM> CONNECT received from %d\n", mess->senderId);
 			if (call ConnectionModule.isConnected(mess->senderId)) {
-				printf("|PANC| <ConnectionModule> Node %d is already connected\n", mess->senderId);
+				printf("DEBUG: <CM> Node %d is already connected. Ignoring\n", mess->senderId);
 			}
 			else {
-				signal ConnectionModule.OnNewDeviceConnected(mess->senderId);
-				connectedDevices[mess->senderId]=1;
+
+				call ConnectionModule.sendAck(mess->senderId);
+				
 			}			
 			
 		}
@@ -59,9 +79,9 @@ implementation
 	
 	event void ConnackSender.sendDone(message_t* buf,error_t err) {
 
-    		if(&packet == buf && err == SUCCESS ) {
-			//printf("|PANC| <ConnectionModule> Sending ack to %d\n", destinationId);
+		if (&packet == buf) {
+      			radioBusy = FALSE;
     		}
-
+    		//radioBusy = FALSE;
 	}
 }

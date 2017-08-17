@@ -1,5 +1,3 @@
-#include "client.h"
-
 #include "Timer.h"
 #include "packets.h"
 
@@ -35,15 +33,15 @@ module ClientC {
 
 		dbg("boot","Application booted.\n");
 
-		printf("|Node %d| Booted\n",TOS_NODE_ID);
+		printf("DEBUG: |Node %d| Booted\n",TOS_NODE_ID);
 	//call TempRead.read();
 		call SplitControl.start();
 
 	}
 
-	event void ConnectionModule.OnConnackReceived() {
+	event void ConnectionModule.OnConnectedToPanc() {
 		
-		printf("Ack received");
+		printf("|NODE %d| Connected to PANC\n", TOS_NODE_ID);
 
 	}
 
@@ -52,8 +50,9 @@ module ClientC {
 	event void SplitControl.startDone(error_t err){
 
 		if(err == SUCCESS) {
-			printf("|Node %d| Radio ON.\n", TOS_NODE_ID);
-    			call MilliTimer.startPeriodic( 800 );
+			printf("DEBUG: |Node %d| Radio ON.\n", TOS_NODE_ID);
+			printf("|Node %d| Ready\n", TOS_NODE_ID);
+    			call MilliTimer.startPeriodic(1000);
 		}
 	else
 		{		
