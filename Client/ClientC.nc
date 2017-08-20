@@ -38,7 +38,11 @@ module ClientC {
 		call SplitControl.start();
 
 	}
-
+	event void OnSubscribeToPanc() {
+		printf("|NODE %d| Subscribed to PANC\n", TOS_NODE_ID);	
+	}
+	
+	
 	event void ConnectionModule.OnConnectedToPanc() {
 		
 		printf("|NODE %d| Connected to PANC\n", TOS_NODE_ID);
@@ -70,6 +74,8 @@ module ClientC {
 			call ConnectionModule.sendConnect();
 		else {
 			call MilliTimer.stop();
+			call SubscribeModule.setTopic((TOS_NODE_ID-1)%7,7);
+			call SubscribeModule.sendSubscribe();
 		}
 	}
 

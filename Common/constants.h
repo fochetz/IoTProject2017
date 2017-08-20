@@ -13,5 +13,13 @@ enum {
 
 #define N_NODES 8
 
+#define TEMP_MASK 1
+#define HUMI_MASK 2
+#define LUMI_MASK 4
+#define TEMP_ALLIGNMENT 0
+#define HUMI_ALLIGNMENT 1
+#define LUMI_ALLIGNMENT 2
+
+
 
 #endif
