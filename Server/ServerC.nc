@@ -17,6 +17,7 @@ module ServerC {
 	    	interface SplitControl;
 		//interface Receive as SubscriptionReceive;
 		interface ConnectionModule;
+		interface SubscribeModule;
 		interface Receive as PublicationReceive;
 
 	}
@@ -32,7 +33,7 @@ module ServerC {
 
 	}
 	
-	event void onNewDeviceSubscribe(uint8_t nodeId, uint8_t topic, uint8_t qos)
+	event void SubscribeModule.onNewDeviceSubscribe(uint8_t nodeId, uint8_t topic, uint8_t qos)
 	{
 		printf("|PANC| Node %d subscribed to following topic %d with following qos %d\n", nodeId,topic,qos);
 	

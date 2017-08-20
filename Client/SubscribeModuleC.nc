@@ -42,13 +42,13 @@ implementation{
 	}
 	
 	
-	bool command isSubscribed(){
+	bool command SubscribeModule.isSubscribed(){
 		return isSubscribe;
 	}
 	
 	
 	event message_t* SubackReceive.receive(message_t* buf, void* payload, uint8_t len) {
-		
+		return buf;
 	}
 	
 	

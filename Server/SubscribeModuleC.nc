@@ -24,7 +24,17 @@ implementation
 	bool radioBusy = 0;	
 	message_t packet;
 	
-	bool command isSubscribe(uint8_t nodeId, uint8_t topic)
+	
+	
+	void printSubscribeVariable()
+	{
+		uint8_t i;
+		for(i=0; i<N_NODES; i++)
+		{
+			printf("%d T: %d Qos: %d, H: %d Qos %d, L: %d Qos %d\n",i,subscribedTemperatureDevice[i],subscribedTemperatureDeviceQos[i], subscribedHumidityDevice[i],subscribedHumidityDeviceQos[i],subscribedLuminosityDevice[i],subscribedLuminosityDeviceQos[i]);
+		}
+	}
+	bool command SubscribeModule.isSubscribe(uint8_t nodeId, uint8_t topic)
 	{
 		switch(topic)
 		{
@@ -38,12 +48,12 @@ implementation
 			break;
 			
 		}
-		return false;
+		return 0;
 	}
 	/*-------------------------------------------------------------------
 		Add the subscriber to the correct list with qos
 	---------------------------------------------------------------------*/
-	void command addSubscriber(uinr8_t nodeId, uint8_t topic, uint8_t qos)
+	void command SubscribeModule.addSubscriber(uint8_t nodeId, uint8_t topic, uint8_t qos)
 	{
 		if((topic&TEMP_MASK)==TEMP_MASK)
 		{
@@ -82,10 +92,11 @@ implementation
 			}
 		}
 		signal SubscribeModule.onNewDeviceSubscribe(nodeId,topic,qos);
+		printSubscribeVariable();
 	}
 	
 	event message_t* SubscribeReceive.receive(message_t* buf, void* payload, uint8_t len) {
-		if(len!=sizeof(sub_msg_t)
+		if(len!=sizeof(sub_msg_t))
 		{
 			printf("DEBUG: <MM> Error in Subscribe packet\n");
 		}

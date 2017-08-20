@@ -13,12 +13,14 @@ implementation {
   components SerialPrintfC;
   components SerialStartC;
   components ConnectionModuleAppC;
+  components SubscribeModuleAppC;
 
   //Boot interface
   App.Boot -> MainC.Boot;
 
   //Send and Receive interfaces
   App.ConnectionModule -> ConnectionModuleAppC;
+  App.SubscribeModule -> SubscribeModuleAppC;
   //App.ConnectionModule -> ConnectionReceiverC;
   App.PublicationReceive -> PublicationReceiverC;
 

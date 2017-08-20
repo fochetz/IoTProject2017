@@ -21,8 +21,8 @@ implementation {
 
   	App.SubackReceive -> SubackReceiverC;
   	App.SubscribeSender -> SubscribeSenderC;
-	App.Packet -> SubackSenderC;
-  	App.AMPacket -> SubackSenderC;
+	App.Packet -> SubscribeSenderC;
+  	App.AMPacket -> SubscribeSenderC;
 	App.PacketAcknowledgements->ActiveMessageC;
 }
 

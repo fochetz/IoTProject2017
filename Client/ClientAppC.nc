@@ -9,6 +9,7 @@ implementation {
 
   components MainC, ClientC as App;
 	components ConnectionModuleAppC;
+	components SubscribeModuleAppC;
   components ActiveMessageC;
   components new TimerMilliC();
   components new FakeSensorC();
@@ -30,6 +31,7 @@ implementation {
   App.LumRead -> FakeSensorC.LumRead;
 
 	App.ConnectionModule -> ConnectionModuleAppC;
+	App.SubscribeModule -> SubscribeModuleAppC;
 
 
 }

@@ -10,6 +10,7 @@ module ClientC {
 	uses {
 
 		interface ConnectionModule;
+		interface SubscribeModule;
 		interface Boot;
 		interface AMPacket;
 		interface Packet;
@@ -38,7 +39,7 @@ module ClientC {
 		call SplitControl.start();
 
 	}
-	event void OnSubscribeToPanc() {
+	event void SubscribeModule.OnSubscribeToPanc() {
 		printf("|NODE %d| Subscribed to PANC\n", TOS_NODE_ID);	
 	}
 	
