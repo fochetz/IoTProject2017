@@ -38,11 +38,11 @@ implementation
 	{
 		switch(topic)
 		{
-			case TEMP_MASK:
+			case TEMPERATURE:
 				return subscribedTemperatureDevice[nodeId-2];
-			case LUMI_MASK:
+			case LUMINOSITY:
 				return subscribedLuminosityDevice[nodeId-2];
-			case HUMI_MASK:
+			case HUMIDITY:
 				return subscribedHumidityDevice[nodeId-2];
 			default: printf("DEBUG: <SM> Something wrong in isSubscribe\n");
 			break;
@@ -103,7 +103,7 @@ implementation
 		else
 		{
 			sub_msg_t* mess= (sub_msg_t*)payload;
-			printf("DEBUG: <MM> Subscribe packet succesfully received\n");
+			printf("DEBUG: <SM> Subscribe packet succesfully received\n");
 			call SubscribeModule.addSubscriber(mess->senderId,mess->topics,mess->qos);
 		}
 		
@@ -115,5 +115,17 @@ implementation
       			radioBusy = FALSE;
     		}
     		//radioBusy = FALSE;
+	}
+
+	bool command SubscribeModule.getQos(uint8_t nodeId,uint8_t topic)
+	{
+		switch(topic)
+			{
+				case TEMPERATURE: return subscribedTemperatureDeviceQos[nodeId-2];
+				case LUMINOSITY: return subscribedLuminosityDeviceQos[nodeId-2];
+				case HUMIDITY: return subscribedHumidityDeviceQos[nodeId-2];
+				default: printf("DEBUG: <SM> GetQos: Topic not recognized! \n");
+					 return 0;
+			}
 	}
 }

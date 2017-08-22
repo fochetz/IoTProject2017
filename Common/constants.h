@@ -19,7 +19,8 @@ enum {
 #define TEMP_ALLIGNMENT 0
 #define HUMI_ALLIGNMENT 1
 #define LUMI_ALLIGNMENT 2
-
-
+#define TEMPERATURE 1
+#define HUMIDITY 2
+#define LUMINOSITY 3
 
 #endif

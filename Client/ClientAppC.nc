@@ -12,6 +12,7 @@ implementation {
 	components SubscribeModuleAppC;
   components ActiveMessageC;
   components new TimerMilliC();
+  components new TimerMilliC() as TimerB;
   components new FakeSensorC();
   components SerialPrintfC;
   components SerialStartC;
@@ -24,6 +25,7 @@ implementation {
 
   //Timer interface
   App.MilliTimer -> TimerMilliC;
+  App.SubscribeTimer -> TimerB;
 
   //Fake Sensor read
   App.TempRead -> FakeSensorC.TempRead;

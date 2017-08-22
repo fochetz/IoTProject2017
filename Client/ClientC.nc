@@ -16,6 +16,7 @@ module ClientC {
 		interface Packet;
 		interface SplitControl;
 		interface Timer<TMilli> as MilliTimer;
+		interface Timer<TMilli> as SubscribeTimer;
 		interface Read<uint16_t> as TempRead;
 		interface Read<uint16_t> as HumRead;
 		interface Read<uint16_t> as LumRead;
@@ -76,8 +77,17 @@ module ClientC {
 		else {
 			call MilliTimer.stop();
 			call SubscribeModule.setTopic((TOS_NODE_ID-1)%7,7);
-			call SubscribeModule.sendSubscribe();
+			call SubscribeTimer.startPeriodic(1000);
 		}
+	}
+
+	event void SubscribeTimer.fired() {
+		if(call SubscribeModule.isSubscribed()==0)
+			call SubscribeModule.sendSubscribe();
+		else
+		{
+			call SubscribeTimer.stop();
+		}	
 	}
 
   

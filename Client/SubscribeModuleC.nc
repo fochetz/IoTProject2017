@@ -57,13 +57,7 @@ implementation{
 			if ( call PacketAcknowledgements.wasAcked( buf ) ) {				
 				printf("DEBUG: |NODE %d| <SM>  SUBSCRIBE ack received from PANC\n", TOS_NODE_ID);
 				isSubscribe=1;
-			}
-			else{
-				//resend
-			}
-			
-			
-			
+			}	
 		}
 	}
 
