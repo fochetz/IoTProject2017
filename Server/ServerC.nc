@@ -35,7 +35,7 @@ module ServerC {
 	
 	event void SubscribeModule.onNewDeviceSubscribe(uint8_t nodeId, uint8_t topic, uint8_t qos)
 	{
-		printf("|PANC| Node %d subscribed to following topic %d with following qos %d\n", nodeId,topic,qos);
+		printf("|PANC| Node %d subscribed to THL: %d%d%d QOS %d%d%d\n", nodeId,(topic&TEMP_MASK)&&1, (topic&HUMI_MASK)&&1, (topic&LUMI_MASK)&&1 ,(qos&TEMP_MASK)&&1, (qos&HUMI_MASK)&&1, (qos&LUMI_MASK)&&1);
 	
 	}
 

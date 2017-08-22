@@ -24,16 +24,48 @@ implementation
 	bool radioBusy = 0;	
 	message_t packet;
 	
-	
+	void printSubscribeValueForTopic(uint8_t nodeId, uint8_t topic) {
+		
+		if (call SubscribeModule.isSubscribe(nodeId, topic)) {
+			
+			printf("%d",call SubscribeModule.getQos(nodeId, topic));			
+			
+		} else {
+			
+			printf("X");			
+			
+		}
+		
+	}
 	
 	void printSubscribeVariable()
 	{
+		
 		uint8_t i;
-		for(i=0; i<N_NODES; i++)
-		{
-			printf("%d T: %d Qos: %d, H: %d Qos %d, L: %d Qos %d\n",i,subscribedTemperatureDevice[i],subscribedTemperatureDeviceQos[i], subscribedHumidityDevice[i],subscribedHumidityDeviceQos[i],subscribedLuminosityDevice[i],subscribedLuminosityDeviceQos[i]);
+		printf("DEBUG:          TEM   HUM   LUM\n");
+		
+		
+		for(i=0; i<N_NODES; i++) {
+			if (call SubscribeModule.isSubscribe(i+2, TEMPERATURE) || call SubscribeModule.isSubscribe(i+2, HUMIDITY) || call SubscribeModule.isSubscribe(i+2, LUMINOSITY)) {
+			printf("DEBUG: NODE %d:    ", i+2);
+			printSubscribeValueForTopic(i+2, TEMPERATURE);
+			printf("     ");
+			printSubscribeValueForTopic(i+2, HUMIDITY);
+			printf("     ");
+			printSubscribeValueForTopic(i+2, LUMINOSITY);
+			
+			printf("\n");
+			}			
+
+			//printf("%d T: %d Qos: %d, H: %d Qos %d, L: %d Qos %d\n",i,subscribedTemperatureDevice[i],subscribedTemperatureDeviceQos[i], subscribedHumidityDevice[i],subscribedHumidityDeviceQos[i],subscribedLuminosityDevice[i],subscribedLuminosityDeviceQos[i]);
+
 		}
+
 	}
+
+	
+		
+
 	bool command SubscribeModule.isSubscribe(uint8_t nodeId, uint8_t topic)
 	{
 		switch(topic)
@@ -55,6 +87,7 @@ implementation
 	---------------------------------------------------------------------*/
 	void command SubscribeModule.addSubscriber(uint8_t nodeId, uint8_t topic, uint8_t qos)
 	{
+
 		if((topic&TEMP_MASK)==TEMP_MASK)
 		{
 			subscribedTemperatureDevice[nodeId-2]=1;
