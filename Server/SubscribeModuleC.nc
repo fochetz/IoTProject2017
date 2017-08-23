@@ -50,6 +50,15 @@ implementation
 		}
 		return 0;
 	}
+
+	void command SubscribeModule.sendSubAck(uint8_t nodeId)
+	{
+		simple_msg_t* mess=(simple_msg_t*)(call Packet.getPayload(&packet,sizeof(simple_msg_t)));
+		mess->senderId=TOS_NODE_ID;
+		if(call SubackSender.send(nodeId,&packet,sizeof(simple_msg_t)) == SUCCESS){
+			printf("DEBUG: |PANC| <SM> Sent SubAck to %d\n", TOS_NODE_ID);
+		}
+	}
 	/*-------------------------------------------------------------------
 		Add the subscriber to the correct list with qos
 	---------------------------------------------------------------------*/
@@ -105,6 +114,7 @@ implementation
 			sub_msg_t* mess= (sub_msg_t*)payload;
 			printf("DEBUG: <SM> Subscribe packet succesfully received\n");
 			call SubscribeModule.addSubscriber(mess->senderId,mess->topics,mess->qos);
+			call SubscribeModule.sendSubAck(mess->senderId);
 		}
 		
 		return buf;
