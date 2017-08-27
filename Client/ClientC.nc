@@ -17,9 +17,11 @@ module ClientC {
 		interface SplitControl;
 		interface Timer<TMilli> as MilliTimer;
 		interface Timer<TMilli> as SubscribeTimer;
+		interface Timer<TMilli> as SensorTimer;
 		interface Read<uint16_t> as TempRead;
 		interface Read<uint16_t> as HumRead;
 		interface Read<uint16_t> as LumRead;
+		interface PublishModule;
 
 	}
 
@@ -82,37 +84,66 @@ module ClientC {
 	}
 
 	event void SubscribeTimer.fired() {
-		if(call SubscribeModule.isSubscribed()==0)
+		if(call SubscribeModule.isSubscribed()==0) {
 			call SubscribeModule.sendSubscribe();
+		}
 		else
 		{
 			call SubscribeTimer.stop();
+			printf("|NODE %d| Starting reading sensors\n",TOS_NODE_ID);
+			call SensorTimer.startPeriodic(1000);
 		}	
 	}
 
-  
+	event void SensorTimer.fired() {
+
+		call TempRead.read();
+		call LumRead.read();
+		call HumRead.read();
+		
+	}
+
+	bool getQOS() {
+
+		return TRUE;		
+
+	}
+  	
+	uint8_t getTopic() {
+		
+		return TOS_NODE_ID%4;		
+		
+	}
 
   //************************* Read interface **********************//
 
 	event void TempRead.readDone(error_t result, uint16_t data) {
 
-		printf("Temperature read: %d \n",data);	
-		call HumRead.read();
+		
+		printf("|NODE %d| Temp: %d\n", TOS_NODE_ID,data);
+
+		if (getTopic()==TEMPERATURE)
+			call PublishModule.publish(TEMPERATURE, data, getQOS());	
+
 
 	}
 
 	event void LumRead.readDone(error_t result, uint16_t data) {
 
-		printf("Luminosity read: %d \n",data);
-		call TempRead.read();
+		printf("|NODE %d| Lum: %d\n", TOS_NODE_ID,data);
+
+		if (getTopic()==LUMINOSITY)
+			call PublishModule.publish(LUMINOSITY, data, getQOS());
 
 	}
 
   	event void HumRead.readDone(error_t result, uint16_t data) {
 
-		printf("Humidity read: %d \n",data);
-		call LumRead.read();
+		printf("|NODE %d| Hum: %d\n", TOS_NODE_ID,data);
 
+		if (getTopic()==HUMIDITY)
+			call PublishModule.publish(HUMIDITY, data, getQOS());
+		
 	}
 
 }

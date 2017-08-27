@@ -22,12 +22,14 @@ generic module FakeSensorP() {
 
 	//***************** Boot interface Temperature********************//
 	command error_t TempRead.read(){
-		call TimerReadTemp.startOneShot( 1000 );
+		call TimerReadTemp.startOneShot( 300 );
+		//printf("TASDASD\n");
 		return SUCCESS;
 	}
 
 	//***************** TimerReadTemp interface ********************//
 	event void TimerReadTemp.fired() {
+		
 		uint16_t value;
 		value = call Random.rand16() %temperatureMaxBound;		
 		signal TempRead.readDone( SUCCESS, value );
@@ -36,7 +38,7 @@ generic module FakeSensorP() {
 
 	//***************** Boot interface Humidity ********************//
 	command error_t HumRead.read(){
-		call TimerReadHum.startOneShot( 2000 );
+		call TimerReadHum.startOneShot( 400 );
 		return SUCCESS;
 	}
 
@@ -50,7 +52,7 @@ generic module FakeSensorP() {
 
 	//***************** Boot interface Luminosity ********************//
 	command error_t LumRead.read(){
-		call TimerReadLum.startOneShot( 4000 );
+		call TimerReadLum.startOneShot( 500 );
 		return SUCCESS;
 	}
 

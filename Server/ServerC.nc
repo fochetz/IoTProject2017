@@ -35,13 +35,23 @@ module ServerC {
 	
 	event void SubscribeModule.onNewDeviceSubscribe(uint8_t nodeId, uint8_t topic, uint8_t qos)
 	{
-		printf("|PANC| Node %d subscribed to THL: %d%d%d QOS %d%d%d\n", nodeId,(topic&TEMP_MASK)&&1, (topic&HUMI_MASK)&&1, (topic&LUMI_MASK)&&1 ,(qos&TEMP_MASK)&&1, (qos&HUMI_MASK)&&1, (qos&LUMI_MASK)&&1);
+		if (call ConnectionModule.isConnected(nodeId)) {
+
+			printf("|PANC| Node %d subscribed to THL: %d%d%d QOS %d%d%d\n", nodeId,(topic&TEMP_MASK)&&1, (topic&HUMI_MASK)&&1, (topic&LUMI_MASK)&&1 ,(qos&TEMP_MASK)&&1, (qos&HUMI_MASK)&&1, (qos&LUMI_MASK)&&1);
+			call SubscribeModule.addSubscriber(nodeId,topic,qos);
+
+		}
+		else {
+			printf("|PANC| Node %d is not connected. Ignoring SUBSCRIBE message", nodeId);
+		}
+
+		
 	
 	}
 
-	uint8_t counter=0;
+	//uint8_t counter=0;
 
-	uint8_t rec_id;
+	//uint8_t rec_id;
 
 	message_t packet;
     
