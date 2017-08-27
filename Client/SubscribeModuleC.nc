@@ -48,16 +48,21 @@ implementation{
 	
 	
 	event message_t* SubackReceive.receive(message_t* buf, void* payload, uint8_t len) {
+		if(len == sizeof(simple_msg_t))
+		{
+			isSubscribe=1;
+			printf("DEBUG: |NODE %d| <SM>  SUBSCRIBE ack received from PANC\n", TOS_NODE_ID);
+		}
 		return buf;
 	}
 	
 	
 	event void SubscribeSender.sendDone(message_t* buf,error_t err) {
 		if(&packet == buf && err == SUCCESS ) {
-			if ( call PacketAcknowledgements.wasAcked( buf ) ) {				
+			/*if ( call PacketAcknowledgements.wasAcked( buf ) ) {				
 				printf("DEBUG: |NODE %d| <SM>  SUBSCRIBE ack received from PANC\n", TOS_NODE_ID);
 				isSubscribe=1;
-			}	
+			}*/	
 		}
 	}
 
