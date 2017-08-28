@@ -44,12 +44,18 @@ module ClientC {
 	}
 	event void SubscribeModule.OnSubscribeToPanc() {
 		printf("|NODE %d| Subscribed to PANC\n", TOS_NODE_ID);	
+		call SubscribeTimer.stop();
+		printf("|NODE %d| Starting reading sensors\n",TOS_NODE_ID);
+		call SensorTimer.startPeriodic(1000);
 	}
 	
 	
 	event void ConnectionModule.OnConnectedToPanc() {
 		
 		printf("|NODE %d| Connected to PANC\n", TOS_NODE_ID);
+		call MilliTimer.stop();
+		call SubscribeModule.setTopic((TOS_NODE_ID-1)%7,7);
+		call SubscribeTimer.startPeriodic(1000);
 
 	}
 
@@ -62,8 +68,7 @@ module ClientC {
 			printf("|Node %d| Ready\n", TOS_NODE_ID);
     			call MilliTimer.startPeriodic(1000);
 		}
-	else
-		{		
+		else {		
 			call SplitControl.start();
 		}
 
@@ -76,23 +81,12 @@ module ClientC {
 	event void MilliTimer.fired() {
 		if (call ConnectionModule.isConnected()==0)
 			call ConnectionModule.sendConnect();
-		else {
-			call MilliTimer.stop();
-			call SubscribeModule.setTopic((TOS_NODE_ID-1)%7,7);
-			call SubscribeTimer.startPeriodic(1000);
-		}
 	}
 
 	event void SubscribeTimer.fired() {
 		if(call SubscribeModule.isSubscribed()==0) {
 			call SubscribeModule.sendSubscribe();
 		}
-		else
-		{
-			call SubscribeTimer.stop();
-			printf("|NODE %d| Starting reading sensors\n",TOS_NODE_ID);
-			call SensorTimer.startPeriodic(1000);
-		}	
 	}
 
 	event void SensorTimer.fired() {

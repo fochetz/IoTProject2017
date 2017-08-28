@@ -11,7 +11,6 @@ configuration ConnectionModuleAppC {
 implementation {
 
   	components ConnectionModuleC as App;
-  	components new AMSenderC(CONNACK_AM) as ConnackSenderC;
   	components new AMReceiverC(CONNECT_AM) as ConnectionReceiverC;
   	components SerialPrintfC;
   	components SerialStartC;
@@ -19,9 +18,6 @@ implementation {
 	ConnectionModule = App;
 
   	App.ConnectionReceive -> ConnectionReceiverC;
-  	App.ConnackSender -> ConnackSenderC;
-	App.Packet -> ConnackSenderC;
-  	App.AMPacket -> ConnackSenderC;
 
 
 }

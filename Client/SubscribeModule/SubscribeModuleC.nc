@@ -5,7 +5,6 @@ module SubscribeModuleC
 
 	provides interface SubscribeModule;
 	uses {
- 		interface Receive as SubackReceive;
 		interface AMSend as SubscribeSender;
 		interface AMPacket;
 		interface Packet;
@@ -29,7 +28,7 @@ implementation{
 		//set acknowledgement
 		call PacketAcknowledgements.requestAck( &packet );
 		if(call SubscribeSender.send(1,&packet,sizeof(sub_msg_t)) == SUCCESS){
-		printf("DEBUG: |NODE %d| <SM> Sending SUBSCRIBE to PANC\n", TOS_NODE_ID);
+			printf("DEBUG: |NODE %d| <SM> Sending SUBSCRIBE to PANC\n", TOS_NODE_ID);
 		
 
 		}
@@ -47,16 +46,12 @@ implementation{
 	}
 	
 	
-	event message_t* SubackReceive.receive(message_t* buf, void* payload, uint8_t len) {
-		return buf;
-	}
-	
-	
 	event void SubscribeSender.sendDone(message_t* buf,error_t err) {
 		if(&packet == buf && err == SUCCESS ) {
 			if ( call PacketAcknowledgements.wasAcked( buf ) ) {				
 				printf("DEBUG: |NODE %d| <SM>  SUBSCRIBE ack received from PANC\n", TOS_NODE_ID);
 				isSubscribe=1;
+				signal SubscribeModule.OnSubscribeToPanc();
 			}	
 		}
 	}

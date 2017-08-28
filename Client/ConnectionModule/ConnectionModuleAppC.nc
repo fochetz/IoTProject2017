@@ -12,16 +12,16 @@ implementation {
 
   	components ConnectionModuleC as App;
   	components new AMSenderC(CONNECT_AM) as ConnectSenderC;
-  	components new AMReceiverC(CONNACK_AM) as ConnackReceiverC;
   	components SerialPrintfC;
   	components SerialStartC;
+	components ActiveMessageC;
 
 	ConnectionModule = App;
 
-  	App.ConnackReceive -> ConnackReceiverC;
   	App.ConnectSender -> ConnectSenderC;
 	App.Packet -> ConnectSenderC;
   	App.AMPacket -> ConnectSenderC;
+	App.PacketAcknowledgements->ActiveMessageC;
 
 
 }
