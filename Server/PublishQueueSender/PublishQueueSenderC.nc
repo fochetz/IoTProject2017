@@ -41,14 +41,14 @@ implementation{
 		needAckQueue[tail]=needAck;
 		senderIdQueue[tail]=senderId;
 		numberOfPacketInQueue++;tail++;
-		
+		printf("|PANC| Publish message succesfully added in queue!\n");
 		if(tail==MAXQUEUELENGHT){
 			tail=0;
 		}
 		return 1;
 	}
 	
-	void command startQueueTimer()
+	void command PublishQueueSender.startQueueTimer()
 	{
 		SenderTimer.startPeriodic(TIMEBETWEENMESSAGES);
 	}
