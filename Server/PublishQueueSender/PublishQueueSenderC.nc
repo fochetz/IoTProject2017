@@ -17,29 +17,27 @@ module PublishQueueSenderModuleC
 }
 
 implementation{
-	uint8_t topicQueue[MAXQUEUELENGHT];
+	message_t messageQueue[MAXQUEUELENGHT];
 	uint8_t destinationIdQueue[MAXQUEUELENGHT];
-	uint8_t senderIdQueue[MAXQUEUELENGHT];
-	uint8_t qosQueue[MAXQUEUELENGHT];
-	uint16_t dataQueue[MAXQUEUELENGHT];
 	bool needAckQueue[MAXQUEUELENGHT];
 	uint8_t head=0,tail=0;
 	uint8_t numberOfPacketInQueue=0;
+	uint8_t packetLenght;
 	message_t packet;
 	
+	void command PublishQueueSender.setPacketLenght(uint8_t len)
+	{
+		packetLenght=len;
+	}
 	
-	
-	bool command PublishQueueSender.pushMessage(uint8_t topic,uint8_t qos, uint16_t value, bool needAck, uint8_t destinationId, uint8_t senderId)
+	bool command PublishQueueSender.pushMessage(message_t* message ,uint8_t destinationId, bool needAck)
 	{
 		if(numberOfPacketInQueue>=MAXQUEUELENGHT){
 			return 0;//max capability of the queue reached, msg can't be added
 		}
-		topicQueue[tail]=topic;
-		qosQueue[tail]=qos;
+		memcpy(&messageQueue[tail],message,sizeof(message_t));
 		destinationIdQueue[tail]=destinationId;
-		dataQueue[tail]=value;
 		needAckQueue[tail]=needAck;
-		senderIdQueue[tail]=senderId;
 		numberOfPacketInQueue++;tail++;
 		printf("|PANC| Publish message succesfully added in queue!\n");
 		if(tail==MAXQUEUELENGHT){
@@ -54,10 +52,10 @@ implementation{
 	}
 	event void SenderTimer.fired()
 	{
-		pub_msg_t* mess;
+		//pub_msg_t* mess;
 		if(numberOfPacketInQueue>0)
 		{
-			mess=(pub_msg_t*)(call Packet.getPayload(&packet,sizeof(pub_msg_t)));
+			/*mess=(pub_msg_t*)(call Packet.getPayload(&packet,sizeof(pub_msg_t)));
 			mess->senderId = senderIdQueue[head];
 			mess->topic = topicQueue[head];
 			mess->data = dataQueue[head]; 
@@ -65,7 +63,8 @@ implementation{
 			//set acknowledgement
 			if(needAckQueue[head]==1){
 				call PacketAcknowledgements.requestAck( &packet );
-			}
+			}*/
+			memcpy(&packet,&messageQueue[head],sizeof(message_t));
 			if(call PublishSender.send(destinationIdQueue[head]packet,sizeof(pub_msg_t)) == SUCCESS){
 				printf("DEBUG: |PANC| <PMQ> Publish message sent from queue\n");
 			}
@@ -85,14 +84,15 @@ implementation{
 				}
 				else
 				{
-					call PublishQueueSender.pushMessage(topicQueue[head],qosQueue[head],dataQueue[head],needAckQueue[head],destinationIdQueue[head],senderIdQueue[head]);
+					call PublishQueueSender.pushMessage(&messageQueue[head],destinationIdQueue[head],needAckQueue[head]);
 				}
 			}
 		}
 		else
-			call PublishQueueSender.pushMessage(topicQueue[head],qosQueue[head],dataQueue[head],needAckQueue[head],destinationIdQueue[head],senderIdQueue[head]);
+			call PublishQueueSender.pushMessage(&messageQueue[head],destinationIdQueue[head],needAckQueue[head]);
 		head++;
 		if(head==MAXQUEUELENGHT) head=0;
 	}
 	
 }
+
