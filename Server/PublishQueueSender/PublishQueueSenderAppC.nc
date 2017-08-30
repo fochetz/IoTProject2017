@@ -18,7 +18,7 @@ implementation {
 	components ActiveMessageC;
 
 	PublishQueueSender = App;
-	App.SenderTimer = TimerMilliC;
+	App.SenderTimer -> TimerMilliC;
   	App.PublishSender -> PublishSenderC;
 	App.Packet -> PublishSenderC;
   	App.AMPacket -> PublishSenderC;

@@ -19,6 +19,7 @@ module ServerC {
 		interface ConnectionModule;
 		interface SubscribeModule;
 		interface Receive as PublicationReceive;
+		interface PublishQueueSender;
 
 	}
 

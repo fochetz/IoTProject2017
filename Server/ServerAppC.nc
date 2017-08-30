@@ -14,6 +14,7 @@ implementation {
   components SerialStartC;
   components ConnectionModuleAppC;
   components SubscribeModuleAppC;
+  components PublishQueueSenderAppC;
 
   //Boot interface
   App.Boot -> MainC.Boot;
@@ -23,6 +24,7 @@ implementation {
   App.SubscribeModule -> SubscribeModuleAppC;
   //App.ConnectionModule -> ConnectionReceiverC;
   App.PublicationReceive -> PublicationReceiverC;
+  App.PublishQueueSender -> PublishQueueSenderAppC;
 
   //Radio Control
   App.SplitControl -> ActiveMessageC;

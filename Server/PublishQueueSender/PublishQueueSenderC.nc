@@ -2,7 +2,7 @@
 #define MAXQUEUELENGHT 15
 #define TIMEBETWEENMESSAGES 300
 
-module PublishQueueSenderModuleC
+module PublishQueueSenderC
 {
 
 	provides interface PublishQueueSender;
@@ -11,7 +11,7 @@ module PublishQueueSenderModuleC
 		interface AMPacket;
 		interface Packet;
 		interface PacketAcknowledgements;
-		nterface Timer<TMilli> as SenderTimer;
+		interface Timer<TMilli> as SenderTimer;
 	}
 
 }
@@ -48,7 +48,7 @@ implementation{
 	
 	void command PublishQueueSender.startQueueTimer()
 	{
-		SenderTimer.startPeriodic(TIMEBETWEENMESSAGES);
+		call SenderTimer.startPeriodic(TIMEBETWEENMESSAGES);
 	}
 	event void SenderTimer.fired()
 	{
@@ -65,7 +65,7 @@ implementation{
 				call PacketAcknowledgements.requestAck( &packet );
 			}*/
 			memcpy(&packet,&messageQueue[head],sizeof(message_t));
-			if(call PublishSender.send(destinationIdQueue[head]packet,sizeof(pub_msg_t)) == SUCCESS){
+			if(call PublishSender.send(destinationIdQueue[head],&packet,packetLenght) == SUCCESS){
 				printf("DEBUG: |PANC| <PMQ> Publish message sent from queue\n");
 			}
 			numberOfPacketInQueue--;
