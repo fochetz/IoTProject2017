@@ -7,7 +7,7 @@ module PublishModuleC
 
 	uses {
  		interface Receive as PublishReceive;
-		interface AMSend as PublishSender;
+		interface QueueSender as PublishSender;
 		interface AMPacket;
 		interface Packet;
 	} 
@@ -17,45 +17,36 @@ implementation
 {
 	message_t packet;
 
-	pub_msg_t* getPublishPacket(uint8_t topic, uint16_t data, bool qos, uint8_t senderId) {
+	void setPublishPacket(uint8_t topic, uint16_t data, bool qos, uint8_t senderId) {
 		pub_msg_t* mess=(pub_msg_t*)(call Packet.getPayload(&packet,sizeof(pub_msg_t)));
 		mess->topic = topic;
 		mess->senderId = TOS_NODE_ID;
 		mess->data = data;
 		mess->qos = qos;
-		return mess;
+		
 	}
 
-	void ackablePublish(uint8_t topic, uint16_t data, uint8_t senderId) {
-
-		//pub_msg_t* mess = getPublishPacket(topic, data, 1);
-		//printf("PROVA: %d\n", mess->data);
+	void ackablePublish(uint8_t destination, uint8_t topic, uint16_t data, uint8_t senderId) {
+		
+		setPublishPacket(topic, data, 1, senderId);
+		call PublishSender.pushMessage(&packet, destination, TRUE);
 
 	}
 
-	void publish(uint8_t topic, uint16_t data, uint8_t senderId) {
+	void publish(uint8_t destination, uint8_t topic, uint16_t data, uint8_t senderId) {
 
-		//pub_msg_t* mess = getPublishPacket(topic, data, 0, senderId);
+		setPublishPacket(topic, data, 0, senderId);
+		call PublishSender.pushMessage(&packet, destination, FALSE);
 			
 	}
 
 
-	void command PublishModule.publish(uint8_t topic, uint16_t data, bool qos, uint8_t senderId) {
+	void command PublishModule.publish(uint8_t destination, uint8_t topic, uint16_t data, bool qos, uint8_t senderId) {
 		printf("DEBUG: |NODE %d| Publishing %d, %d, %d from %d\n",TOS_NODE_ID, topic, data, qos, senderId);
 		if (qos)
-			ackablePublish(topic, data, senderId);
+			ackablePublish(destination, topic, data, senderId);
 		else
-			publish(topic, data, senderId);
-	}
-
-	
-
-	event void PublishSender.sendDone(message_t* buf,error_t err) {
-
-		if (&packet == buf) {
-      			//radioBusy = FALSE;
-    		}
-    		
+			publish(destination, topic, data, senderId);
 	}
 
 	event message_t* PublishReceive.receive(message_t* buf, void* payload, uint8_t len) {

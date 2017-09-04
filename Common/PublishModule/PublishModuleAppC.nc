@@ -11,8 +11,9 @@ configuration PublishModuleAppC {
 implementation {
 
   	components PublishModuleC as App;
-  	components new AMSenderC(PUBLISH_AM) as PublishSenderC;
+  	//components new AMSenderC(PUBLISH_AM) as PublishSenderC;
 	components new AMReceiverC(PUBLISH_AM) as PublishReceiverC;
+	components new QueueSenderAppC(PUBLISH_AM) as PublishQueueSender;
   
   	components SerialPrintfC;
   	components SerialStartC;
@@ -20,10 +21,10 @@ implementation {
 	PublishModule = App;
 
   	//App.ConnackReceive -> ConnackReceiverC;
-  	App.PublishSender -> PublishSenderC;
+  	App.PublishSender -> PublishQueueSender;
 	App.PublishReceive -> PublishReceiverC;
-	App.Packet -> PublishSenderC;
-  	App.AMPacket -> PublishSenderC;
+	App.Packet -> PublishQueueSender.Packet;
+  	//App.AMPacket -> PublishSenderC;
 
 
 }

@@ -132,7 +132,7 @@ module ClientC {
 		printf("|NODE %d| Temp: %d\n", TOS_NODE_ID,data);
 
 		if (getTopic()==TEMPERATURE)
-			call PublishModule.publish(TEMPERATURE, data, getQOS(), TOS_NODE_ID);	
+			call PublishModule.publish(0, TEMPERATURE, data, getQOS(), TOS_NODE_ID);	
 
 
 	}
@@ -142,7 +142,7 @@ module ClientC {
 		printf("|NODE %d| Lum: %d\n", TOS_NODE_ID,data);
 
 		if (getTopic()==LUMINOSITY)
-			call PublishModule.publish(LUMINOSITY, data, getQOS(), TOS_NODE_ID);
+			call PublishModule.publish(0, LUMINOSITY, data, getQOS(), TOS_NODE_ID);
 
 	}
 
@@ -151,7 +151,7 @@ module ClientC {
 		printf("|NODE %d| Hum: %d\n", TOS_NODE_ID,data);
 
 		if (getTopic()==HUMIDITY)
-			call PublishModule.publish(HUMIDITY, data, getQOS(), TOS_NODE_ID);
+			call PublishModule.publish(0, HUMIDITY, data, getQOS(), TOS_NODE_ID);
 		
 	}
 

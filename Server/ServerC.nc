@@ -39,6 +39,11 @@ module ServerC {
 			default: printf("NO DATA"); break;
 		}
 		printf("%d (NODE %d)\n", value, senderId);
+		/*for (int i = 0, i<N_NODES, i++) {
+			
+			if (call SubscribeModule.			
+			
+		}*/
 		
 	}
 
