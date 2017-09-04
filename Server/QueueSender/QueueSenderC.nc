@@ -24,12 +24,45 @@ implementation{
 	uint8_t numberOfPacketInQueue=0;
 	uint8_t packetLenght;
 	message_t packet;
-	
+	bool radioBusy=0;
+	bool startedTimer=0;
+	bool sentOutOfOrderPacketFlag=0;
+
+
+	void sendPacketFromQueue()
+	{
+		uint8_t destination=destinationIdQueue[head];
+		memcpy(&packet,&messageQueue[head],sizeof(message_t));
+		if(call PublishSender.send(destination,&packet,packetLenght) == SUCCESS){
+			printf("DEBUG: |PANC| <MQ> Message sent from queue\n");
+			radioBusy=1;
+		}
+		numberOfPacketInQueue--;//decrease numberOfPacketInQueue
+		sentOutOfOrderPacketFlag=0;	
+	}
+
+	//send the messages that don't require an ack and that are pushed while the radio was free
+
+	void sendOutOfOrder(message_t* message, uint8_t destination){
+		memcpy(&packet,message,sizeof(message_t));
+		if(call PublishSender.send(destination,&packet,packetLenght) == SUCCESS){
+			printf("DEBUG: |PANC| <MQ> Message sent out of order \n");
+			radioBusy=1;
+			sentOutOfOrderPacketFlag=1;
+		}
+	}
+
 	bool command QueueSender.pushMessage(message_t* message ,uint8_t destinationId, bool needAck)
 	{
+		if(needAck==0 && radioBusy==0)
+		{
+			sendOutOfOrder(message,destinationId);
+			return 1;
+		}
 		if(numberOfPacketInQueue>=MAXQUEUELENGHT){
 			return 0;//max capability of the queue reached, msg can't be added
 		}
+		
 		memcpy(&messageQueue[tail],message,sizeof(message_t));
 		destinationIdQueue[tail]=destinationId;
 		needAckQueue[tail]=needAck;
@@ -38,55 +71,50 @@ implementation{
 		if(tail==MAXQUEUELENGHT){
 			tail=0;
 		}
+		if(startedTimer==0) call QueueSender.startQueueTimer();
+		//if(numberOfPacketInQueue==1 && radioBusy==0)  sendPacketFromQueue();
 		return 1;
 	}
 	
 	void command QueueSender.startQueueTimer()
 	{
 		call SenderTimer.startPeriodic(TIMEBETWEENMESSAGES);
+		startedTimer=1;
 	}
 	event void SenderTimer.fired()
 	{
 		//pub_msg_t* mess;
-		if(numberOfPacketInQueue>0)
+		if(numberOfPacketInQueue>0 && radioBusy==0)
 		{
-			/*mess=(pub_msg_t*)(call Packet.getPayload(&packet,sizeof(pub_msg_t)));
-			mess->senderId = senderIdQueue[head];
-			mess->topic = topicQueue[head];
-			mess->data = dataQueue[head]; 
-			mess->qos = qosQueue[head];
-			//set acknowledgement
-			if(needAckQueue[head]==1){
-				call PacketAcknowledgements.requestAck( &packet );
-			}*/
-			memcpy(&packet,&messageQueue[head],sizeof(message_t));
-			if(call PublishSender.send(destinationIdQueue[head],&packet,packetLenght) == SUCCESS){
-				printf("DEBUG: |PANC| <PMQ> Publish message sent from queue\n");
-			}
-			numberOfPacketInQueue--;
-			//decrease numberOfPacketInQueue
+			sendPacketFromQueue();
 		}
 	}
 	
 	
 	event void PublishSender.sendDone(message_t* buf,error_t err)
 	{
-		if(&packet == buf && err == SUCCESS ) {
-			if(needAckQueue[head]==1){
-				if(call PacketAcknowledgements.wasAcked( buf ))
-				{
-					printf("DEBUG: |PANC| <PMQ> Publish message, ack received\n");
-				}
-				else
-				{
-					call QueueSender.pushMessage(&messageQueue[head],destinationIdQueue[head],needAckQueue[head]);
+		if(sentOutOfOrderPacketFlag==0)
+		{
+			if(&packet == buf && err == SUCCESS ) {
+				if(needAckQueue[head]==1){
+					if(call PacketAcknowledgements.wasAcked( buf ))
+					{
+						printf("DEBUG: |PANC| <PMQ> Publish message, ack received\n");
+					}
+					else
+					{
+						call QueueSender.pushMessage(&messageQueue[head],destinationIdQueue[head],needAckQueue[head]);
+					}
 				}
 			}
+			else{
+				call QueueSender.pushMessage(&messageQueue[head],destinationIdQueue[head],needAckQueue[head]);
+			}
+
+			head++;
+			if(head==MAXQUEUELENGHT) head=0;
 		}
-		else
-			call QueueSender.pushMessage(&messageQueue[head],destinationIdQueue[head],needAckQueue[head]);
-		head++;
-		if(head==MAXQUEUELENGHT) head=0;
+		radioBusy=0;
 	}
 	
 }
