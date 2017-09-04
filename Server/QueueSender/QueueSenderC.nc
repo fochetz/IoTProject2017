@@ -2,10 +2,10 @@
 #define MAXQUEUELENGHT 15
 #define TIMEBETWEENMESSAGES 300
 
-module PublishQueueSenderC
+generic module QueueSenderC()
 {
 
-	provides interface PublishQueueSender;
+	provides interface QueueSender;
 	uses {
 		interface AMSend as PublishSender;
 		interface AMPacket;
@@ -25,12 +25,7 @@ implementation{
 	uint8_t packetLenght;
 	message_t packet;
 	
-	void command PublishQueueSender.setPacketLenght(uint8_t len)
-	{
-		packetLenght=len;
-	}
-	
-	bool command PublishQueueSender.pushMessage(message_t* message ,uint8_t destinationId, bool needAck)
+	bool command QueueSender.pushMessage(message_t* message ,uint8_t destinationId, bool needAck)
 	{
 		if(numberOfPacketInQueue>=MAXQUEUELENGHT){
 			return 0;//max capability of the queue reached, msg can't be added
@@ -46,7 +41,7 @@ implementation{
 		return 1;
 	}
 	
-	void command PublishQueueSender.startQueueTimer()
+	void command QueueSender.startQueueTimer()
 	{
 		call SenderTimer.startPeriodic(TIMEBETWEENMESSAGES);
 	}
@@ -84,12 +79,12 @@ implementation{
 				}
 				else
 				{
-					call PublishQueueSender.pushMessage(&messageQueue[head],destinationIdQueue[head],needAckQueue[head]);
+					call QueueSender.pushMessage(&messageQueue[head],destinationIdQueue[head],needAckQueue[head]);
 				}
 			}
 		}
 		else
-			call PublishQueueSender.pushMessage(&messageQueue[head],destinationIdQueue[head],needAckQueue[head]);
+			call QueueSender.pushMessage(&messageQueue[head],destinationIdQueue[head],needAckQueue[head]);
 		head++;
 		if(head==MAXQUEUELENGHT) head=0;
 	}

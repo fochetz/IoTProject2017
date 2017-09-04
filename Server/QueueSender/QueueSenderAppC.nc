@@ -2,22 +2,22 @@
 #include "printf.h"
 #include "constants.h"
 
-configuration PublishQueueSenderAppC {
+generic configuration QueueSenderAppC(packet_channel channel) {
 
-		provides interface PublishQueueSender;
+		provides interface QueueSender;
 
 }
 
 implementation {
 
-  	components PublishQueueSenderC as App;
-  	components new AMSenderC(PUBLISH_AM) as PublishSenderC;
+  	components new QueueSenderC() as App;
+  	components new AMSenderC(channel) as PublishSenderC;
 	components new TimerMilliC();
 	components SerialPrintfC;
   	components SerialStartC;
 	components ActiveMessageC;
 
-	PublishQueueSender = App;
+	QueueSender = App;
 	App.SenderTimer -> TimerMilliC;
   	App.PublishSender -> PublishSenderC;
 	App.Packet -> PublishSenderC;

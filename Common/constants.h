@@ -1,6 +1,6 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
-enum {
+typedef enum {
 	UNUSED,
 	CONNECT_AM,
 	CONNACK_AM,
@@ -8,7 +8,7 @@ enum {
 	SUBACK_AM,
 	PUBLISH_AM,
 	PUBACK_AM
-};
+}packet_channel;
 
 
 #define N_NODES 8

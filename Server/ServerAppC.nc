@@ -14,7 +14,7 @@ implementation {
   components SerialStartC;
   components ConnectionModuleAppC;
   components SubscribeModuleAppC;
-  components PublishQueueSenderAppC;
+  components new QueueSenderAppC(PUBLISH_AM) as PublishQueueSender;
 
   //Boot interface
   App.Boot -> MainC.Boot;
@@ -24,7 +24,7 @@ implementation {
   App.SubscribeModule -> SubscribeModuleAppC;
   //App.ConnectionModule -> ConnectionReceiverC;
   App.PublicationReceive -> PublicationReceiverC;
-  App.PublishQueueSender -> PublishQueueSenderAppC;
+  App.QueueSender -> PublishQueueSender;
 
   //Radio Control
   App.SplitControl -> ActiveMessageC;
