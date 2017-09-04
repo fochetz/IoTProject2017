@@ -3,11 +3,11 @@
 typedef enum {
 	UNUSED,
 	CONNECT_AM,
-	CONNACK_AM,
+	
 	SUBSCRIBE_AM,
 	SUBACK_AM,
 	PUBLISH_AM,
-	PUBACK_AM
+
 }packet_channel;
 
 

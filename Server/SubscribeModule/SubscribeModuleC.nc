@@ -6,7 +6,7 @@ module SubscribeModuleC
 	provides interface SubscribeModule;
 	uses {
  		interface Receive as SubscribeReceive;
-		interface AMSend as SubackSender;
+		//interface AMSend as SubackSender;
 		interface AMPacket;
 		interface Packet;		
 		interface PacketAcknowledgements;
@@ -124,7 +124,7 @@ implementation
 				subscribedHumidityDeviceQos[nodeId-2]=0;
 			}
 		}
-		//signal SubscribeModule.onNewDeviceSubscribe(nodeId,topic,qos);
+		
 		printSubscribeVariable();
 	}
 	
@@ -138,17 +138,10 @@ implementation
 			sub_msg_t* mess= (sub_msg_t*)payload;
 			printf("DEBUG: <SM> Subscribe packet succesfully received\n");
 			//call SubscribeModule.addSubscriber(mess->senderId,mess->topics,mess->qos);
-			signal SubscribeModule.onNewDeviceSubscribe(mess->senderId,mess->topics,mess->qos);
+			signal SubscribeModule.OnNewDeviceSubscribe(mess->senderId,mess->topics,mess->qos);
 		}
 		
 		return buf;
-	}
-	event void SubackSender.sendDone(message_t* buf,error_t err) {
-
-		if (&packet == buf) {
-      			radioBusy = FALSE;
-    		}
-    		//radioBusy = FALSE;
 	}
 
 	bool command SubscribeModule.getQos(uint8_t nodeId,uint8_t topic)

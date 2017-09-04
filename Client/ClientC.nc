@@ -38,10 +38,25 @@ module ClientC {
 		dbg("boot","Application booted.\n");
 
 		printf("DEBUG: |Node %d| Booted\n",TOS_NODE_ID);
-	//call TempRead.read();
+	
 		call SplitControl.start();
 
 	}
+
+	event void PublishModule.OnPublicationReceive(uint8_t topic, uint16_t value, bool qos, uint8_t senderId) {
+			
+		printf("|NODE %d| Data %d\n", TOS_NODE_ID, senderId);
+		printf("|NODE %d| ", TOS_NODE_ID);
+		switch(topic) {
+			case TEMPERATURE: printf("T: "); break;			
+			case HUMIDITY: printf("H: "); break;
+			case LUMINOSITY: printf("H: "); break;
+			default: printf("NO DATA"); break;
+		}
+		printf("%d (NODE %d)\n", value, senderId);	
+		
+	}
+
 	event void SubscribeModule.OnSubscribeToPanc() {
 		printf("|NODE %d| Subscribed to PANC\n", TOS_NODE_ID);	
 		call SubscribeTimer.stop();
@@ -117,7 +132,7 @@ module ClientC {
 		printf("|NODE %d| Temp: %d\n", TOS_NODE_ID,data);
 
 		if (getTopic()==TEMPERATURE)
-			call PublishModule.publish(TEMPERATURE, data, getQOS());	
+			call PublishModule.publish(TEMPERATURE, data, getQOS(), TOS_NODE_ID);	
 
 
 	}
@@ -127,7 +142,7 @@ module ClientC {
 		printf("|NODE %d| Lum: %d\n", TOS_NODE_ID,data);
 
 		if (getTopic()==LUMINOSITY)
-			call PublishModule.publish(LUMINOSITY, data, getQOS());
+			call PublishModule.publish(LUMINOSITY, data, getQOS(), TOS_NODE_ID);
 
 	}
 
@@ -136,7 +151,7 @@ module ClientC {
 		printf("|NODE %d| Hum: %d\n", TOS_NODE_ID,data);
 
 		if (getTopic()==HUMIDITY)
-			call PublishModule.publish(HUMIDITY, data, getQOS());
+			call PublishModule.publish(HUMIDITY, data, getQOS(), TOS_NODE_ID);
 		
 	}
 

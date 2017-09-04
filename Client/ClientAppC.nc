@@ -8,9 +8,11 @@ configuration ClientAppC {}
 implementation {
 
   	components MainC, ClientC as App;
+
 	components ConnectionModuleAppC;
 	components SubscribeModuleAppC;
 	components PublishModuleAppC;
+
   	components ActiveMessageC;
   	components new TimerMilliC();
  	components new TimerMilliC() as TimerB;

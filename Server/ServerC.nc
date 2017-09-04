@@ -13,12 +13,12 @@ module ServerC {
 		interface Boot;
     		interface AMPacket;
 		interface Packet;
-		//interface PacketAcknowledgements;
+	
 	    	interface SplitControl;
-		//interface Receive as SubscriptionReceive;
+		
 		interface ConnectionModule;
 		interface SubscribeModule;
-		interface Receive as PublicationReceive;
+		interface PublishModule;
 		interface QueueSender;
 
 	}
@@ -27,6 +27,21 @@ module ServerC {
 
 } implementation {
 
+
+	event void PublishModule.OnPublicationReceive(uint8_t topic, uint16_t value, bool qos, uint8_t senderId) {
+			
+		printf("|NODE %d| Data %d\n", TOS_NODE_ID, senderId);
+		printf("|NODE %d| ", TOS_NODE_ID);
+		switch(topic) {
+			case TEMPERATURE: printf("T: "); break;			
+			case HUMIDITY: printf("H: "); break;
+			case LUMINOSITY: printf("H: "); break;
+			default: printf("NO DATA"); break;
+		}
+		printf("%d (NODE %d)\n", value, senderId);
+		
+	}
+
 	event void ConnectionModule.OnNewDeviceConnected(uint8_t nodeId) {
 
 		printf("|PANC| Node %d connected\n", nodeId);
@@ -34,7 +49,7 @@ module ServerC {
 
 	}
 	
-	event void SubscribeModule.onNewDeviceSubscribe(uint8_t nodeId, uint8_t topic, uint8_t qos)
+	event void SubscribeModule.OnNewDeviceSubscribe(uint8_t nodeId, uint8_t topic, uint8_t qos)
 	{
 		if (call ConnectionModule.isConnected(nodeId)) {
 
@@ -84,12 +99,6 @@ module ServerC {
 	event void SplitControl.stopDone(error_t err){}
 
 
-	event message_t* PublicationReceive.receive(message_t* buf, void* payload, uint8_t len) {
-		
-		printf("|PANC| PUBLISH received\n");
-		return buf;
-
-	}
 
 
 }

@@ -36,6 +36,7 @@ implementation{
 	
 	void command SubscribeModule.setTopic(uint8_t topics, uint8_t QOS)
 	{
+		printf("|NODE %d| Setting subscriptions THL: %d%d%d QOS %d%d%d\n", TOS_NODE_ID,(topics&TEMP_MASK)&&1, (topics&HUMI_MASK)&&1, (topics&LUMI_MASK)&&1 ,(QOS&TEMP_MASK)&&1, (QOS&HUMI_MASK)&&1, (QOS&LUMI_MASK)&&1);
 		topic=topics;
 		qos=QOS;
 	}
