@@ -2,7 +2,7 @@
 #define MAXQUEUELENGHT 15
 #define TIMEBETWEENMESSAGES 300
 
-generic module QueueSenderC()
+generic module QueueSenderC(uint8_t packetLenght)
 {
 
 	provides interface QueueSender;
@@ -22,7 +22,6 @@ implementation{
 	bool needAckQueue[MAXQUEUELENGHT];
 	uint8_t head=0,tail=0;
 	uint8_t numberOfPacketInQueue=0;
-	uint8_t packetLenght = sizeof(pub_msg_t);
 	message_t packet;
 	bool radioBusy=0;
 	bool startedTimer=0;

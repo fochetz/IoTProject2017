@@ -13,7 +13,7 @@ implementation {
   	components PublishModuleC as App;
   	//components new AMSenderC(PUBLISH_AM) as PublishSenderC;
 	components new AMReceiverC(PUBLISH_AM) as PublishReceiverC;
-	components new QueueSenderAppC(PUBLISH_AM) as PublishQueueSender;
+	components new QueueSenderAppC(PUBLISH_AM,sizeof(pub_msg_t)) as PublishQueueSender;
   
   	components SerialPrintfC;
   	components SerialStartC;

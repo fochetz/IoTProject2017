@@ -36,7 +36,7 @@ module ServerC {
 		switch(topic) {
 			case TEMPERATURE: printf("T: "); break;			
 			case HUMIDITY: printf("H: "); break;
-			case LUMINOSITY: printf("H: "); break;
+			case LUMINOSITY: printf("L: "); break;
 			default: printf("NO DATA"); break;
 		}
 		printf("%d (NODE %d)\n", value, senderId);

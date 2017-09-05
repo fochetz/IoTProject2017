@@ -2,7 +2,7 @@
 #include "printf.h"
 #include "constants.h"
 
-generic configuration QueueSenderAppC(packet_channel channel) {
+generic configuration QueueSenderAppC(packet_channel channel,uint8_t lenght) {
 
 		provides interface QueueSender;
 		provides interface Packet;
@@ -11,7 +11,7 @@ generic configuration QueueSenderAppC(packet_channel channel) {
 
 implementation {
 
-  	components new QueueSenderC() as App;
+  	components new QueueSenderC(lenght) as App;
   	components new AMSenderC(channel) as PublishQueueSenderC;
 	components new TimerMilliC();
 	components SerialPrintfC;

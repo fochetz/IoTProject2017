@@ -130,9 +130,10 @@ module ClientC {
 	event void TempRead.readDone(error_t result, uint16_t data) {
 
 		
-		printf("|NODE %d| T: %d\n", TOS_NODE_ID,data);
+		
 
 		if (getTopic()==TEMPERATURE) {
+			printf("|NODE %d| T: %d\n", TOS_NODE_ID,data);
 			call PublishModule.publish(PANC_ID, TEMPERATURE, data, getQOS(), TOS_NODE_ID);	
 		}
 
@@ -141,9 +142,9 @@ module ClientC {
 
 	event void LumRead.readDone(error_t result, uint16_t data) {
 
-		printf("|NODE %d| L: %d\n", TOS_NODE_ID,data);
 
-		if (getTopic()==LUMINOSITY) {
+		if (getTopic()==LUMINOSITY) {			
+			printf("|NODE %d| L: %d\n", TOS_NODE_ID,data);
 			call PublishModule.publish(PANC_ID, LUMINOSITY, data, getQOS(), TOS_NODE_ID);
 		}
 
@@ -151,9 +152,10 @@ module ClientC {
 
   	event void HumRead.readDone(error_t result, uint16_t data) {
 
-		printf("|NODE %d| H: %d\n", TOS_NODE_ID,data);
+		
 
-		if (getTopic()!=HUMIDITY) {
+		if (getTopic()==HUMIDITY) {
+			printf("|NODE %d| H: %d\n", TOS_NODE_ID,data);
 			call PublishModule.publish(PANC_ID, HUMIDITY, data, getQOS(), TOS_NODE_ID);
 		}
 		
