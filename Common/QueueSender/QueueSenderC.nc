@@ -8,8 +8,8 @@ generic module QueueSenderC()
 	provides interface QueueSender;
 	uses {
 		interface AMSend as PublishSender;
-		interface AMPacket;
-		interface Packet;
+		//interface AMPacket;
+		//interface Packet;
 		interface PacketAcknowledgements;
 		interface Timer<TMilli> as SenderTimer;
 	}
@@ -22,7 +22,7 @@ implementation{
 	bool needAckQueue[MAXQUEUELENGHT];
 	uint8_t head=0,tail=0;
 	uint8_t numberOfPacketInQueue=0;
-	uint8_t packetLenght;
+	uint8_t packetLenght = sizeof(pub_msg_t);
 	message_t packet;
 	bool radioBusy=0;
 	bool startedTimer=0;
@@ -34,7 +34,8 @@ implementation{
 		uint8_t destination=destinationIdQueue[head];
 		memcpy(&packet,&messageQueue[head],sizeof(message_t));
 		if(call PublishSender.send(destination,&packet,packetLenght) == SUCCESS){
-			printf("DEBUG: |PANC| <MQ> Message sent from queue\n");
+			printf("DEBUG: |NODE %d| <MQ> Message sent from queue\n", TOS_NODE_ID);
+			//TODO: cambiare nome nodo in caso sia PANC.
 			radioBusy=1;
 		}
 		numberOfPacketInQueue--;//decrease numberOfPacketInQueue
@@ -46,7 +47,8 @@ implementation{
 	void sendOutOfOrder(message_t* message, uint8_t destination){
 		memcpy(&packet,message,sizeof(message_t));
 		if(call PublishSender.send(destination,&packet,packetLenght) == SUCCESS){
-			printf("DEBUG: |PANC| <MQ> Message sent out of order \n");
+			printf("DEBUG: |NODE %d| <MQ> Message sent out of order \n", TOS_NODE_ID);
+		//TODO: cambiare nome nodo in caso sia PANC.
 			radioBusy=1;
 			sentOutOfOrderPacketFlag=1;
 		}

@@ -12,7 +12,7 @@ typedef enum {
 
 
 #define N_NODES 8
-
+#define PANC_ID 1
 #define TEMP_MASK 1
 #define HUMI_MASK 2
 #define LUMI_MASK 4

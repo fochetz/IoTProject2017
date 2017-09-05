@@ -29,8 +29,9 @@ module ServerC {
 
 
 	event void PublishModule.OnPublicationReceive(uint8_t topic, uint16_t value, bool qos, uint8_t senderId) {
-			
-		printf("|NODE %d| Data %d\n", TOS_NODE_ID, senderId);
+		
+		int i;
+		//printf("|NODE %d| Data %d\n", TOS_NODE_ID, senderId);
 		printf("|NODE %d| ", TOS_NODE_ID);
 		switch(topic) {
 			case TEMPERATURE: printf("T: "); break;			
@@ -39,11 +40,14 @@ module ServerC {
 			default: printf("NO DATA"); break;
 		}
 		printf("%d (NODE %d)\n", value, senderId);
-		/*for (int i = 0, i<N_NODES, i++) {
+		
+		for(i = 1; i<N_NODES; i++) {
 			
-			if (call SubscribeModule.			
+			if (i!=TOS_NODE_ID && i!=senderId && call ConnectionModule.isConnected(i) && call SubscribeModule.isSubscribe(i, topic)) {
+				call PublishModule.publish(i, topic, value, call SubscribeModule.getQos(i, topic), senderId);
+			}			
 			
-		}*/
+		}
 		
 	}
 

@@ -45,13 +45,12 @@ module ClientC {
 
 	event void PublishModule.OnPublicationReceive(uint8_t topic, uint16_t value, bool qos, uint8_t senderId) {
 			
-		printf("|NODE %d| Data %d\n", TOS_NODE_ID, senderId);
 		printf("|NODE %d| ", TOS_NODE_ID);
 		switch(topic) {
 			case TEMPERATURE: printf("T: "); break;			
 			case HUMIDITY: printf("H: "); break;
 			case LUMINOSITY: printf("H: "); break;
-			default: printf("NO DATA"); break;
+			default: printf("NO VALID DATA: "); break;
 		}
 		printf("%d (NODE %d)\n", value, senderId);	
 		
@@ -114,7 +113,7 @@ module ClientC {
 
 	bool getQOS() {
 
-		return TRUE;		
+		return TOS_NODE_ID%2;		
 
 	}
   	
@@ -124,36 +123,44 @@ module ClientC {
 		
 	}
 
+
+
   //************************* Read interface **********************//
 
 	event void TempRead.readDone(error_t result, uint16_t data) {
 
 		
-		printf("|NODE %d| Temp: %d\n", TOS_NODE_ID,data);
+		printf("|NODE %d| T: %d\n", TOS_NODE_ID,data);
 
-		if (getTopic()==TEMPERATURE)
-			call PublishModule.publish(0, TEMPERATURE, data, getQOS(), TOS_NODE_ID);	
+		if (getTopic()==TEMPERATURE) {
+			call PublishModule.publish(PANC_ID, TEMPERATURE, data, getQOS(), TOS_NODE_ID);	
+		}
 
 
 	}
 
 	event void LumRead.readDone(error_t result, uint16_t data) {
 
-		printf("|NODE %d| Lum: %d\n", TOS_NODE_ID,data);
+		printf("|NODE %d| L: %d\n", TOS_NODE_ID,data);
 
-		if (getTopic()==LUMINOSITY)
-			call PublishModule.publish(0, LUMINOSITY, data, getQOS(), TOS_NODE_ID);
+		if (getTopic()==LUMINOSITY) {
+			call PublishModule.publish(PANC_ID, LUMINOSITY, data, getQOS(), TOS_NODE_ID);
+		}
 
 	}
 
   	event void HumRead.readDone(error_t result, uint16_t data) {
 
-		printf("|NODE %d| Hum: %d\n", TOS_NODE_ID,data);
+		printf("|NODE %d| H: %d\n", TOS_NODE_ID,data);
 
-		if (getTopic()==HUMIDITY)
-			call PublishModule.publish(0, HUMIDITY, data, getQOS(), TOS_NODE_ID);
+		if (getTopic()!=HUMIDITY) {
+			call PublishModule.publish(PANC_ID, HUMIDITY, data, getQOS(), TOS_NODE_ID);
+		}
+		
 		
 	}
+
+	
 
 }
 

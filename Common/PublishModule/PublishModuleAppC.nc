@@ -23,7 +23,7 @@ implementation {
   	//App.ConnackReceive -> ConnackReceiverC;
   	App.PublishSender -> PublishQueueSender;
 	App.PublishReceive -> PublishReceiverC;
-	App.Packet -> PublishQueueSender.Packet;
+	App.Packet -> PublishQueueSender;
   	//App.AMPacket -> PublishSenderC;
 
 

@@ -20,7 +20,7 @@ implementation
 	void setPublishPacket(uint8_t topic, uint16_t data, bool qos, uint8_t senderId) {
 		pub_msg_t* mess=(pub_msg_t*)(call Packet.getPayload(&packet,sizeof(pub_msg_t)));
 		mess->topic = topic;
-		mess->senderId = TOS_NODE_ID;
+		mess->senderId = senderId;
 		mess->data = data;
 		mess->qos = qos;
 		
@@ -42,7 +42,7 @@ implementation
 
 
 	void command PublishModule.publish(uint8_t destination, uint8_t topic, uint16_t data, bool qos, uint8_t senderId) {
-		printf("DEBUG: |NODE %d| Publishing %d, %d, %d from %d\n",TOS_NODE_ID, topic, data, qos, senderId);
+		printf("DEBUG: |NODE %d| Publishing to %d T:%d, D:%d, Q:%d from %d\n",TOS_NODE_ID, destination, topic, data, qos, senderId);
 		if (qos)
 			ackablePublish(destination, topic, data, senderId);
 		else
