@@ -28,6 +28,7 @@ module ServerC {
 } implementation {
 
 	int counter = 0;
+
 	event void PublishModule.OnPublicationReceive(uint8_t topic, uint16_t value, bool qos, uint8_t senderId) {
 		
 		int i;
@@ -41,11 +42,14 @@ module ServerC {
 		}
 		printf("%d (NODE %d)\n", value, senderId);
 		
-		for(i = 1; i<N_NODES; i++) {
+		for(i = 1; i<=N_NODES; i++) {
 			
 			if (i!=TOS_NODE_ID && i!=senderId && call ConnectionModule.isConnected(i) && call SubscribeModule.isSubscribe(i, topic)) {
 				if (!call PublishModule.publish(i, topic, value, call SubscribeModule.getQos(i, topic), senderId)) {	
 					printf("|PANC| (%d->%d) Lost (queue full)\n", counter, i);
+				}
+				else {
+					printf("|PANC| (%d->%d)\n", counter, i);
 				}
 			}			
 			

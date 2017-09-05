@@ -7,8 +7,6 @@ generic module QueueSenderC(uint8_t packetLenght)
 	provides interface QueueSender;
 	uses {
 		interface AMSend as PublishSender;
-		//interface AMPacket;
-		//interface Packet;
 		interface PacketAcknowledgements;
 		interface Timer<TMilli> as SenderTimer;
 	}
@@ -25,6 +23,7 @@ implementation{
 	bool radioBusy=0;
 	bool startedTimer=0;
 	bool sentOutOfOrderPacketFlag=0;
+	int resentCounter = 0;
 
 
 	void sendPacketFromQueue()
@@ -74,13 +73,18 @@ implementation{
 			tail=0;
 		}
 		if(startedTimer==0) call QueueSender.startQueueTimer();
-		//if(numberOfPacketInQueue==1 && radioBusy==0)  sendPacketFromQueue();
+		if(numberOfPacketInQueue==1 && radioBusy==0)  sendPacketFromQueue();
 		return 1;
 	}
 	
 	void command QueueSender.startQueueTimer()
 	{
-		call SenderTimer.startPeriodic(TIMEBETWEENMESSAGES);
+		if (TOS_NODE_ID==PANC_ID) {
+			call SenderTimer.startPeriodic(TIMEBETWEENMESSAGES/N_NODES);
+		}
+		else {
+			call SenderTimer.startPeriodic(TIMEBETWEENMESSAGES);
+		}
 		startedTimer=1;
 	}
 	event void SenderTimer.fired()
@@ -95,16 +99,15 @@ implementation{
 	
 	event void PublishSender.sendDone(message_t* buf,error_t err)
 	{
+		
 		if(sentOutOfOrderPacketFlag==0)
 		{
 			if(&packet == buf && err == SUCCESS ) {
 				if(needAckQueue[head]==1){
-					if(call PacketAcknowledgements.wasAcked( buf ))
+					if(!(call PacketAcknowledgements.wasAcked( buf )))
 					{
-						printf("DEBUG: |PANC| <PMQ> Publish message, ack received\n");
-					}
-					else
-					{
+						resentCounter++;
+						printf("|NODE %d| Re-pushing message in queue (%d)\n", TOS_NODE_ID, resentCounter);				
 						call QueueSender.pushMessage(&messageQueue[head],destinationIdQueue[head],needAckQueue[head]);
 					}
 				}
@@ -116,7 +119,9 @@ implementation{
 			head++;
 			if(head==MAXQUEUELENGHT) head=0;
 		}
+		
 		radioBusy=0;
+
 	}
 	
 }

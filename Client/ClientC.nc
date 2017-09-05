@@ -60,7 +60,7 @@ module ClientC {
 		printf("|NODE %d| Subscribed to PANC\n", TOS_NODE_ID);	
 		call SubscribeTimer.stop();
 		printf("|NODE %d| Starting reading sensors\n",TOS_NODE_ID);
-		call SensorTimer.startPeriodic(100);
+		call SensorTimer.startPeriodic(SENSOR_TIMER);
 	}
 	
 	
@@ -68,7 +68,8 @@ module ClientC {
 		
 		printf("|NODE %d| Connected to PANC\n", TOS_NODE_ID);
 		call MilliTimer.stop();
-		call SubscribeModule.setTopic((TOS_NODE_ID-1)%7,7);
+		call SubscribeModule.setTopic((TOS_NODE_ID-1)%7,(TOS_NODE_ID+4)%7);
+		//call SubscribeModule.setTopic(7,6);
 		call SubscribeTimer.startPeriodic(1000);
 
 	}
