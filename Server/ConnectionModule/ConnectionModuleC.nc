@@ -35,13 +35,13 @@ implementation
 	event message_t* ConnectionReceive.receive(message_t* buf, void* payload, uint8_t len) {
 
 		if (len!=sizeof(simple_msg_t)){
-			printf("DEBUG: <CM> Something wrong in CONNECT packet\n");
+			printfDebug("<CM> Something wrong in CONNECT packet\n");
 		}
 		else {
 			simple_msg_t* mess = (simple_msg_t*)payload;
-			printf("DEBUG: <CM> CONNECT received from %d\n", mess->senderId);
+			printfDebug("<CM> CONNECT received from %d\n", mess->senderId);
 			if (call ConnectionModule.isConnected(mess->senderId)) {
-				printf("DEBUG: <CM> Node %d is already connected. Ignoring\n", mess->senderId);
+				printfDebug("<CM> Node %d is already connected. Ignoring\n", mess->senderId);
 				
 			}
 			else {

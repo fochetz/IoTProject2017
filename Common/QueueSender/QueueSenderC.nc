@@ -30,11 +30,11 @@ implementation{
 	{
 		uint8_t destination=destinationIdQueue[head];
 		memcpy(&packet,&messageQueue[head],sizeof(message_t));
-		if(needAckQueue[head]==1) 
+		if(needAckQueue[head]==1) {
 			call PacketAcknowledgements.requestAck( &packet );
+		}
 		if(call PublishSender.send(destination,&packet,packetLenght) == SUCCESS){
-			printf("DEBUG: |NODE %d| <MQ> Message sent from queue\n", TOS_NODE_ID);
-			//TODO: cambiare nome nodo in caso sia PANC.
+			printfDebug("<QS> Message sent from queue\n");
 			radioBusy=1;
 		}
 		numberOfPacketInQueue--;//decrease numberOfPacketInQueue
@@ -46,7 +46,7 @@ implementation{
 	void sendOutOfOrder(message_t* message, uint8_t destination){
 		memcpy(&packet,message,sizeof(message_t));
 		if(call PublishSender.send(destination,&packet,packetLenght) == SUCCESS){
-			printf("DEBUG: |NODE %d| <MQ> Message sent out of order \n", TOS_NODE_ID);
+			printfDebug("<QS> Message sent out of order \n");
 		//TODO: cambiare nome nodo in caso sia PANC.
 			radioBusy=1;
 			sentOutOfOrderPacketFlag=1;
@@ -68,7 +68,7 @@ implementation{
 		destinationIdQueue[tail]=destinationId;
 		needAckQueue[tail]=needAck;
 		numberOfPacketInQueue++;tail++;
-		printf("DEBUG: |NODE %d| Publish message succesfully added in queue!\n", TOS_NODE_ID);
+		printfDebug("<QS> Message succesfully added in queue!\n");
 		if(tail==MAXQUEUELENGHT){
 			tail=0;
 		}
@@ -80,16 +80,15 @@ implementation{
 	void command QueueSender.startQueueTimer()
 	{
 		if (TOS_NODE_ID==PANC_ID) {
-			call SenderTimer.startPeriodic(TIMEBETWEENMESSAGES/N_NODES);
+			call SenderTimer.startPeriodic(PUBLISH_TIMER_PANC);
 		}
 		else {
-			call SenderTimer.startPeriodic(TIMEBETWEENMESSAGES);
+			call SenderTimer.startPeriodic(PUBLISH_TIMER_NODE);
 		}
 		startedTimer=1;
 	}
 	event void SenderTimer.fired()
 	{
-		//pub_msg_t* mess;
 		if(numberOfPacketInQueue>0 && radioBusy==0)
 		{
 			sendPacketFromQueue();
@@ -107,7 +106,7 @@ implementation{
 					if(!(call PacketAcknowledgements.wasAcked( buf )))
 					{
 						resentCounter++;
-						printf("|NODE %d| Re-pushing message in queue (%d)\n", TOS_NODE_ID, resentCounter);				
+						printfDebug("<QS> Re-pushing message in queue (%d)\n", resentCounter);				
 						call QueueSender.pushMessage(&messageQueue[head],destinationIdQueue[head],needAckQueue[head]);
 					}
 				}

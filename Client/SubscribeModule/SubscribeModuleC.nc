@@ -28,7 +28,7 @@ implementation{
 		//set acknowledgement
 		call PacketAcknowledgements.requestAck( &packet );
 		if(call SubscribeSender.send(1,&packet,sizeof(sub_msg_t)) == SUCCESS){
-			printf("DEBUG: |NODE %d| <SM> Sending SUBSCRIBE to PANC\n", TOS_NODE_ID);
+			printfDebug("<SM> Sending SUBSCRIBE to PANC\n");
 		
 
 		}
@@ -36,7 +36,7 @@ implementation{
 	
 	void command SubscribeModule.setTopic(uint8_t topics, uint8_t QOS)
 	{
-		printf("|NODE %d| Setting subscriptions THL: %d%d%d QOS %d%d%d\n", TOS_NODE_ID,(topics&TEMP_MASK)&&1, (topics&HUMI_MASK)&&1, (topics&LUMI_MASK)&&1 ,(QOS&TEMP_MASK)&&1, (QOS&HUMI_MASK)&&1, (QOS&LUMI_MASK)&&1);
+		printfH("Setting subscriptions THL: %d%d%d QOS %d%d%d\n",(topics&TEMP_MASK)&&1, (topics&HUMI_MASK)&&1, (topics&LUMI_MASK)&&1 ,(QOS&TEMP_MASK)&&1, (QOS&HUMI_MASK)&&1, (QOS&LUMI_MASK)&&1);
 		topic=topics;
 		qos=QOS;
 	}
@@ -50,7 +50,7 @@ implementation{
 	event void SubscribeSender.sendDone(message_t* buf,error_t err) {
 		if(&packet == buf && err == SUCCESS ) {
 			if ( call PacketAcknowledgements.wasAcked( buf ) ) {				
-				printf("DEBUG: |NODE %d| <SM>  SUBSCRIBE ack received from PANC\n", TOS_NODE_ID);
+				printfDebug("<SM>  SUBSCRIBE ack received from PANC\n");
 				isSubscribe=1;
 				signal SubscribeModule.OnSubscribeToPanc();
 			}	

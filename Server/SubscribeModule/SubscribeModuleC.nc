@@ -42,12 +42,12 @@ implementation
 	{
 		
 		uint8_t i;
-		printf("DEBUG:          TEM   HUM   LUM\n");
+		printfDebug("          TEM   HUM   LUM\n");
 		
 		
 		for(i=0; i<N_NODES; i++) {
 			if (call SubscribeModule.isSubscribe(i+2, TEMPERATURE) || call SubscribeModule.isSubscribe(i+2, HUMIDITY) || call SubscribeModule.isSubscribe(i+2, LUMINOSITY)) {
-			printf("DEBUG: NODE %d:    ", i+2);
+			printfDebug(" NODE %d:    ", i+2);
 			printSubscribeValueForTopic(i+2, TEMPERATURE);
 			printf("     ");
 			printSubscribeValueForTopic(i+2, HUMIDITY);
@@ -76,7 +76,7 @@ implementation
 				return subscribedLuminosityDevice[nodeId-2];
 			case HUMIDITY:
 				return subscribedHumidityDevice[nodeId-2];
-			default: printf("DEBUG: <SM> Something wrong in isSubscribe\n");
+			default: printfDebug("<SM> Something wrong in isSubscribe\n");
 			break;
 			
 		}
@@ -131,12 +131,12 @@ implementation
 	event message_t* SubscribeReceive.receive(message_t* buf, void* payload, uint8_t len) {
 		if(len!=sizeof(sub_msg_t))
 		{
-			printf("DEBUG: <MM> Error in Subscribe packet\n");
+			printfDebug("<MM> Error in Subscribe packet\n");
 		}
 		else
 		{
 			sub_msg_t* mess= (sub_msg_t*)payload;
-			printf("DEBUG: <SM> Subscribe packet succesfully received\n");
+			printfDebug("<SM> Subscribe packet succesfully received\n");
 			//call SubscribeModule.addSubscriber(mess->senderId,mess->topics,mess->qos);
 			signal SubscribeModule.OnNewDeviceSubscribe(mess->senderId,mess->topics,mess->qos);
 		}
@@ -151,7 +151,7 @@ implementation
 				case TEMPERATURE: return subscribedTemperatureDeviceQos[nodeId-2];
 				case LUMINOSITY: return subscribedLuminosityDeviceQos[nodeId-2];
 				case HUMIDITY: return subscribedHumidityDeviceQos[nodeId-2];
-				default: printf("DEBUG: <SM> GetQos: Topic not recognized! \n");
+				default: printfDebug("<SM> GetQos: Topic not recognized! \n");
 					 return 0;
 			}
 	}

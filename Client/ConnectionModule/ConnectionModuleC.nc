@@ -21,12 +21,11 @@ implementation
 	
 	void command ConnectionModule.sendConnect() {
 
-		//printf("|PANC| <ConnectionModule> Sending ack to %d\n", destinationId);
 		simple_msg_t* mess=(simple_msg_t*)(call Packet.getPayload(&packet,sizeof(simple_msg_t)));
 		mess->senderId = TOS_NODE_ID;
 		call PacketAcknowledgements.requestAck( &packet );
 		if(call ConnectSender.send(1,&packet,sizeof(simple_msg_t)) == SUCCESS){
-			printf("DEBUG: |NODE %d| <CM> Sending CONNECT to PANC\n", TOS_NODE_ID);
+			printfDebug("<CM> Sending CONNECT to PANC\n");
 		
 
 		}
@@ -42,9 +41,9 @@ implementation
 		if(&packet == buf && err == SUCCESS ) {
 			if ( call PacketAcknowledgements.wasAcked( buf ) ) 
 			{				
-				printf("DEBUG: |NODE %d| <CM> CONNACK received from PANC\n", TOS_NODE_ID);
+				printfDebug("<CM> CONNACK received from PANC\n");
 				if (call ConnectionModule.isConnected()) {
-					printf("DEBUG: |NODE %d| <CM> Is already connected\n", TOS_NODE_ID);
+					printfDebug("<CM> Is already connected\n");
 				}
 				else {
 					signal ConnectionModule.OnConnectedToPanc();

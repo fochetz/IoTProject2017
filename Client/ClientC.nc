@@ -33,43 +33,34 @@ module ClientC {
 
   //***************** Boot interface ********************//
 
+
 	event void Boot.booted() {
 
-		dbg("boot","Application booted.\n");
-
-		printf("DEBUG: |Node %d| Booted\n",TOS_NODE_ID);
-	
+		//dbg("boot","Application booted.\n");
+		printfDebug("Booted\n");
 		call SplitControl.start();
 
 	}
 
 	event void PublishModule.OnPublicationReceive(uint8_t topic, uint16_t value, bool qos, uint8_t senderId) {
-			
-		printf("|NODE %d| ", TOS_NODE_ID);
-		switch(topic) {
-			case TEMPERATURE: printf("T: "); break;			
-			case HUMIDITY: printf("H: "); break;
-			case LUMINOSITY: printf("H: "); break;
-			default: printf("NO VALID DATA: "); break;
-		}
-		printf("%d (NODE %d)\n", value, senderId);	
+		
+		printReceivedDataNode(topic, value, senderId);	
 		
 	}
 
 	event void SubscribeModule.OnSubscribeToPanc() {
-		printf("|NODE %d| Subscribed to PANC\n", TOS_NODE_ID);	
+		printfH("Subscribed to PANC\n");	
 		call SubscribeTimer.stop();
-		printf("|NODE %d| Starting reading sensors\n",TOS_NODE_ID);
+		printfH("Starting reading sensors\n");
 		call SensorTimer.startPeriodic(SENSOR_TIMER);
 	}
 	
 	
 	event void ConnectionModule.OnConnectedToPanc() {
 		
-		printf("|NODE %d| Connected to PANC\n", TOS_NODE_ID);
+		printfH("Connected to PANC\n");
 		call MilliTimer.stop();
 		call SubscribeModule.setTopic((TOS_NODE_ID-1)%7,(TOS_NODE_ID+4)%7);
-		//call SubscribeModule.setTopic(7,6);
 		call SubscribeTimer.startPeriodic(1000);
 
 	}
@@ -79,8 +70,9 @@ module ClientC {
 	event void SplitControl.startDone(error_t err){
 
 		if(err == SUCCESS) {
-			printf("DEBUG: |Node %d| Radio ON.\n", TOS_NODE_ID);
-			printf("|Node %d| Ready\n", TOS_NODE_ID);
+	
+			printfDebug("Radio ON.\n");
+			printfH("Ready\n");
     			call MilliTimer.startPeriodic(1000);
 		}
 		else {		
@@ -114,13 +106,15 @@ module ClientC {
 
 	bool getQOS() {
 
-		return TOS_NODE_ID%2;		
+		return TOS_NODE_ID%2;
+		//return 1;		
 
 	}
   	
 	uint8_t getTopic() {
 		
-		return TOS_NODE_ID%4;		
+		return TOS_NODE_ID%4;
+		//return 1;		
 		
 	}
 
@@ -132,9 +126,9 @@ module ClientC {
 		
 
 		if (getTopic()==TEMPERATURE) {
-			printf("|NODE %d| (%d) T: %d\n", TOS_NODE_ID, counter ,data);
+			printfH("(%d) T: %d\n", counter ,data);
 			if (!(call PublishModule.publish(PANC_ID, TEMPERATURE, data, getQOS(), TOS_NODE_ID))) {
-				printf("|NODE %d| (%d) Lost (queue full)\n", TOS_NODE_ID, counter);
+				printfH("(%d) Lost (queue full)\n", counter);
 			}
 			counter++;	
 		}
@@ -146,9 +140,9 @@ module ClientC {
 
 
 		if (getTopic()==LUMINOSITY) {			
-			printf("|NODE %d| (%d) L: %d\n", TOS_NODE_ID, counter ,data);
+			printfH("(%d) L: %d\n", counter ,data);
 			if (!(call PublishModule.publish(PANC_ID, LUMINOSITY, data, getQOS(), TOS_NODE_ID))) {
-				printf("|NODE %d| (%d) Lost (queue full)\n", TOS_NODE_ID, counter);
+				printfH("(%d) Lost (queue full)\n", counter);
 			}	
 			counter++;
 		}
@@ -160,9 +154,9 @@ module ClientC {
 		
 
 		if (getTopic()==HUMIDITY) {
-			printf("|NODE %d| (%d) H: %d\n", TOS_NODE_ID, counter ,data);
+			printfH("(%d) H: %d\n", counter ,data);
 			if (!(call PublishModule.publish(PANC_ID, HUMIDITY, data, getQOS(), TOS_NODE_ID))) {
-				printf("|NODE %d| (%d) Lost (queue full)\n", TOS_NODE_ID, counter);
+				printfH("(%d) Lost (queue full)\n", counter);
 			}
 			counter++;
 		}

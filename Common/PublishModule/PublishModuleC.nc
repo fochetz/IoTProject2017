@@ -42,7 +42,8 @@ implementation
 
 
 	bool command PublishModule.publish(uint8_t destination, uint8_t topic, uint16_t data, bool qos, uint8_t senderId) {
-		printf("DEBUG: |NODE %d| Publishing to %d T:%d, D:%d, Q:%d from %d\n",TOS_NODE_ID, destination, topic, data, qos, senderId);
+
+		printfDebug("<PM> Publishing to %d T:%d, D:%d, Q:%d from %d\n", destination, topic, data, qos, senderId);
 		if (qos)
 			return ackablePublish(destination, topic, data, senderId);
 		else
@@ -52,7 +53,7 @@ implementation
 	event message_t* PublishReceive.receive(message_t* buf, void* payload, uint8_t len) {
 		
 		if (len!=sizeof(pub_msg_t)){
-			printf("DEBUG: <PM> Something wrong in PUBLISH packet\n");
+			printfDebug("<PM> Something wrong in PUBLISH packet\n");
 		}
 		else {
 			pub_msg_t* mess = (pub_msg_t*)payload;
