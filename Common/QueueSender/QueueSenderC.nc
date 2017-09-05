@@ -32,6 +32,8 @@ implementation{
 	{
 		uint8_t destination=destinationIdQueue[head];
 		memcpy(&packet,&messageQueue[head],sizeof(message_t));
+		if(needAckQueue[head]==1) 
+			call PacketAcknowledgements.requestAck( &packet );
 		if(call PublishSender.send(destination,&packet,packetLenght) == SUCCESS){
 			printf("DEBUG: |NODE %d| <MQ> Message sent from queue\n", TOS_NODE_ID);
 			//TODO: cambiare nome nodo in caso sia PANC.
