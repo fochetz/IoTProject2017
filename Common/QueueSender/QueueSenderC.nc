@@ -1,6 +1,5 @@
 #include "packets.h"
-#define MAXQUEUELENGHT 15
-#define TIMEBETWEENMESSAGES 300
+
 
 generic module QueueSenderC(uint8_t packetLenght)
 {
@@ -70,7 +69,7 @@ implementation{
 		destinationIdQueue[tail]=destinationId;
 		needAckQueue[tail]=needAck;
 		numberOfPacketInQueue++;tail++;
-		printf("|PANC| Publish message succesfully added in queue!\n");
+		printf("DEBUG: |NODE %d| Publish message succesfully added in queue!\n", TOS_NODE_ID);
 		if(tail==MAXQUEUELENGHT){
 			tail=0;
 		}

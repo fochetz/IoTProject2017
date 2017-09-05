@@ -27,7 +27,7 @@ module ClientC {
 
 } implementation {
 
-	uint8_t counter=0;
+	int counter=0;
 	uint8_t rec_id;
 	message_t packet;
 
@@ -60,7 +60,7 @@ module ClientC {
 		printf("|NODE %d| Subscribed to PANC\n", TOS_NODE_ID);	
 		call SubscribeTimer.stop();
 		printf("|NODE %d| Starting reading sensors\n",TOS_NODE_ID);
-		call SensorTimer.startPeriodic(1000);
+		call SensorTimer.startPeriodic(100);
 	}
 	
 	
@@ -128,13 +128,14 @@ module ClientC {
   //************************* Read interface **********************//
 
 	event void TempRead.readDone(error_t result, uint16_t data) {
-
-		
 		
 
 		if (getTopic()==TEMPERATURE) {
-			printf("|NODE %d| T: %d\n", TOS_NODE_ID,data);
-			call PublishModule.publish(PANC_ID, TEMPERATURE, data, getQOS(), TOS_NODE_ID);	
+			printf("|NODE %d| (%d) T: %d\n", TOS_NODE_ID, counter ,data);
+			if (!(call PublishModule.publish(PANC_ID, TEMPERATURE, data, getQOS(), TOS_NODE_ID))) {
+				printf("|NODE %d| (%d) Lost (queue full)\n", TOS_NODE_ID, counter);
+			}
+			counter++;	
 		}
 
 
@@ -144,8 +145,11 @@ module ClientC {
 
 
 		if (getTopic()==LUMINOSITY) {			
-			printf("|NODE %d| L: %d\n", TOS_NODE_ID,data);
-			call PublishModule.publish(PANC_ID, LUMINOSITY, data, getQOS(), TOS_NODE_ID);
+			printf("|NODE %d| (%d) L: %d\n", TOS_NODE_ID, counter ,data);
+			if (!(call PublishModule.publish(PANC_ID, LUMINOSITY, data, getQOS(), TOS_NODE_ID))) {
+				printf("|NODE %d| (%d) Lost (queue full)\n", TOS_NODE_ID, counter);
+			}	
+			counter++;
 		}
 
 	}
@@ -155,8 +159,11 @@ module ClientC {
 		
 
 		if (getTopic()==HUMIDITY) {
-			printf("|NODE %d| H: %d\n", TOS_NODE_ID,data);
-			call PublishModule.publish(PANC_ID, HUMIDITY, data, getQOS(), TOS_NODE_ID);
+			printf("|NODE %d| (%d) H: %d\n", TOS_NODE_ID, counter ,data);
+			if (!(call PublishModule.publish(PANC_ID, HUMIDITY, data, getQOS(), TOS_NODE_ID))) {
+				printf("|NODE %d| (%d) Lost (queue full)\n", TOS_NODE_ID, counter);
+			}
+			counter++;
 		}
 		
 		

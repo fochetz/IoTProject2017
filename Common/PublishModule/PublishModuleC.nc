@@ -26,27 +26,27 @@ implementation
 		
 	}
 
-	void ackablePublish(uint8_t destination, uint8_t topic, uint16_t data, uint8_t senderId) {
+	bool ackablePublish(uint8_t destination, uint8_t topic, uint16_t data, uint8_t senderId) {
 		
 		setPublishPacket(topic, data, 1, senderId);
-		call PublishSender.pushMessage(&packet, destination, TRUE);
+		return call PublishSender.pushMessage(&packet, destination, TRUE);
 
 	}
 
-	void publish(uint8_t destination, uint8_t topic, uint16_t data, uint8_t senderId) {
+	bool publish(uint8_t destination, uint8_t topic, uint16_t data, uint8_t senderId) {
 
 		setPublishPacket(topic, data, 0, senderId);
-		call PublishSender.pushMessage(&packet, destination, FALSE);
+		return call PublishSender.pushMessage(&packet, destination, FALSE);
 			
 	}
 
 
-	void command PublishModule.publish(uint8_t destination, uint8_t topic, uint16_t data, bool qos, uint8_t senderId) {
+	bool command PublishModule.publish(uint8_t destination, uint8_t topic, uint16_t data, bool qos, uint8_t senderId) {
 		printf("DEBUG: |NODE %d| Publishing to %d T:%d, D:%d, Q:%d from %d\n",TOS_NODE_ID, destination, topic, data, qos, senderId);
 		if (qos)
-			ackablePublish(destination, topic, data, senderId);
+			return ackablePublish(destination, topic, data, senderId);
 		else
-			publish(destination, topic, data, senderId);
+			return publish(destination, topic, data, senderId);
 	}
 
 	event message_t* PublishReceive.receive(message_t* buf, void* payload, uint8_t len) {

@@ -27,12 +27,12 @@ module ServerC {
 
 } implementation {
 
-
+	int counter = 0;
 	event void PublishModule.OnPublicationReceive(uint8_t topic, uint16_t value, bool qos, uint8_t senderId) {
 		
 		int i;
 		//printf("|NODE %d| Data %d\n", TOS_NODE_ID, senderId);
-		printf("|NODE %d| ", TOS_NODE_ID);
+		printf("|PANC| (%d) ", counter);
 		switch(topic) {
 			case TEMPERATURE: printf("T: "); break;			
 			case HUMIDITY: printf("H: "); break;
@@ -44,10 +44,13 @@ module ServerC {
 		for(i = 1; i<N_NODES; i++) {
 			
 			if (i!=TOS_NODE_ID && i!=senderId && call ConnectionModule.isConnected(i) && call SubscribeModule.isSubscribe(i, topic)) {
-				call PublishModule.publish(i, topic, value, call SubscribeModule.getQos(i, topic), senderId);
+				if (!call PublishModule.publish(i, topic, value, call SubscribeModule.getQos(i, topic), senderId)) {	
+					printf("|PANC| (%d->%d) Lost (queue full)\n", counter, i);
+				}
 			}			
 			
 		}
+		counter++;
 		
 	}
 

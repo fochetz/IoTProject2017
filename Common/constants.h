@@ -19,6 +19,8 @@ typedef enum {
 #define TEMP_ALLIGNMENT 0
 #define HUMI_ALLIGNMENT 1
 #define LUMI_ALLIGNMENT 2
+#define MAXQUEUELENGHT 10
+#define TIMEBETWEENMESSAGES 300
 
 enum {
 	NO_TOPIC,
