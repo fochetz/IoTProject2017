@@ -57,10 +57,12 @@ module ClientC {
 	
 	
 	event void ConnectionModule.OnConnectedToPanc() {
-		
+		uint8_t qos,topic;
+		topic=((TOS_NODE_ID-2)%7)+1;
+		qos=((TOS_NODE_ID+4)%8)&topic;
 		printfH("Connected to PANC\n");
 		call MilliTimer.stop();
-		call SubscribeModule.setTopic((TOS_NODE_ID-1)%7,(TOS_NODE_ID+4)%7);
+		call SubscribeModule.setTopic(topic,qos);
 		call SubscribeTimer.startPeriodic(1000);
 
 	}
