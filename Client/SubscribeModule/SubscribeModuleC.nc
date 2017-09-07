@@ -20,17 +20,22 @@ implementation{
 	uint8_t qos;
 	
 	void command SubscribeModule.sendSubscribe() {
-
-		sub_msg_t* mess=(sub_msg_t*)(call Packet.getPayload(&packet,sizeof(sub_msg_t)));
-		mess->senderId = TOS_NODE_ID;
-		mess->topics = topic;
-		mess->qos = qos;
-		//set acknowledgement
-		call PacketAcknowledgements.requestAck( &packet );
-		if(call SubscribeSender.send(1,&packet,sizeof(sub_msg_t)) == SUCCESS){
-			printfDebug("<SM> Sending SUBSCRIBE to PANC\n");
 		
-
+		if (!topic) {
+			printfDebug("<SM> Not sending SUBSCRIBE. No topics selected");
+		}
+		else {
+			
+			sub_msg_t* mess=(sub_msg_t*)(call Packet.getPayload(&packet,sizeof(sub_msg_t)));
+			mess->senderId = TOS_NODE_ID;
+			mess->topics = topic;
+			mess->qos = qos&topic;
+			//set acknowledgement
+			
+			call PacketAcknowledgements.requestAck( &packet );
+			if(call SubscribeSender.send(PANC_ID,&packet,sizeof(sub_msg_t)) == SUCCESS){
+				printfDebug("<SM> Sending SUBSCRIBE to PANC\n");
+			}
 		}
 	}
 	

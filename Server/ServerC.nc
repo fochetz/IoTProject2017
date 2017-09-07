@@ -29,7 +29,14 @@ module ServerC {
 
 	int counter = 0;
 
+	void printSubscribeData(uint8_t nodeId, uint8_t topic, uint8_t qos) {
 	
+		printfH("Node %d subscribed to THL: ", nodeId);
+		printTopicOrQos(topic);
+		printf("; QOS: ");
+		printTopicOrQos(qos);	
+
+	}
 
 	event void PublishModule.OnPublicationReceive(uint8_t topic, uint16_t value, bool qos, uint8_t senderId) {
 		
@@ -74,21 +81,20 @@ module ServerC {
 	{
 		if (call ConnectionModule.isConnected(nodeId)) {
 				
-			printfH("Node %d subscribed to THL: %d%d%d QOS %d%d%d\n", nodeId,(topic&TEMP_MASK)&&1, (topic&HUMI_MASK)&&1, (topic&LUMI_MASK)&&1 ,(qos&TEMP_MASK)&&1, (qos&HUMI_MASK)&&1, (qos&LUMI_MASK)&&1);
+			//printfH("Node %d subscribed to THL: %d%d%d QOS %d%d%d\n", nodeId,(topic&TEMP_MASK)&&1, (topic&HUMI_MASK)&&1, (topic&LUMI_MASK)&&1 ,(qos&TEMP_MASK)&&1, (qos&HUMI_MASK)&&1, (qos&LUMI_MASK)&&1);
+
+			printSubscribeData(nodeId, topic, qos);
+			printf("\n");
 			call SubscribeModule.addSubscriber(nodeId,topic,qos);
 
 		}
 		else {
-			printfH("Node %d is not connected. Ignoring SUBSCRIBE message", nodeId);
+			printfH("Node %d is not connected. Ignoring SUBSCRIBE message\n", nodeId);
 		}
 
 		
 	
 	}
-
-	//uint8_t counter=0;
-
-	//uint8_t rec_id;
 
 	message_t packet;
     
@@ -96,7 +102,11 @@ module ServerC {
 
 	event void Boot.booted() {
 
-		printf("DEBUG: Booted. TOS ID: %u\n", TOS_NODE_ID);
+		printfDebug("Booted\n");
+		if (TOS_NODE_ID!=PANC_ID) {
+			printfH("ERROR: This ID is not reserved to PANC.\n");
+			return;
+		}
 		call SplitControl.start();
 
 	}	
@@ -106,9 +116,8 @@ module ServerC {
 	event void SplitControl.startDone(error_t err){   
 
 		if(err == SUCCESS) {
-			printf("DEBUG: Radio ON.\n");
-			printHeader();
-			printf("Device ready\n");
+			printfDebug("Radio ON\n");
+			printfH("Device ready\n");
 		}
 		else {
 			call SplitControl.start();

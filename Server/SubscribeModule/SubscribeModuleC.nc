@@ -6,7 +6,6 @@ module SubscribeModuleC
 	provides interface SubscribeModule;
 	uses {
  		interface Receive as SubscribeReceive;
-		//interface AMSend as SubackSender;
 		interface AMPacket;
 		interface Packet;		
 		interface PacketAcknowledgements;
@@ -131,7 +130,7 @@ implementation
 	event message_t* SubscribeReceive.receive(message_t* buf, void* payload, uint8_t len) {
 		if(len!=sizeof(sub_msg_t))
 		{
-			printfDebug("<MM> Error in Subscribe packet\n");
+			printfDebug("<SM> Error in Subscribe packet\n");
 		}
 		else
 		{
@@ -155,4 +154,10 @@ implementation
 					 return 0;
 			}
 	}
+/*
+	bool isSubscribed(uint8_t nodeId) {
+		
+		return subscribedTemperatureDevice[nodeId-2] || subscribedHumidityDevice[nodeId-2] || subscribedLuminosityDevice[nodeId-2];
+		
+	} */
 }

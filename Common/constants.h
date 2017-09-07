@@ -10,6 +10,7 @@ typedef enum {
 
 }packet_channel;
 
+#define DEBUG_PRINT TRUE
 
 #define N_NODES 8
 #define PANC_ID 1
@@ -39,13 +40,12 @@ void printHeader() {
 	if (TOS_NODE_ID!=PANC_ID)
 		printf("|N: %d| ", TOS_NODE_ID);
 	else
-		printf("|PANC| ");	
+		printf("|P: %d| ", TOS_NODE_ID);	
 
 }
 
 void printDebugHeader() {
 	printf("DEBUG: ");
-	printHeader();
 }
 
 void printfH(const char *fmt, ...) {
@@ -59,16 +59,37 @@ void printfH(const char *fmt, ...) {
 }
 
 void printfDebug(const char *fmt, ...) {
-/*	
-	va_list args;
-	printf("DEBUG: ");
-	printHeader();
-	va_start(args, fmt);
-	vprintf(fmt, args);
-	va_end(args);
 	
-*/
+	if(DEBUG_PRINT) {
+		va_list args;
+		printDebugHeader();
+		printHeader();
+		va_start(args, fmt);
+		vprintf(fmt, args);
+		va_end(args);
+	}
+
 }
+
+void printTopicOrQos(uint8_t value) {
+	printf("%d%d%d", (value&TEMP_MASK)&&1, (value&HUMI_MASK)&&1, (value&LUMI_MASK)&&1);
+}
+
+
+/*
+void printTemperature(uint16_t value) {
+	printf("T: %d", value);
+}
+
+void printLuminosity(uint16_t value) {
+	printf("L: %d", value);
+}
+
+void printHumidity(uint16_t value) {
+	printf("H: %d", value);
+}
+*/
+
 
 void printReceivedData(uint8_t topic, uint16_t value, bool qos, uint8_t senderId) {
 		

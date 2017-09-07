@@ -37,8 +37,20 @@ module ClientC {
 	event void Boot.booted() {
 
 		printfDebug("Booted\n");
+		if (TOS_NODE_ID==PANC_ID) {
+			printfH("ERROR: This ID is reserved to PANC\n");
+			return;
+		}
 		call SplitControl.start();
 
+	}
+
+	uint8_t getTopicsToSubscribe() {
+		return TOS_NODE_ID%8;
+	}
+
+	uint8_t getQosToSubscribe() {
+		return (TOS_NODE_ID+2)%8;
 	}
 
 	event void PublishModule.OnPublicationReceive(uint8_t topic, uint16_t value, bool qos, uint8_t senderId) {
@@ -57,12 +69,15 @@ module ClientC {
 	
 	event void ConnectionModule.OnConnectedToPanc() {
 		uint8_t qos,topic;
-		topic=((TOS_NODE_ID-2)%8);
-		qos=((TOS_NODE_ID+4)%8)&topic;
+		topic=getTopicsToSubscribe();
+		qos=getQosToSubscribe();
 		printfH("Connected to PANC\n");
 		call MilliTimer.stop();
-		call SubscribeModule.setTopic(topic,qos);
-		call SubscribeTimer.startPeriodic(1000);
+		if (topic) {
+			call SubscribeModule.setTopic(topic,qos);
+			call SubscribeModule.sendSubscribe();
+			call SubscribeTimer.startPeriodic(1000);
+		}
 
 	}
 
@@ -74,6 +89,7 @@ module ClientC {
 	
 			printfDebug("Radio ON.\n");
 			printfH("Ready\n");
+			call ConnectionModule.sendConnect();
     			call MilliTimer.startPeriodic(1000);
 		}
 		else {		
