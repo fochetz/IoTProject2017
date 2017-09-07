@@ -96,7 +96,7 @@ module ServerC {
 
 	event void Boot.booted() {
 
-		//printf("DEBUG: Booted. TOS ID: %u\n", TOS_NODE_ID);
+		printf("DEBUG: Booted. TOS ID: %u\n", TOS_NODE_ID);
 		call SplitControl.start();
 
 	}	
@@ -106,7 +106,7 @@ module ServerC {
 	event void SplitControl.startDone(error_t err){   
 
 		if(err == SUCCESS) {
-			//printf("DEBUG: Radio ON.\n");
+			printf("DEBUG: Radio ON.\n");
 			printHeader();
 			printf("Device ready\n");
 		}

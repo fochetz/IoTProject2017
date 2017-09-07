@@ -36,7 +36,7 @@ module ClientC {
 
 	event void Boot.booted() {
 
-		//printfDebug("Booted\n");
+		printfDebug("Booted\n");
 		call SplitControl.start();
 
 	}
@@ -57,7 +57,7 @@ module ClientC {
 	
 	event void ConnectionModule.OnConnectedToPanc() {
 		uint8_t qos,topic;
-		topic=((TOS_NODE_ID-2)%7)+1;
+		topic=((TOS_NODE_ID-2)%8);
 		qos=((TOS_NODE_ID+4)%8)&topic;
 		printfH("Connected to PANC\n");
 		call MilliTimer.stop();
@@ -72,7 +72,7 @@ module ClientC {
 
 		if(err == SUCCESS) {
 	
-			//printfDebug("Radio ON.\n");
+			printfDebug("Radio ON.\n");
 			printfH("Ready\n");
     			call MilliTimer.startPeriodic(1000);
 		}

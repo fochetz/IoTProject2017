@@ -43,7 +43,7 @@ implementation
 
 	bool command PublishModule.publish(uint8_t destination, uint8_t topic, uint16_t data, bool qos, uint8_t senderId) {
 
-		//printfDebug("<PM> Publishing to %d T:%d, D:%d, Q:%d from %d\n", destination, topic, data, qos, senderId);
+		printfDebug("<PM> Publishing to %d T:%d, D:%d, Q:%d from %d\n", destination, topic, data, qos, senderId);
 		if (qos)
 			return ackablePublish(destination, topic, data, senderId);
 		else

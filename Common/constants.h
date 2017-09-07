@@ -59,7 +59,7 @@ void printfH(const char *fmt, ...) {
 }
 
 void printfDebug(const char *fmt, ...) {
-	
+/*	
 	va_list args;
 	printf("DEBUG: ");
 	printHeader();
@@ -67,7 +67,7 @@ void printfDebug(const char *fmt, ...) {
 	vprintf(fmt, args);
 	va_end(args);
 	
-
+*/
 }
 
 void printReceivedData(uint8_t topic, uint16_t value, bool qos, uint8_t senderId) {

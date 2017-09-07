@@ -125,7 +125,7 @@ implementation
 			}
 		}
 		
-		//printSubscribeVariable();
+		printSubscribeVariable();
 	}
 	
 	event message_t* SubscribeReceive.receive(message_t* buf, void* payload, uint8_t len) {
@@ -136,7 +136,7 @@ implementation
 		else
 		{
 			sub_msg_t* mess= (sub_msg_t*)payload;
-			//printfDebug("<SM> Subscribe packet succesfully received\n");
+			printfDebug("<SM> Subscribe packet succesfully received\n");
 			//call SubscribeModule.addSubscriber(mess->senderId,mess->topics,mess->qos);
 			signal SubscribeModule.OnNewDeviceSubscribe(mess->senderId,mess->topics,mess->qos);
 		}

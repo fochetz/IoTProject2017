@@ -25,7 +25,7 @@ implementation
 		mess->senderId = TOS_NODE_ID;
 		call PacketAcknowledgements.requestAck( &packet );
 		if(call ConnectSender.send(1,&packet,sizeof(simple_msg_t)) == SUCCESS){
-			//printfDebug("<CM> Sending CONNECT to PANC\n");
+			printfDebug("<CM> Sending CONNECT to PANC\n");
 		
 
 		}
@@ -43,7 +43,7 @@ implementation
 			{				
 				//printfDebug("<CM> CONNACK received from PANC\n");
 				if (call ConnectionModule.isConnected()) {
-					//printfDebug("<CM> Is already connected\n");
+					printfDebug("<CM> Is already connected\n");
 				}
 				else {
 					signal ConnectionModule.OnConnectedToPanc();
