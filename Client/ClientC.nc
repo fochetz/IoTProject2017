@@ -36,8 +36,7 @@ module ClientC {
 
 	event void Boot.booted() {
 
-		//dbg("boot","Application booted.\n");
-		printfDebug("Booted\n");
+		//printfDebug("Booted\n");
 		call SplitControl.start();
 
 	}
@@ -73,7 +72,7 @@ module ClientC {
 
 		if(err == SUCCESS) {
 	
-			printfDebug("Radio ON.\n");
+			//printfDebug("Radio ON.\n");
 			printfH("Ready\n");
     			call MilliTimer.startPeriodic(1000);
 		}
@@ -128,7 +127,7 @@ module ClientC {
 		
 
 		if (getTopic()==TEMPERATURE) {
-			printfH("(%d) T: %d\n", counter ,data);
+			printfH("Read n°(%d): T: %d\n", counter ,data);
 			if (!(call PublishModule.publish(PANC_ID, TEMPERATURE, data, getQOS(), TOS_NODE_ID))) {
 				printfH("(%d) Lost (queue full)\n", counter);
 			}
@@ -142,7 +141,7 @@ module ClientC {
 
 
 		if (getTopic()==LUMINOSITY) {			
-			printfH("(%d) L: %d\n", counter ,data);
+			printfH("Read n°(%d) L: %d\n", counter ,data);
 			if (!(call PublishModule.publish(PANC_ID, LUMINOSITY, data, getQOS(), TOS_NODE_ID))) {
 				printfH("(%d) Lost (queue full)\n", counter);
 			}	
@@ -156,7 +155,7 @@ module ClientC {
 		
 
 		if (getTopic()==HUMIDITY) {
-			printfH("(%d) H: %d\n", counter ,data);
+			printfH("Read n°(%d) H: %d\n", counter ,data);
 			if (!(call PublishModule.publish(PANC_ID, HUMIDITY, data, getQOS(), TOS_NODE_ID))) {
 				printfH("(%d) Lost (queue full)\n", counter);
 			}

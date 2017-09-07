@@ -28,7 +28,7 @@ implementation{
 		//set acknowledgement
 		call PacketAcknowledgements.requestAck( &packet );
 		if(call SubscribeSender.send(1,&packet,sizeof(sub_msg_t)) == SUCCESS){
-			printfDebug("<SM> Sending SUBSCRIBE to PANC\n");
+			//printfDebug("<SM> Sending SUBSCRIBE to PANC\n");
 		
 
 		}
@@ -50,7 +50,7 @@ implementation{
 	event void SubscribeSender.sendDone(message_t* buf,error_t err) {
 		if(&packet == buf && err == SUCCESS ) {
 			if ( call PacketAcknowledgements.wasAcked( buf ) ) {				
-				printfDebug("<SM>  SUBSCRIBE ack received from PANC\n");
+				//printfDebug("<SM>  SUBSCRIBE ack received from PANC\n");
 				isSubscribe=1;
 				signal SubscribeModule.OnSubscribeToPanc();
 			}	

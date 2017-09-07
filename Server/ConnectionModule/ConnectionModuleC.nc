@@ -39,7 +39,7 @@ implementation
 		}
 		else {
 			simple_msg_t* mess = (simple_msg_t*)payload;
-			printfDebug("<CM> CONNECT received from %d\n", mess->senderId);
+			//printfDebug("<CM> CONNECT received from %d\n", mess->senderId);
 			if (call ConnectionModule.isConnected(mess->senderId)) {
 				printfDebug("<CM> Node %d is already connected. Ignoring\n", mess->senderId);
 				

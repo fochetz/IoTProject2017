@@ -34,7 +34,7 @@ implementation{
 			call PacketAcknowledgements.requestAck( &packet );
 		}
 		if(call PublishSender.send(destination,&packet,packetLenght) == SUCCESS){
-			printfDebug("<QS> Message sent from queue\n");
+			//printfDebug("<QS> Message sent from queue\n");
 			radioBusy=1;
 		}
 		numberOfPacketInQueue--;//decrease numberOfPacketInQueue
@@ -46,8 +46,7 @@ implementation{
 	void sendOutOfOrder(message_t* message, uint8_t destination){
 		memcpy(&packet,message,sizeof(message_t));
 		if(call PublishSender.send(destination,&packet,packetLenght) == SUCCESS){
-			printfDebug("<QS> Message sent out of order \n");
-		//TODO: cambiare nome nodo in caso sia PANC.
+			//printfDebug("<QS> Message sent out of order \n");
 			radioBusy=1;
 			sentOutOfOrderPacketFlag=1;
 		}
@@ -68,7 +67,7 @@ implementation{
 		destinationIdQueue[tail]=destinationId;
 		needAckQueue[tail]=needAck;
 		numberOfPacketInQueue++;tail++;
-		printfDebug("<QS> Message succesfully added in queue!\n");
+		//printfDebug("<QS> Message succesfully added in queue!\n");
 		if(tail==MAXQUEUELENGHT){
 			tail=0;
 		}
@@ -106,7 +105,7 @@ implementation{
 					if(!(call PacketAcknowledgements.wasAcked( buf )))
 					{
 						resentCounter++;
-						printfDebug("<QS> Re-pushing message in queue (%d)\n", resentCounter);				
+						//printfDebug("<QS> Re-pushing message in queue (%d)\n", resentCounter);				
 						call QueueSender.pushMessage(&messageQueue[head],destinationIdQueue[head],needAckQueue[head]);
 					}
 				}
