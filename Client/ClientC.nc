@@ -90,7 +90,7 @@ module ClientC {
 			printfDebug("Radio ON.\n");
 			printfH("Ready\n");
 			call ConnectionModule.sendConnect();
-    			call MilliTimer.startPeriodic(1000);
+    			call ConnectionTimer.startPeriodic(1000);
 		}
 		else {		
 			call SplitControl.start();
