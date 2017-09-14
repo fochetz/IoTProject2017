@@ -28,6 +28,7 @@ module ServerC {
 } implementation {
 
 	int counter = 0;
+	uint8_t publishTopic[N_NODES+2];
 
 	void printSubscribeData(uint8_t nodeId, uint8_t topic, uint8_t qos) {
 	
@@ -44,7 +45,24 @@ module ServerC {
 		//printHeader();
 		printReceivedData(topic, value, qos, senderId);
 		printf("\n");
-		
+
+		if (!(call ConnectionModule.isConnected(senderId))) {
+			printfDebug("Node %d is not connected. Ignoring PUBLISH.\n", senderId);			
+			return;
+		}
+
+		if (publishTopic[senderId] == NO_TOPIC) {
+			publishTopic[senderId] = topic;
+			printfDebug("Received first PUBLISH from Node %d\n", senderId);
+		}
+		else {
+			if (publishTopic[senderId]!=topic) {
+				
+				printfDebug("PUBLISH to multiple topic detected (Node %d)\n", senderId);				
+				return;
+			}
+		}
+
 		for(i = 1; i<=N_NODES; i++) {
 			
 			if (i!=TOS_NODE_ID && i!=senderId && 
