@@ -6,6 +6,9 @@ module ConnectionModuleC
 	provides interface ConnectionModule;
 	uses {
  		interface Receive as ConnectionReceive;
+		interface AMSend as ConnackSender;
+		interface AMPacket;
+		interface Packet;
 	}
 
 }
@@ -19,7 +22,8 @@ implementation
 	void command ConnectionModule.addConnectedDevice(uint8_t device) {
 
 		connectedDevices[device-2]=1;
-		signal ConnectionModule.OnNewDeviceConnected(device);
+		call ConnectionModule.sendConnack(device);
+		
 
 
 	}
@@ -40,17 +44,33 @@ implementation
 		else {
 			simple_msg_t* mess = (simple_msg_t*)payload;
 			printfDebug("<CM> CONNECT received from %d\n", mess->senderId);
-			if (call ConnectionModule.isConnected(mess->senderId)) {
-				printfDebug("<CM> Node %d is already connected. Ignoring\n", mess->senderId);
-				
-			}
-			else {
-				call ConnectionModule.addConnectedDevice(mess->senderId);
-			}			
-			
+			signal ConnectionModule.OnConnectReceived(mess->senderId);
 		}
 		return buf;
 
+	}
+
+	void command ConnectionModule.sendConnack(uint8_t destinationId) {
+
+		simple_msg_t* mess=(simple_msg_t*)(call Packet.getPayload(&packet,sizeof(simple_msg_t)));
+		mess->senderId = TOS_NODE_ID;
+
+		if (radioBusy == FALSE) {
+ 			radioBusy = TRUE;
+ 			if (call ConnackSender.send(destinationId,&packet,sizeof(simple_msg_t))==SUCCESS) 				{
+				printfDebug("<CM> CONNACK sent to Node %d\n", destinationId);
+			}
+		}
+		
+
+	}
+
+	event void ConnackSender.sendDone(message_t* buf,error_t err) {
+
+		if (&packet == buf) {
+      			radioBusy = FALSE;
+    		}
+    		//radioBusy = FALSE;
 	}
 	
 }

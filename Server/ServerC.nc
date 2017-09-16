@@ -88,14 +88,16 @@ module ServerC {
 		
 	}
 
-	event void ConnectionModule.OnNewDeviceConnected(uint8_t nodeId) {
+	event void ConnectionModule.OnConnectReceived(uint8_t nodeId) {
 
-		printfH("Node %d connected\n", nodeId);
+		printfH("CONNECT received from Node %d\n", nodeId);
+		call ConnectionModule.addConnectedDevice(nodeId);
+		//call ConnectionModule.sendConnack(nodeId);
 		
 
 	}
 	
-	event void SubscribeModule.OnNewDeviceSubscribe(uint8_t nodeId, uint8_t topic, uint8_t qos)
+	event void SubscribeModule.OnSubscribeReceived(uint8_t nodeId, uint8_t topic, uint8_t qos)
 	{
 		if (call ConnectionModule.isConnected(nodeId)) {
 				
@@ -104,6 +106,7 @@ module ServerC {
 			printSubscribeData(nodeId, topic, qos);
 			printf("\n");
 			call SubscribeModule.addSubscriber(nodeId,topic,qos);
+			call SubscribeModule.sendSuback(nodeId);
 
 		}
 		else {

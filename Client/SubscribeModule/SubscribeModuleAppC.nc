@@ -12,6 +12,7 @@ implementation {
 
   	components SubscribeModuleC as App;
   	components new AMSenderC(SUBSCRIBE_AM) as SubscribeSenderC;
+	components new AMReceiverC(SUBACK_AM) as SubackReceiverC;
 	components SerialPrintfC;
   	components SerialStartC;
 	components ActiveMessageC;
@@ -21,6 +22,6 @@ implementation {
   	App.SubscribeSender -> SubscribeSenderC;
 	App.Packet -> SubscribeSenderC;
   	App.AMPacket -> SubscribeSenderC;
-	App.PacketAcknowledgements->ActiveMessageC;
+	App.SubackReceive -> SubackReceiverC;
 }
 

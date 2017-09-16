@@ -6,14 +6,15 @@ module SubscribeModuleC
 	provides interface SubscribeModule;
 	uses {
 		interface AMSend as SubscribeSender;
+		interface Receive as SubackReceive;
 		interface AMPacket;
 		interface Packet;
-		interface PacketAcknowledgements;
 	}
 
 }
 
 implementation{
+	bool radioBusy=FALSE;
 	bool isSubscribe=0;
 	message_t packet;
 	uint8_t topic;
@@ -30,10 +31,8 @@ implementation{
 			mess->senderId = TOS_NODE_ID;
 			mess->topics = topic;
 			mess->qos = qos&topic;
-			//set acknowledgement
-			
-			call PacketAcknowledgements.requestAck( &packet );
-			if(call SubscribeSender.send(PANC_ID,&packet,sizeof(sub_msg_t)) == SUCCESS){
+			if(radioBusy == FALSE && call SubscribeSender.send(PANC_ID,&packet,sizeof(sub_msg_t)) == SUCCESS){
+				radioBusy=TRUE;
 				printfDebug("<SM> Sending SUBSCRIBE to PANC\n");
 			}
 		}
@@ -54,12 +53,30 @@ implementation{
 	
 	event void SubscribeSender.sendDone(message_t* buf,error_t err) {
 		if(&packet == buf && err == SUCCESS ) {
-			if ( call PacketAcknowledgements.wasAcked( buf ) ) {				
-				printfDebug("<SM>  SUBSCRIBE ack received from PANC\n");
+			radioBusy=FALSE;		
+		}
+	}
+
+	event message_t* SubackReceive.receive(message_t* buf, void* payload, uint8_t len) {
+ 
+ 		if (len!=sizeof(simple_msg_t)){
+ 			printfDebug("<SM> Something wrong in SUBACK packet\n");
+ 		}
+ 		else {
+
+			printfDebug("<SM> SUBACK received from PANC\n");
+			if (call SubscribeModule.isSubscribed()) {
+				printfDebug("<SM> Already received SUBACK");
+			}
+			else {
+	 			
 				isSubscribe=1;
 				signal SubscribeModule.OnSubscribeToPanc();
-			}	
+			}		
+			
 		}
+		return buf;
+
 	}
 
 }

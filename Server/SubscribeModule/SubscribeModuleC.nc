@@ -8,7 +8,7 @@ module SubscribeModuleC
  		interface Receive as SubscribeReceive;
 		interface AMPacket;
 		interface Packet;		
-		interface PacketAcknowledgements;
+		interface AMSend as SubackSender;
 	}
 
 }
@@ -56,7 +56,7 @@ implementation
 			printf("\n");
 			}			
 
-			//printf("%d T: %d Qos: %d, H: %d Qos %d, L: %d Qos %d\n",i,subscribedTemperatureDevice[i],subscribedTemperatureDeviceQos[i], subscribedHumidityDevice[i],subscribedHumidityDeviceQos[i],subscribedLuminosityDevice[i],subscribedLuminosityDeviceQos[i]);
+			
 
 		}
 
@@ -128,23 +128,22 @@ implementation
 	}
 	
 	event message_t* SubscribeReceive.receive(message_t* buf, void* payload, uint8_t len) {
-		if(len!=sizeof(sub_msg_t))
-		{
+
+		if(len!=sizeof(sub_msg_t)) {
 			printfDebug("<SM> Error in Subscribe packet\n");
 		}
-		else
-		{
+		else {
 			sub_msg_t* mess= (sub_msg_t*)payload;
 			printfDebug("<SM> Subscribe packet succesfully received\n");
-			//call SubscribeModule.addSubscriber(mess->senderId,mess->topics,mess->qos);
-			signal SubscribeModule.OnNewDeviceSubscribe(mess->senderId,mess->topics,mess->qos);
+			signal SubscribeModule.OnSubscribeReceived(mess->senderId,mess->topics,mess->qos);
 		}
-		
 		return buf;
+
 	}
 
 	bool command SubscribeModule.getQos(uint8_t nodeId,uint8_t topic)
 	{
+
 		switch(topic)
 			{
 				case TEMPERATURE: return subscribedTemperatureDeviceQos[nodeId-2];
@@ -153,11 +152,31 @@ implementation
 				default: printfDebug("<SM> GetQos: Topic not recognized! \n");
 					 return 0;
 			}
+
 	}
-/*
-	bool isSubscribed(uint8_t nodeId) {
+
+	
+	void command SubscribeModule.sendSuback(uint8_t destinationId) {
+
+		simple_msg_t* mess=(simple_msg_t*)(call Packet.getPayload(&packet,sizeof(simple_msg_t)));
 		
-		return subscribedTemperatureDevice[nodeId-2] || subscribedHumidityDevice[nodeId-2] || subscribedLuminosityDevice[nodeId-2];
+		mess->senderId = TOS_NODE_ID;
+		if (radioBusy == FALSE) {
+ 			radioBusy = TRUE;
+ 			if (call SubackSender.send(destinationId,&packet,sizeof(simple_msg_t)) == SUCCESS) {
+				printfDebug("<SM> SUBACK sent to Node %d\n", destinationId);
+			}
+		}
 		
-	} */
+
+	}
+
+	event void SubackSender.sendDone(message_t* buf,error_t err) {
+
+		if (&packet == buf) {
+      			radioBusy = FALSE;
+    		}
+
+	}
+
 }
