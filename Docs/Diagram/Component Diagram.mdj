@@ -972,7 +972,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "Publish Module",
+											"text": "PublishModule",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -2124,7 +2124,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "Queue Sender",
+											"text": "QueueSender",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -19808,7 +19808,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFef+TrInFsKsk="
 					},
-					"name": "Publish Module",
+					"name": "PublishModule",
 					"ownedElements": [
 						{
 							"_type": "UMLDependency",
@@ -20333,7 +20333,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFef+TrInFsKsk="
 					},
-					"name": "Queue Sender",
+					"name": "QueueSender",
 					"ownedElements": [
 						{
 							"_type": "UMLDependency",

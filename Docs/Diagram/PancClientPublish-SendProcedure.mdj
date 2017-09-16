@@ -810,7 +810,7 @@
 													"height": 13,
 													"autoResize": false,
 													"underline": false,
-													"text": "Publish Module",
+													"text": "PublishModule",
 													"horizontalAlignment": 2,
 													"verticalAlignment": 5,
 													"wordWrap": false
@@ -1013,7 +1013,7 @@
 													"height": 13,
 													"autoResize": false,
 													"underline": false,
-													"text": "Publish Module",
+													"text": "PublishModule",
 													"horizontalAlignment": 2,
 													"verticalAlignment": 5,
 													"wordWrap": false
@@ -1419,7 +1419,7 @@
 													"height": 13,
 													"autoResize": false,
 													"underline": false,
-													"text": "Queue Sender",
+													"text": "QueueSender",
 													"horizontalAlignment": 2,
 													"verticalAlignment": 5,
 													"wordWrap": false
@@ -1622,7 +1622,7 @@
 													"height": 13,
 													"autoResize": false,
 													"underline": false,
-													"text": "Publish Module",
+													"text": "PublishModule",
 													"horizontalAlignment": 2,
 													"verticalAlignment": 5,
 													"wordWrap": false
@@ -1825,7 +1825,7 @@
 													"height": 13,
 													"autoResize": false,
 													"underline": false,
-													"text": "Connection Module",
+													"text": "ConnectionModule",
 													"horizontalAlignment": 2,
 													"verticalAlignment": 5,
 													"wordWrap": false
@@ -2028,7 +2028,7 @@
 													"height": 13,
 													"autoResize": false,
 													"underline": false,
-													"text": "Subscribe Module",
+													"text": "SubscribeModule",
 													"horizontalAlignment": 2,
 													"verticalAlignment": 5,
 													"wordWrap": false
@@ -2585,9 +2585,9 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-											"left": 224,
+											"left": 223,
 											"top": 216,
-											"width": 83.82080078125,
+											"width": 85,
 											"height": 13,
 											"autoResize": false,
 											"alpha": 1.5707963267948966,
@@ -5185,7 +5185,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFee9akZl0GjOs="
 							},
-							"name": "Publish Module",
+							"name": "PublishModule",
 							"stereotype": "Client",
 							"visibility": "public",
 							"represent": {
@@ -5199,7 +5199,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFee9akZl0GjOs="
 							},
-							"name": "Publish Module",
+							"name": "PublishModule",
 							"stereotype": "Panc",
 							"visibility": "public",
 							"represent": {
@@ -5227,7 +5227,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFee9akZl0GjOs="
 							},
-							"name": "Queue Sender",
+							"name": "QueueSender",
 							"stereotype": "Panc",
 							"visibility": "public",
 							"represent": {
@@ -5241,7 +5241,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFee9akZl0GjOs="
 							},
-							"name": "Publish Module",
+							"name": "PublishModule",
 							"stereotype": "Generic Client",
 							"visibility": "public",
 							"represent": {
@@ -5255,7 +5255,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFee9akZl0GjOs="
 							},
-							"name": "Connection Module",
+							"name": "ConnectionModule",
 							"stereotype": "Panc",
 							"visibility": "public",
 							"represent": {
@@ -5269,7 +5269,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFee9akZl0GjOs="
 							},
-							"name": "Subscribe Module",
+							"name": "SubscribeModule",
 							"stereotype": "Panc",
 							"visibility": "public",
 							"represent": {
@@ -5458,7 +5458,6 @@
 					"visibility": "public",
 					"isStatic": false,
 					"isLeaf": false,
-					"type": "",
 					"isReadOnly": false,
 					"isOrdered": false,
 					"isUnique": false,
@@ -5476,7 +5475,6 @@
 					"visibility": "public",
 					"isStatic": false,
 					"isLeaf": false,
-					"type": "",
 					"isReadOnly": false,
 					"isOrdered": false,
 					"isUnique": false,
@@ -5494,7 +5492,6 @@
 					"visibility": "public",
 					"isStatic": false,
 					"isLeaf": false,
-					"type": "",
 					"isReadOnly": false,
 					"isOrdered": false,
 					"isUnique": false,
@@ -5530,7 +5527,6 @@
 					"visibility": "public",
 					"isStatic": false,
 					"isLeaf": false,
-					"type": "",
 					"isReadOnly": false,
 					"isOrdered": false,
 					"isUnique": false,
@@ -5548,7 +5544,6 @@
 					"visibility": "public",
 					"isStatic": false,
 					"isLeaf": false,
-					"type": "",
 					"isReadOnly": false,
 					"isOrdered": false,
 					"isUnique": false,
@@ -5566,7 +5561,6 @@
 					"visibility": "public",
 					"isStatic": false,
 					"isLeaf": false,
-					"type": "",
 					"isReadOnly": false,
 					"isOrdered": false,
 					"isUnique": false,
@@ -5584,7 +5578,6 @@
 					"visibility": "public",
 					"isStatic": false,
 					"isLeaf": false,
-					"type": "",
 					"isReadOnly": false,
 					"isOrdered": false,
 					"isUnique": false,
@@ -5774,7 +5767,7 @@
 													"height": 13,
 													"autoResize": false,
 													"underline": false,
-													"text": "Publish Module",
+													"text": "PublishModule",
 													"horizontalAlignment": 2,
 													"verticalAlignment": 5,
 													"wordWrap": false
@@ -5977,7 +5970,7 @@
 													"height": 13,
 													"autoResize": false,
 													"underline": false,
-													"text": "Queue Sender",
+													"text": "QueueSender",
 													"horizontalAlignment": 2,
 													"verticalAlignment": 5,
 													"wordWrap": false
@@ -6180,7 +6173,7 @@
 													"height": 13,
 													"autoResize": false,
 													"underline": false,
-													"text": "Publish Module",
+													"text": "PublishModule",
 													"horizontalAlignment": 2,
 													"verticalAlignment": 5,
 													"wordWrap": false
@@ -7313,7 +7306,7 @@
 													"height": 13,
 													"autoResize": false,
 													"underline": false,
-													"text": "«Queue Sender»",
+													"text": "«QueueSender»",
 													"horizontalAlignment": 2,
 													"verticalAlignment": 5,
 													"wordWrap": false
@@ -8865,7 +8858,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFefLukm9LHyAY="
 							},
-							"name": "Publish Module",
+							"name": "PublishModule",
 							"stereotype": "Generic",
 							"visibility": "public",
 							"represent": {
@@ -8879,7 +8872,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFefLukm9LHyAY="
 							},
-							"name": "Queue Sender",
+							"name": "QueueSender",
 							"stereotype": "Generic",
 							"visibility": "public",
 							"represent": {
@@ -8893,7 +8886,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFefLukm9LHyAY="
 							},
-							"name": "Publish Module",
+							"name": "PublishModule",
 							"stereotype": "Generic",
 							"visibility": "public",
 							"represent": {
@@ -8908,7 +8901,7 @@
 								"$ref": "AAAAAAFefLukm9LHyAY="
 							},
 							"name": "Timer",
-							"stereotype": "Queue Sender",
+							"stereotype": "QueueSender",
 							"visibility": "public",
 							"represent": {
 								"$ref": "AAAAAAFefPc4utVXN7w="
