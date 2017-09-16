@@ -50,7 +50,7 @@ module ClientC {
 	}
 
 	uint8_t getQosToSubscribe() {
-		return (TOS_NODE_ID+2)%8;
+		return (((TOS_NODE_ID+2)%8)&(getTopicsToSubscribe()));
 	}
 
 	event void PublishModule.OnPublicationReceive(uint8_t topic, uint16_t value, bool qos, uint8_t senderId) {

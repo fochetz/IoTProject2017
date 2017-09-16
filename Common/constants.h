@@ -10,7 +10,7 @@ typedef enum {
 
 }packet_channel;
 
-#define DEBUG_PRINT TRUE
+#define DEBUG_PRINT FALSE
 
 #define N_NODES 8
 #define PANC_ID 1

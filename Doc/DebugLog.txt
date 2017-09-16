@@ -1,0 +1,2487 @@
+00:04.175	ID:8	DEBUG: |N: 8| Booted
+00:04.179	ID:8	DEBUG: |N: 8| Radio ON.
+00:04.180	ID:8	|N: 8| Ready
+00:04.184	ID:8	DEBUG: |N: 8| <CM> Sending CONNECT to PANC
+00:04.339	ID:2	DEBUG: |N: 2| Booted
+00:04.343	ID:2	DEBUG: |N: 2| Radio ON.
+00:04.343	ID:2	|N: 2| Ready
+00:04.346	ID:2	DEBUG: |N: 2| <CM> Sending CONNECT to PANC
+00:04.353	ID:6	DEBUG: |N: 6| Booted
+00:04.357	ID:6	DEBUG: |N: 6| Radio ON.
+00:04.358	ID:6	|N: 6| Ready
+00:04.362	ID:6	DEBUG: |N: 6| <CM> Sending CONNECT to PANC
+00:04.451	ID:4	DEBUG: |N: 4| Booted
+00:04.455	ID:4	DEBUG: |N: 4| Radio ON.
+00:04.456	ID:4	|N: 4| Ready
+00:04.459	ID:4	DEBUG: |N: 4| <CM> Sending CONNECT to PANC
+00:04.485	ID:1	DEBUG: |P: 1| Booted
+00:04.489	ID:1	DEBUG: |P: 1| Radio ON
+00:04.490	ID:1	|P: 1| Device ready
+00:04.504	ID:7	DEBUG: |N: 7| Booted
+00:04.508	ID:7	DEBUG: |N: 7| Radio ON.
+00:04.509	ID:7	|N: 7| Ready
+00:04.512	ID:7	DEBUG: |N: 7| <CM> Sending CONNECT to PANC
+00:04.524	ID:1	DEBUG: |P: 1| <CM> CONNECT received from 7
+00:04.526	ID:1	|P: 1| CONNECT received from Node 7
+00:04.529	ID:1	DEBUG: |P: 1| <CM> CONNACK sent to Node 7
+00:04.536	ID:7	DEBUG: |N: 7| <CM> CONNACK received from PANC
+00:04.537	ID:7	|N: 7| Connected to PANC
+00:04.540	ID:7	|N: 7| Setting subscriptions THL: 111 QOS 100
+00:04.543	ID:7	DEBUG: |N: 7| <SM> Sending SUBSCRIBE to PANC
+00:04.556	ID:1	DEBUG: |P: 1| <SM> Subscribe packet succesfully received
+00:04.559	ID:1	|P: 1| Node 7 subscribed to THL: 111; QOS: 100
+00:04.561	ID:1	DEBUG: |P: 1|           TEM   HUM   LUM
+00:04.564	ID:1	DEBUG: |P: 1|  NODE 7:    1     0     0
+00:04.568	ID:1	DEBUG: |P: 1| <SM> SUBACK sent to Node 7
+00:04.573	ID:7	DEBUG: |N: 7| <SM> SUBACK received from PANC
+00:04.575	ID:7	|N: 7| Subscribed to PANC
+00:04.576	ID:7	|N: 7| Starting reading sensors
+00:04.811	ID:9	DEBUG: |N: 9| Booted
+00:04.815	ID:9	DEBUG: |N: 9| Radio ON.
+00:04.816	ID:9	|N: 9| Ready
+00:04.818	ID:5	DEBUG: |N: 5| Booted
+00:04.819	ID:9	DEBUG: |N: 9| <CM> Sending CONNECT to PANC
+00:04.823	ID:5	DEBUG: |N: 5| Radio ON.
+00:04.823	ID:5	|N: 5| Ready
+00:04.825	ID:1	DEBUG: |P: 1| <CM> CONNECT received from 9
+00:04.827	ID:5	DEBUG: |N: 5| <CM> Sending CONNECT to PANC
+00:04.827	ID:1	|P: 1| CONNECT received from Node 9
+00:04.831	ID:1	DEBUG: |P: 1| <CM> CONNACK sent to Node 9
+00:04.833	ID:9	DEBUG: |N: 9| <CM> CONNACK received from PANC
+00:04.835	ID:9	|N: 9| Connected to PANC
+00:04.838	ID:1	DEBUG: |P: 1| <CM> CONNECT received from 5
+00:04.838	ID:9	|N: 9| Setting subscriptions THL: 100 QOS 100
+00:04.840	ID:1	|P: 1| CONNECT received from Node 5
+00:04.842	ID:9	DEBUG: |N: 9| <SM> Sending SUBSCRIBE to PANC
+00:04.844	ID:1	DEBUG: |P: 1| <CM> CONNACK sent to Node 5
+00:04.847	ID:5	DEBUG: |N: 5| <CM> CONNACK received from PANC
+00:04.848	ID:5	|N: 5| Connected to PANC
+00:04.851	ID:5	|N: 5| Setting subscriptions THL: 101 QOS 101
+00:04.854	ID:1	DEBUG: |P: 1| <SM> Subscribe packet succesfully received
+00:04.855	ID:5	DEBUG: |N: 5| <SM> Sending SUBSCRIBE to PANC
+00:04.857	ID:1	|P: 1| Node 9 subscribed to THL: 100; QOS: 100
+00:04.859	ID:1	DEBUG: |P: 1|           TEM   HUM   LUM
+00:04.862	ID:1	DEBUG: |P: 1|  NODE 7:    1     0     0
+00:04.865	ID:1	DEBUG: |P: 1|  NODE 9:    1     X     X
+00:04.868	ID:1	DEBUG: |P: 1| <SM> SUBACK sent to Node 9
+00:04.872	ID:1	DEBUG: |P: 1| <SM> Subscribe packet succesfully received
+00:04.876	ID:1	|P: 1| Node 5 subscribed to THL: 101; QOS: 101
+00:04.877	ID:9	DEBUG: |N: 9| <SM> SUBACK received from PANC
+00:04.878	ID:1	DEBUG: |P: 1|           TEM   HUM   LUM
+00:04.878	ID:9	|N: 9| Subscribed to PANC
+00:04.880	ID:9	|N: 9| Starting reading sensors
+00:04.881	ID:1	DEBUG: |P: 1|  NODE 5:    1     X     1
+00:04.884	ID:1	DEBUG: |P: 1|  NODE 7:    1     0     0
+00:04.886	ID:1	DEBUG: |P: 1|  NODE 9:    1     X     X
+00:05.002	ID:3	DEBUG: |N: 3| Booted
+00:05.006	ID:3	DEBUG: |N: 3| Radio ON.
+00:05.007	ID:3	|N: 3| Ready
+00:05.010	ID:3	DEBUG: |N: 3| <CM> Sending CONNECT to PANC
+00:05.017	ID:1	DEBUG: |P: 1| <CM> CONNECT received from 3
+00:05.019	ID:1	|P: 1| CONNECT received from Node 3
+00:05.022	ID:1	DEBUG: |P: 1| <CM> CONNACK sent to Node 3
+00:05.034	ID:3	DEBUG: |N: 3| <CM> CONNACK received from PANC
+00:05.035	ID:3	|N: 3| Connected to PANC
+00:05.038	ID:3	|N: 3| Setting subscriptions THL: 110 QOS 100
+00:05.041	ID:3	DEBUG: |N: 3| <SM> Sending SUBSCRIBE to PANC
+00:05.051	ID:1	DEBUG: |P: 1| <SM> Subscribe packet succesfully received
+00:05.055	ID:1	|P: 1| Node 3 subscribed to THL: 110; QOS: 100
+00:05.057	ID:1	DEBUG: |P: 1|           TEM   HUM   LUM
+00:05.059	ID:1	DEBUG: |P: 1|  NODE 3:    1     0     X
+00:05.062	ID:1	DEBUG: |P: 1|  NODE 5:    1     X     1
+00:05.065	ID:1	DEBUG: |P: 1|  NODE 7:    1     0     0
+00:05.067	ID:1	DEBUG: |P: 1|  NODE 9:    1     X     X
+00:05.070	ID:1	DEBUG: |P: 1| <SM> SUBACK sent to Node 3
+00:05.078	ID:3	DEBUG: |N: 3| <SM> SUBACK received from PANC
+00:05.079	ID:3	|N: 3| Subscribed to PANC
+00:05.081	ID:3	|N: 3| Starting reading sensors
+00:05.163	ID:8	DEBUG: |N: 8| <CM> Sending CONNECT to PANC
+00:05.169	ID:1	DEBUG: |P: 1| <CM> CONNECT received from 8
+00:05.171	ID:1	|P: 1| CONNECT received from Node 8
+00:05.174	ID:1	DEBUG: |P: 1| <CM> CONNACK sent to Node 8
+00:05.181	ID:8	DEBUG: |N: 8| <CM> CONNACK received from PANC
+00:05.182	ID:8	|N: 8| Connected to PANC
+00:05.327	ID:2	DEBUG: |N: 2| <CM> Sending CONNECT to PANC
+00:05.329	ID:1	DEBUG: |P: 1| <CM> CONNECT received from 2
+00:05.331	ID:1	|P: 1| CONNECT received from Node 2
+00:05.335	ID:1	DEBUG: |P: 1| <CM> CONNACK sent to Node 2
+00:05.337	ID:2	DEBUG: |N: 2| <CM> CONNACK received from PANC
+00:05.338	ID:2	|N: 2| Connected to PANC
+00:05.341	ID:6	DEBUG: |N: 6| <CM> Sending CONNECT to PANC
+00:05.342	ID:2	|N: 2| Setting subscriptions THL: 010 QOS 000
+00:05.345	ID:2	DEBUG: |N: 2| <SM> Sending SUBSCRIBE to PANC
+00:05.347	ID:1	DEBUG: |P: 1| <CM> CONNECT received from 6
+00:05.349	ID:1	|P: 1| CONNECT received from Node 6
+00:05.353	ID:1	DEBUG: |P: 1| <CM> CONNACK sent to Node 6
+00:05.356	ID:6	DEBUG: |N: 6| <CM> CONNACK received from PANC
+00:05.357	ID:1	DEBUG: |P: 1| <SM> Subscribe packet succesfully received
+00:05.357	ID:6	|N: 6| Connected to PANC
+00:05.360	ID:6	|N: 6| Setting subscriptions THL: 011 QOS 000
+00:05.361	ID:1	|P: 1| Node 2 subscribed to THL: 010; QOS: 000
+00:05.363	ID:1	DEBUG: |P: 1|           TEM   HUM   LUM
+00:05.364	ID:6	DEBUG: |N: 6| <SM> Sending SUBSCRIBE to PANC
+00:05.365	ID:1	DEBUG: |P: 1|  NODE 2:    X     0     X
+00:05.368	ID:1	DEBUG: |P: 1|  NODE 3:    1     0     X
+00:05.371	ID:1	DEBUG: |P: 1|  NODE 5:    1     X     1
+00:05.374	ID:1	DEBUG: |P: 1|  NODE 7:    1     0     0
+00:05.376	ID:1	DEBUG: |P: 1|  NODE 9:    1     X     X
+00:05.379	ID:1	DEBUG: |P: 1| <SM> SUBACK sent to Node 2
+00:05.383	ID:1	DEBUG: |P: 1| <SM> Subscribe packet succesfully received
+00:05.387	ID:1	|P: 1| Node 6 subscribed to THL: 011; QOS: 000
+00:05.388	ID:2	DEBUG: |N: 2| <SM> SUBACK received from PANC
+00:05.389	ID:2	|N: 2| Subscribed to PANC
+00:05.389	ID:1	DEBUG: |P: 1|           TEM   HUM   LUM
+00:05.390	ID:2	|N: 2| Starting reading sensors
+00:05.392	ID:1	DEBUG: |P: 1|  NODE 2:    X     0     X
+00:05.394	ID:1	DEBUG: |P: 1|  NODE 3:    1     0     X
+00:05.397	ID:1	DEBUG: |P: 1|  NODE 5:    1     X     1
+00:05.400	ID:1	DEBUG: |P: 1|  NODE 6:    X     0     0
+00:05.403	ID:1	DEBUG: |P: 1|  NODE 7:    1     0     0
+00:05.405	ID:1	DEBUG: |P: 1|  NODE 9:    1     X     X
+00:05.438	ID:4	DEBUG: |N: 4| <CM> Sending CONNECT to PANC
+00:05.450	ID:1	DEBUG: |P: 1| <CM> CONNECT received from 4
+00:05.452	ID:1	|P: 1| CONNECT received from Node 4
+00:05.455	ID:1	DEBUG: |P: 1| <CM> CONNACK sent to Node 4
+00:05.464	ID:4	DEBUG: |N: 4| <CM> CONNACK received from PANC
+00:05.465	ID:4	|N: 4| Connected to PANC
+00:05.468	ID:4	|N: 4| Setting subscriptions THL: 001 QOS 001
+00:05.471	ID:4	DEBUG: |N: 4| <SM> Sending SUBSCRIBE to PANC
+00:05.479	ID:1	DEBUG: |P: 1| <SM> Subscribe packet succesfully received
+00:05.483	ID:1	|P: 1| Node 4 subscribed to THL: 001; QOS: 001
+00:05.485	ID:1	DEBUG: |P: 1|           TEM   HUM   LUM
+00:05.487	ID:1	DEBUG: |P: 1|  NODE 2:    X     0     X
+00:05.490	ID:1	DEBUG: |P: 1|  NODE 3:    1     0     X
+00:05.492	ID:1	DEBUG: |P: 1|  NODE 4:    X     X     1
+00:05.495	ID:1	DEBUG: |P: 1|  NODE 5:    1     X     1
+00:05.498	ID:1	DEBUG: |P: 1|  NODE 6:    X     0     0
+00:05.500	ID:1	DEBUG: |P: 1|  NODE 7:    1     0     0
+00:05.503	ID:1	DEBUG: |P: 1|  NODE 9:    1     X     X
+00:05.506	ID:1	DEBUG: |P: 1| <SM> SUBACK sent to Node 4
+00:05.515	ID:4	DEBUG: |N: 4| <SM> SUBACK received from PANC
+00:05.516	ID:4	|N: 4| Subscribed to PANC
+00:05.518	ID:4	|N: 4| Starting reading sensors
+00:05.603	ID:7	|N: 7| Read n(0) L: 148
+00:05.607	ID:7	DEBUG: |N: 7| <PM> Publishing to 1 T:3, D:148, Q:1 from 7
+00:05.610	ID:7	DEBUG: |N: 7| <QS> Message succesfully added in queue!
+00:05.613	ID:7	DEBUG: |N: 7| <QS> Message sent from queue
+00:05.625	ID:1	|P: 1| [NODE:7; QoS:1] L:148
+00:05.628	ID:1	DEBUG: |P: 1| Received first PUBLISH from Node 7
+00:05.632	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:148, Q:1 from 7
+00:05.634	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:05.638	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:05.641	ID:1	|P: 1| [NODE:7; QoS:1] L:148 -> NODE 4 QoS 1
+00:05.646	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:148, Q:1 from 7
+00:05.647	ID:4	|N: 4| [NODE:7] L:148
+00:05.648	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:05.652	ID:1	|P: 1| [NODE:7; QoS:1] L:148 -> NODE 5 QoS 1
+00:05.655	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:148, Q:0 from 7
+00:05.658	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:05.661	ID:1	|P: 1| [NODE:7; QoS:1] L:148 -> NODE 6 QoS 0
+00:05.665	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (1)
+00:05.668	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:05.676	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:05.687	ID:5	|N: 5| [NODE:7] L:148
+00:05.695	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:05.701	ID:6	|N: 6| [NODE:7] L:148
+00:05.715	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:05.720	ID:4	|N: 4| [NODE:7] L:148
+00:05.834	ID:5	DEBUG: |N: 5| <SM> Sending SUBSCRIBE to PANC
+00:05.845	ID:1	DEBUG: |P: 1| <SM> Subscribe packet succesfully received
+00:05.848	ID:1	|P: 1| Node 5 subscribed to THL: 101; QOS: 101
+00:05.850	ID:1	DEBUG: |P: 1|           TEM   HUM   LUM
+00:05.853	ID:1	DEBUG: |P: 1|  NODE 2:    X     0     X
+00:05.856	ID:1	DEBUG: |P: 1|  NODE 3:    1     0     X
+00:05.858	ID:1	DEBUG: |P: 1|  NODE 4:    X     X     1
+00:05.861	ID:1	DEBUG: |P: 1|  NODE 5:    1     X     1
+00:05.863	ID:1	DEBUG: |P: 1|  NODE 6:    X     0     0
+00:05.866	ID:1	DEBUG: |P: 1|  NODE 7:    1     0     0
+00:05.868	ID:9	|N: 9| Read n(0): T: 1
+00:05.869	ID:1	DEBUG: |P: 1|  NODE 9:    1     X     X
+00:05.871	ID:9	DEBUG: |N: 9| <PM> Publishing to 1 T:1, D:1, Q:1 from 9
+00:05.872	ID:1	DEBUG: |P: 1| <SM> SUBACK sent to Node 5
+00:05.874	ID:9	DEBUG: |N: 9| <QS> Message succesfully added in queue!
+00:05.878	ID:9	DEBUG: |N: 9| <QS> Message sent from queue
+00:05.879	ID:5	DEBUG: |N: 5| <SM> SUBACK received from PANC
+00:05.880	ID:5	|N: 5| Subscribed to PANC
+00:05.882	ID:5	|N: 5| Starting reading sensors
+00:05.885	ID:1	|P: 1| [NODE:9; QoS:1] T:1
+00:05.887	ID:1	DEBUG: |P: 1| Received first PUBLISH from Node 9
+00:05.891	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:1, Q:1 from 9
+00:05.894	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:05.897	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:05.900	ID:1	|P: 1| [NODE:9; QoS:1] T:1 -> NODE 3 QoS 1
+00:05.905	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:1, D:1, Q:1 from 9
+00:05.906	ID:3	|N: 3| [NODE:9] T:1
+00:05.907	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:05.910	ID:1	|P: 1| [NODE:9; QoS:1] T:1 -> NODE 5 QoS 1
+00:05.914	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:1, Q:1 from 9
+00:05.917	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:05.920	ID:1	|P: 1| [NODE:9; QoS:1] T:1 -> NODE 7 QoS 1
+00:05.923	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (2)
+00:05.926	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:05.930	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:05.933	ID:5	|N: 5| [NODE:9] T:1
+00:05.949	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:05.954	ID:7	|N: 7| [NODE:9] T:1
+00:05.969	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:05.973	ID:3	|N: 3| [NODE:9] T:1
+00:06.108	ID:3	|N: 3| Read n(0) L: 842
+00:06.112	ID:3	DEBUG: |N: 3| <PM> Publishing to 1 T:3, D:842, Q:1 from 3
+00:06.114	ID:3	DEBUG: |N: 3| <QS> Message succesfully added in queue!
+00:06.118	ID:3	DEBUG: |N: 3| <QS> Message sent from queue
+00:06.125	ID:1	|P: 1| [NODE:3; QoS:1] L:842
+00:06.128	ID:1	DEBUG: |P: 1| Received first PUBLISH from Node 3
+00:06.132	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:842, Q:1 from 3
+00:06.134	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:06.138	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:06.141	ID:1	|P: 1| [NODE:3; QoS:1] L:842 -> NODE 4 QoS 1
+00:06.146	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:842, Q:1 from 3
+00:06.146	ID:4	|N: 4| [NODE:3] L:842
+00:06.148	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:06.152	ID:1	|P: 1| [NODE:3; QoS:1] L:842 -> NODE 5 QoS 1
+00:06.156	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:842, Q:0 from 3
+00:06.158	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:06.162	ID:1	|P: 1| [NODE:3; QoS:1] L:842 -> NODE 6 QoS 0
+00:06.165	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:3, D:842, Q:0 from 3
+00:06.168	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:06.171	ID:1	|P: 1| [NODE:3; QoS:1] L:842 -> NODE 7 QoS 0
+00:06.175	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (3)
+00:06.178	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:06.181	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:06.186	ID:5	|N: 5| [NODE:3] L:842
+00:06.204	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:06.207	ID:6	|N: 6| [NODE:3] L:842
+00:06.224	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:06.226	ID:7	|N: 7| [NODE:3] L:842
+00:06.242	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:06.248	ID:4	|N: 4| [NODE:3] L:842
+00:06.343	ID:6	DEBUG: |N: 6| <SM> Sending SUBSCRIBE to PANC
+00:06.349	ID:1	DEBUG: |P: 1| <SM> Subscribe packet succesfully received
+00:06.353	ID:1	|P: 1| Node 6 subscribed to THL: 011; QOS: 000
+00:06.355	ID:1	DEBUG: |P: 1|           TEM   HUM   LUM
+00:06.357	ID:1	DEBUG: |P: 1|  NODE 2:    X     0     X
+00:06.360	ID:1	DEBUG: |P: 1|  NODE 3:    1     0     X
+00:06.362	ID:1	DEBUG: |P: 1|  NODE 4:    X     X     1
+00:06.365	ID:1	DEBUG: |P: 1|  NODE 5:    1     X     1
+00:06.368	ID:1	DEBUG: |P: 1|  NODE 6:    X     0     0
+00:06.371	ID:1	DEBUG: |P: 1|  NODE 7:    1     0     0
+00:06.373	ID:1	DEBUG: |P: 1|  NODE 9:    1     X     X
+00:06.376	ID:1	DEBUG: |P: 1| <SM> SUBACK sent to Node 6
+00:06.381	ID:6	DEBUG: |N: 6| <SM> SUBACK received from PANC
+00:06.383	ID:6	|N: 6| Subscribed to PANC
+00:06.384	ID:6	|N: 6| Starting reading sensors
+00:06.388	ID:2	|N: 2| Read n(0) H: 63
+00:06.391	ID:2	DEBUG: |N: 2| <PM> Publishing to 1 T:2, D:63, Q:0 from 2
+00:06.395	ID:2	DEBUG: |N: 2| <QS> Message sent out of order 
+00:06.399	ID:1	|P: 1| [NODE:2; QoS:0] H:63
+00:06.402	ID:1	DEBUG: |P: 1| Received first PUBLISH from Node 2
+00:06.406	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:2, D:63, Q:0 from 2
+00:06.409	ID:1	DEBUG: |P: 1| <QS> Message sent out of order 
+00:06.413	ID:1	|P: 1| [NODE:2; QoS:0] H:63 -> NODE 3 QoS 0
+00:06.415	ID:3	|N: 3| [NODE:2] H:63
+00:06.417	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:2, D:63, Q:0 from 2
+00:06.419	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:06.422	ID:1	|P: 1| [NODE:2; QoS:0] H:63 -> NODE 6 QoS 0
+00:06.426	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:2, D:63, Q:0 from 2
+00:06.429	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:06.432	ID:1	|P: 1| [NODE:2; QoS:0] H:63 -> NODE 7 QoS 0
+00:06.436	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:06.447	ID:6	|N: 6| [NODE:2] H:63
+00:06.458	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:06.461	ID:7	|N: 7| [NODE:2] H:63
+00:06.580	ID:7	|N: 7| Read n(1) L: 261
+00:06.584	ID:7	DEBUG: |N: 7| <PM> Publishing to 1 T:3, D:261, Q:1 from 7
+00:06.586	ID:7	DEBUG: |N: 7| <QS> Message succesfully added in queue!
+00:06.590	ID:7	DEBUG: |N: 7| <QS> Message sent from queue
+00:06.597	ID:1	|P: 1| [NODE:7; QoS:1] L:261
+00:06.601	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:261, Q:1 from 7
+00:06.603	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:06.607	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:06.610	ID:1	|P: 1| [NODE:7; QoS:1] L:261 -> NODE 4 QoS 1
+00:06.615	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:261, Q:1 from 7
+00:06.617	ID:4	|N: 4| [NODE:7] L:261
+00:06.618	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:06.621	ID:1	|P: 1| [NODE:7; QoS:1] L:261 -> NODE 5 QoS 1
+00:06.625	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:261, Q:0 from 7
+00:06.627	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:06.631	ID:1	|P: 1| [NODE:7; QoS:1] L:261 -> NODE 6 QoS 0
+00:06.634	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (4)
+00:06.637	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:06.640	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:06.645	ID:5	|N: 5| [NODE:7] L:261
+00:06.653	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:06.656	ID:6	|N: 6| [NODE:7] L:261
+00:06.672	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:06.678	ID:4	|N: 4| [NODE:7] L:261
+00:06.844	ID:9	|N: 9| Read n(1): T: 0
+00:06.848	ID:9	DEBUG: |N: 9| <PM> Publishing to 1 T:1, D:0, Q:1 from 9
+00:06.851	ID:9	DEBUG: |N: 9| <QS> Message succesfully added in queue!
+00:06.854	ID:9	DEBUG: |N: 9| <QS> Message sent from queue
+00:06.862	ID:1	|P: 1| [NODE:9; QoS:1] T:0
+00:06.866	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:0, Q:1 from 9
+00:06.868	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:06.870	ID:5	|N: 5| Read n(0): T: 6
+00:06.872	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:06.873	ID:5	DEBUG: |N: 5| <PM> Publishing to 1 T:1, D:6, Q:1 from 5
+00:06.875	ID:1	|P: 1| [NODE:9; QoS:1] T:0 -> NODE 3 QoS 1
+00:06.877	ID:5	DEBUG: |N: 5| <QS> Message succesfully added in queue!
+00:06.878	ID:3	|N: 3| [NODE:9] T:0
+00:06.879	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:1, D:0, Q:1 from 9
+00:06.880	ID:5	DEBUG: |N: 5| <QS> Message sent from queue
+00:06.882	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:06.885	ID:1	|P: 1| [NODE:9; QoS:1] T:0 -> NODE 5 QoS 1
+00:06.889	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:0, Q:1 from 9
+00:06.891	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:06.895	ID:1	|P: 1| [NODE:9; QoS:1] T:0 -> NODE 7 QoS 1
+00:06.897	ID:5	DEBUG: |N: 5| <QS> Re-pushing message in queue (1)
+00:06.899	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (5)
+00:06.900	ID:5	DEBUG: |N: 5| <QS> Message succesfully added in queue!
+00:06.902	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:06.904	ID:1	|P: 1| [NODE:5; QoS:1] T:6
+00:06.907	ID:1	DEBUG: |P: 1| Received first PUBLISH from Node 5
+00:06.910	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:6, Q:1 from 5
+00:06.913	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:06.916	ID:1	|P: 1| [NODE:5; QoS:1] T:6 -> NODE 3 QoS 1
+00:06.920	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:6, Q:1 from 5
+00:06.922	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:06.925	ID:1	|P: 1| [NODE:5; QoS:1] T:6 -> NODE 7 QoS 1
+00:06.930	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:06.932	ID:5	|N: 5| [NODE:9] T:0
+00:06.945	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:06.956	ID:7	|N: 7| [NODE:9] T:0
+00:06.965	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:06.971	ID:3	|N: 3| [NODE:9] T:0
+00:06.984	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:06.992	ID:3	|N: 3| [NODE:5] T:6
+00:07.004	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:07.014	ID:7	|N: 7| [NODE:5] T:6
+00:07.084	ID:3	|N: 3| Read n(1) L: 398
+00:07.088	ID:3	DEBUG: |N: 3| <PM> Publishing to 1 T:3, D:398, Q:1 from 3
+00:07.091	ID:3	DEBUG: |N: 3| <QS> Message succesfully added in queue!
+00:07.094	ID:3	DEBUG: |N: 3| <QS> Message sent from queue
+00:07.099	ID:1	|P: 1| [NODE:3; QoS:1] L:398
+00:07.103	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:398, Q:1 from 3
+00:07.106	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:07.109	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:07.113	ID:1	|P: 1| [NODE:3; QoS:1] L:398 -> NODE 4 QoS 1
+00:07.117	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:398, Q:1 from 3
+00:07.120	ID:4	|N: 4| [NODE:3] L:398
+00:07.120	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:07.123	ID:1	|P: 1| [NODE:3; QoS:1] L:398 -> NODE 5 QoS 1
+00:07.127	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:398, Q:0 from 3
+00:07.130	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:07.133	ID:1	|P: 1| [NODE:3; QoS:1] L:398 -> NODE 6 QoS 0
+00:07.137	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:3, D:398, Q:0 from 3
+00:07.140	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:07.143	ID:1	|P: 1| [NODE:3; QoS:1] L:398 -> NODE 7 QoS 0
+00:07.147	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (6)
+00:07.149	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:07.153	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:07.160	ID:5	|N: 5| [NODE:3] L:398
+00:07.173	ID:5	DEBUG: |N: 5| <QS> Message sent from queue
+00:07.182	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:07.184	ID:6	|N: 6| [NODE:3] L:398
+00:07.184	ID:1	|P: 1| [NODE:5; QoS:1] T:6
+00:07.188	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:6, Q:1 from 5
+00:07.190	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:07.193	ID:1	|P: 1| [NODE:5; QoS:1] T:6 -> NODE 3 QoS 1
+00:07.197	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:6, Q:1 from 5
+00:07.200	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:07.203	ID:1	|P: 1| [NODE:5; QoS:1] T:6 -> NODE 7 QoS 1
+00:07.207	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:07.216	ID:7	|N: 7| [NODE:3] L:398
+00:07.219	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:07.227	ID:4	|N: 4| [NODE:3] L:398
+00:07.238	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:07.249	ID:3	|N: 3| [NODE:5] T:6
+00:07.258	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:07.262	ID:7	|N: 7| [NODE:5] T:6
+00:07.364	ID:2	|N: 2| Read n(1) H: 99
+00:07.368	ID:2	DEBUG: |N: 2| <PM> Publishing to 1 T:2, D:99, Q:0 from 2
+00:07.371	ID:2	DEBUG: |N: 2| <QS> Message sent out of order 
+00:07.380	ID:1	|P: 1| [NODE:2; QoS:0] H:99
+00:07.382	ID:6	|N: 6| Read n(0) H: 77
+00:07.384	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:2, D:99, Q:0 from 2
+00:07.385	ID:6	DEBUG: |N: 6| <PM> Publishing to 1 T:2, D:77, Q:0 from 6
+00:07.387	ID:1	DEBUG: |P: 1| <QS> Message sent out of order 
+00:07.389	ID:6	DEBUG: |N: 6| <QS> Message sent out of order 
+00:07.391	ID:1	|P: 1| [NODE:2; QoS:0] H:99 -> NODE 3 QoS 0
+00:07.395	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:2, D:99, Q:0 from 2
+00:07.399	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:07.399	ID:3	|N: 3| [NODE:2] H:99
+00:07.402	ID:1	|P: 1| [NODE:2; QoS:0] H:99 -> NODE 6 QoS 0
+00:07.405	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:2, D:99, Q:0 from 2
+00:07.408	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:07.411	ID:1	|P: 1| [NODE:2; QoS:0] H:99 -> NODE 7 QoS 0
+00:07.415	ID:1	|P: 1| [NODE:6; QoS:0] H:77
+00:07.417	ID:1	DEBUG: |P: 1| Received first PUBLISH from Node 6
+00:07.421	ID:1	DEBUG: |P: 1| <PM> Publishing to 2 T:2, D:77, Q:0 from 6
+00:07.424	ID:1	DEBUG: |P: 1| <QS> Message sent out of order 
+00:07.428	ID:1	|P: 1| [NODE:6; QoS:0] H:77 -> NODE 2 QoS 0
+00:07.430	ID:2	|N: 2| [NODE:6] H:77
+00:07.432	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:2, D:77, Q:0 from 6
+00:07.435	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:07.438	ID:1	|P: 1| [NODE:6; QoS:0] H:77 -> NODE 3 QoS 0
+00:07.442	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:2, D:77, Q:0 from 6
+00:07.444	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:07.448	ID:1	|P: 1| [NODE:6; QoS:0] H:77 -> NODE 7 QoS 0
+00:07.451	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:07.463	ID:6	|N: 6| [NODE:2] H:99
+00:07.474	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:07.475	ID:7	|N: 7| [NODE:2] H:99
+00:07.492	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:07.497	ID:3	|N: 3| [NODE:6] H:77
+00:07.512	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:07.523	ID:7	|N: 7| [NODE:6] H:77
+00:07.557	ID:7	|N: 7| Read n(2) L: 990
+00:07.560	ID:7	DEBUG: |N: 7| <PM> Publishing to 1 T:3, D:990, Q:1 from 7
+00:07.563	ID:7	DEBUG: |N: 7| <QS> Message succesfully added in queue!
+00:07.566	ID:7	DEBUG: |N: 7| <QS> Message sent from queue
+00:07.571	ID:1	|P: 1| [NODE:7; QoS:1] L:990
+00:07.575	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:990, Q:1 from 7
+00:07.578	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:07.581	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:07.585	ID:1	|P: 1| [NODE:7; QoS:1] L:990 -> NODE 4 QoS 1
+00:07.589	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:990, Q:1 from 7
+00:07.590	ID:4	|N: 4| [NODE:7] L:990
+00:07.592	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:07.595	ID:1	|P: 1| [NODE:7; QoS:1] L:990 -> NODE 5 QoS 1
+00:07.599	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:990, Q:0 from 7
+00:07.602	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:07.605	ID:1	|P: 1| [NODE:7; QoS:1] L:990 -> NODE 6 QoS 0
+00:07.609	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (7)
+00:07.612	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:07.615	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:07.620	ID:5	|N: 5| [NODE:7] L:990
+00:07.629	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:07.637	ID:6	|N: 6| [NODE:7] L:990
+00:07.649	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:07.654	ID:4	|N: 4| [NODE:7] L:990
+00:07.821	ID:9	|N: 9| Read n(2): T: 3
+00:07.825	ID:9	DEBUG: |N: 9| <PM> Publishing to 1 T:1, D:3, Q:1 from 9
+00:07.827	ID:9	DEBUG: |N: 9| <QS> Message succesfully added in queue!
+00:07.831	ID:9	DEBUG: |N: 9| <QS> Message sent from queue
+00:07.838	ID:1	|P: 1| [NODE:9; QoS:1] T:3
+00:07.841	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:3, Q:1 from 9
+00:07.844	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:07.846	ID:5	|N: 5| Read n(1): T: 22
+00:07.847	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:07.850	ID:5	DEBUG: |N: 5| <PM> Publishing to 1 T:1, D:22, Q:1 from 5
+00:07.851	ID:1	|P: 1| [NODE:9; QoS:1] T:3 -> NODE 3 QoS 1
+00:07.853	ID:3	|N: 3| [NODE:9] T:3
+00:07.854	ID:5	DEBUG: |N: 5| <QS> Message succesfully added in queue!
+00:07.855	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:1, D:3, Q:1 from 9
+00:07.857	ID:5	DEBUG: |N: 5| <QS> Message sent from queue
+00:07.857	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:07.861	ID:1	|P: 1| [NODE:9; QoS:1] T:3 -> NODE 5 QoS 1
+00:07.864	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:3, Q:1 from 9
+00:07.867	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:07.870	ID:1	|P: 1| [NODE:9; QoS:1] T:3 -> NODE 7 QoS 1
+00:07.871	ID:5	DEBUG: |N: 5| <QS> Re-pushing message in queue (2)
+00:07.874	ID:5	DEBUG: |N: 5| <QS> Message succesfully added in queue!
+00:07.875	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (8)
+00:07.878	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:07.880	ID:1	|P: 1| [NODE:5; QoS:1] T:22
+00:07.884	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:22, Q:1 from 5
+00:07.886	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:07.889	ID:1	|P: 1| [NODE:5; QoS:1] T:22 -> NODE 3 QoS 1
+00:07.893	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:22, Q:1 from 5
+00:07.896	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:07.899	ID:1	|P: 1| [NODE:5; QoS:1] T:22 -> NODE 7 QoS 1
+00:07.902	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:07.914	ID:5	|N: 5| [NODE:9] T:3
+00:07.922	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:07.926	ID:7	|N: 7| [NODE:9] T:3
+00:07.942	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:07.945	ID:3	|N: 3| [NODE:9] T:3
+00:07.961	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:07.965	ID:3	|N: 3| [NODE:5] T:22
+00:07.981	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:07.984	ID:7	|N: 7| [NODE:5] T:22
+00:08.052	ID:5	DEBUG: |N: 5| <QS> Message sent from queue
+00:08.061	ID:3	|N: 3| Read n(2) L: 995
+00:08.063	ID:1	|P: 1| [NODE:5; QoS:1] T:22
+00:08.065	ID:3	DEBUG: |N: 3| <PM> Publishing to 1 T:3, D:995, Q:1 from 3
+00:08.067	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:22, Q:1 from 5
+00:08.068	ID:3	DEBUG: |N: 3| <QS> Message succesfully added in queue!
+00:08.070	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:08.072	ID:3	DEBUG: |N: 3| <QS> Message sent from queue
+00:08.074	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:08.077	ID:3	|N: 3| [NODE:5] T:22
+00:08.077	ID:1	|P: 1| [NODE:5; QoS:1] T:22 -> NODE 3 QoS 1
+00:08.081	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:22, Q:1 from 5
+00:08.083	ID:3	DEBUG: |N: 3| <QS> Re-pushing message in queue (1)
+00:08.084	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:08.085	ID:3	DEBUG: |N: 3| <QS> Message succesfully added in queue!
+00:08.087	ID:1	|P: 1| [NODE:5; QoS:1] T:22 -> NODE 7 QoS 1
+00:08.091	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (9)
+00:08.094	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:08.096	ID:1	|P: 1| [NODE:3; QoS:1] L:995
+00:08.100	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:995, Q:1 from 3
+00:08.103	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:08.106	ID:1	|P: 1| [NODE:3; QoS:1] L:995 -> NODE 4 QoS 1
+00:08.110	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:995, Q:1 from 3
+00:08.113	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:08.116	ID:1	|P: 1| [NODE:3; QoS:1] L:995 -> NODE 5 QoS 1
+00:08.120	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:995, Q:0 from 3
+00:08.123	ID:1	DEBUG: |P: 1| <QS> Message sent out of order 
+00:08.127	ID:1	|P: 1| [NODE:3; QoS:1] L:995 -> NODE 6 QoS 0
+00:08.131	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:3, D:995, Q:0 from 3
+00:08.133	ID:6	|N: 6| [NODE:3] L:995
+00:08.134	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:08.137	ID:1	|P: 1| [NODE:3; QoS:1] L:995 -> NODE 7 QoS 0
+00:08.141	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:08.147	ID:7	|N: 7| [NODE:5] T:22
+00:08.156	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:08.162	ID:3	|N: 3| [NODE:5] T:22
+00:08.168	ID:3	DEBUG: |N: 3| <QS> Message sent from queue
+00:08.174	ID:1	|P: 1| [NODE:3; QoS:1] L:995
+00:08.178	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:995, Q:1 from 3
+00:08.181	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:08.184	ID:1	|P: 1| [NODE:3; QoS:1] L:995 -> NODE 4 QoS 1
+00:08.188	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:995, Q:1 from 3
+00:08.191	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:08.194	ID:1	|P: 1| [NODE:3; QoS:1] L:995 -> NODE 5 QoS 1
+00:08.198	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:995, Q:0 from 3
+00:08.201	ID:1	DEBUG: |P: 1| <QS> Message sent out of order 
+00:08.205	ID:1	|P: 1| [NODE:3; QoS:1] L:995 -> NODE 6 QoS 0
+00:08.207	ID:6	|N: 6| [NODE:3] L:995
+00:08.209	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:3, D:995, Q:0 from 3
+00:08.212	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:08.215	ID:1	|P: 1| [NODE:3; QoS:1] L:995 -> NODE 7 QoS 0
+00:08.219	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:08.230	ID:4	|N: 4| [NODE:3] L:995
+00:08.234	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:08.242	ID:5	|N: 5| [NODE:3] L:995
+00:08.255	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:08.257	ID:7	|N: 7| [NODE:3] L:995
+00:08.274	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:08.283	ID:4	|N: 4| [NODE:3] L:995
+00:08.294	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:08.296	ID:5	|N: 5| [NODE:3] L:995
+00:08.313	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:08.323	ID:7	|N: 7| [NODE:3] L:995
+00:08.341	ID:2	|N: 2| Read n(2) H: 46
+00:08.345	ID:2	DEBUG: |N: 2| <PM> Publishing to 1 T:2, D:46, Q:0 from 2
+00:08.348	ID:2	DEBUG: |N: 2| <QS> Message sent out of order 
+00:08.358	ID:6	|N: 6| Read n(1) H: 13
+00:08.359	ID:1	|P: 1| [NODE:2; QoS:0] H:46
+00:08.362	ID:6	DEBUG: |N: 6| <PM> Publishing to 1 T:2, D:13, Q:0 from 6
+00:08.363	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:2, D:46, Q:0 from 2
+00:08.365	ID:6	DEBUG: |N: 6| <QS> Message sent out of order 
+00:08.367	ID:1	DEBUG: |P: 1| <QS> Message sent out of order 
+00:08.370	ID:3	|N: 3| [NODE:2] H:46
+00:08.371	ID:1	|P: 1| [NODE:2; QoS:0] H:46 -> NODE 3 QoS 0
+00:08.374	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:2, D:46, Q:0 from 2
+00:08.377	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:08.380	ID:1	|P: 1| [NODE:2; QoS:0] H:46 -> NODE 6 QoS 0
+00:08.384	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:2, D:46, Q:0 from 2
+00:08.387	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:08.390	ID:1	|P: 1| [NODE:2; QoS:0] H:46 -> NODE 7 QoS 0
+00:08.394	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:08.397	ID:1	|P: 1| [NODE:6; QoS:0] H:13
+00:08.399	ID:6	|N: 6| [NODE:2] H:46
+00:08.401	ID:1	DEBUG: |P: 1| <PM> Publishing to 2 T:2, D:13, Q:0 from 6
+00:08.404	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:08.407	ID:1	|P: 1| [NODE:6; QoS:0] H:13 -> NODE 2 QoS 0
+00:08.411	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:2, D:13, Q:0 from 6
+00:08.413	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:08.416	ID:1	|P: 1| [NODE:6; QoS:0] H:13 -> NODE 3 QoS 0
+00:08.420	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:2, D:13, Q:0 from 6
+00:08.423	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:08.426	ID:1	|P: 1| [NODE:6; QoS:0] H:13 -> NODE 7 QoS 0
+00:08.430	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:08.437	ID:7	|N: 7| [NODE:2] H:46
+00:08.449	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:08.456	ID:2	|N: 2| [NODE:6] H:13
+00:08.469	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:08.475	ID:3	|N: 3| [NODE:6] H:13
+00:08.488	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:08.499	ID:7	|N: 7| [NODE:6] H:13
+00:08.533	ID:7	|N: 7| Read n(3) L: 389
+00:08.537	ID:7	DEBUG: |N: 7| <PM> Publishing to 1 T:3, D:389, Q:1 from 7
+00:08.540	ID:7	DEBUG: |N: 7| <QS> Message succesfully added in queue!
+00:08.544	ID:7	DEBUG: |N: 7| <QS> Message sent from queue
+00:08.547	ID:1	|P: 1| [NODE:7; QoS:1] L:389
+00:08.550	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:389, Q:1 from 7
+00:08.553	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:08.556	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:08.560	ID:1	|P: 1| [NODE:7; QoS:1] L:389 -> NODE 4 QoS 1
+00:08.563	ID:4	|N: 4| [NODE:7] L:389
+00:08.564	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:389, Q:1 from 7
+00:08.567	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:08.570	ID:1	|P: 1| [NODE:7; QoS:1] L:389 -> NODE 5 QoS 1
+00:08.574	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:389, Q:0 from 7
+00:08.577	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:08.580	ID:1	|P: 1| [NODE:7; QoS:1] L:389 -> NODE 6 QoS 0
+00:08.584	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (10)
+00:08.587	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:08.590	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:08.595	ID:5	|N: 5| [NODE:7] L:389
+00:08.606	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:08.616	ID:6	|N: 6| [NODE:7] L:389
+00:08.626	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:08.629	ID:4	|N: 4| [NODE:7] L:389
+00:08.798	ID:9	|N: 9| Read n(3): T: 22
+00:08.801	ID:9	DEBUG: |N: 9| <PM> Publishing to 1 T:1, D:22, Q:1 from 9
+00:08.804	ID:9	DEBUG: |N: 9| <QS> Message succesfully added in queue!
+00:08.807	ID:9	DEBUG: |N: 9| <QS> Message sent from queue
+00:08.817	ID:1	|P: 1| [NODE:9; QoS:1] T:22
+00:08.821	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:22, Q:1 from 9
+00:08.823	ID:5	|N: 5| Read n(2): T: 20
+00:08.823	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:08.827	ID:5	DEBUG: |N: 5| <PM> Publishing to 1 T:1, D:20, Q:1 from 5
+00:08.827	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:08.829	ID:5	DEBUG: |N: 5| <QS> Message succesfully added in queue!
+00:08.831	ID:1	|P: 1| [NODE:9; QoS:1] T:22 -> NODE 3 QoS 1
+00:08.832	ID:3	|N: 3| [NODE:9] T:22
+00:08.834	ID:5	DEBUG: |N: 5| <QS> Message sent from queue
+00:08.834	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:1, D:22, Q:1 from 9
+00:08.837	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:08.841	ID:1	|P: 1| [NODE:9; QoS:1] T:22 -> NODE 5 QoS 1
+00:08.844	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:22, Q:1 from 9
+00:08.847	ID:5	DEBUG: |N: 5| <QS> Re-pushing message in queue (3)
+00:08.847	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:08.849	ID:5	DEBUG: |N: 5| <QS> Message succesfully added in queue!
+00:08.850	ID:1	|P: 1| [NODE:9; QoS:1] T:22 -> NODE 7 QoS 1
+00:08.855	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (11)
+00:08.858	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:08.860	ID:1	|P: 1| [NODE:5; QoS:1] T:20
+00:08.864	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:20, Q:1 from 5
+00:08.866	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:08.870	ID:1	|P: 1| [NODE:5; QoS:1] T:20 -> NODE 3 QoS 1
+00:08.873	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:20, Q:1 from 5
+00:08.876	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:08.879	ID:1	|P: 1| [NODE:5; QoS:1] T:20 -> NODE 7 QoS 1
+00:08.883	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:08.895	ID:5	|N: 5| [NODE:9] T:22
+00:08.899	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:08.908	ID:7	|N: 7| [NODE:9] T:22
+00:08.919	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:08.921	ID:3	|N: 3| [NODE:9] T:22
+00:08.931	ID:5	DEBUG: |N: 5| <QS> Message sent from queue
+00:08.938	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:08.944	ID:1	|P: 1| [NODE:5; QoS:1] T:20
+00:08.945	ID:3	|N: 3| [NODE:5] T:20
+00:08.948	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:20, Q:1 from 5
+00:08.951	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:08.954	ID:1	|P: 1| [NODE:5; QoS:1] T:20 -> NODE 3 QoS 1
+00:08.957	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:20, Q:1 from 5
+00:08.960	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:08.963	ID:1	|P: 1| [NODE:5; QoS:1] T:20 -> NODE 7 QoS 1
+00:08.967	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (12)
+00:08.970	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:08.973	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:08.982	ID:7	|N: 7| [NODE:5] T:20
+00:08.996	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:09.004	ID:3	|N: 3| [NODE:5] T:20
+00:09.016	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:09.022	ID:7	|N: 7| [NODE:5] T:20
+00:09.035	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:09.037	ID:3	|N: 3| Read n(3) L: 92
+00:09.042	ID:3	DEBUG: |N: 3| <PM> Publishing to 1 T:3, D:92, Q:1 from 3
+00:09.045	ID:3	DEBUG: |N: 3| <QS> Message succesfully added in queue!
+00:09.048	ID:3	DEBUG: |N: 3| <QS> Message sent from queue
+00:09.050	ID:3	|N: 3| [NODE:5] T:20
+00:09.060	ID:1	|P: 1| [NODE:3; QoS:1] L:92
+00:09.063	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:92, Q:1 from 3
+00:09.066	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:09.069	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:09.074	ID:1	|P: 1| [NODE:3; QoS:1] L:92 -> NODE 4 QoS 1
+00:09.075	ID:4	|N: 4| [NODE:3] L:92
+00:09.077	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:92, Q:1 from 3
+00:09.080	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:09.083	ID:1	|P: 1| [NODE:3; QoS:1] L:92 -> NODE 5 QoS 1
+00:09.087	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:92, Q:0 from 3
+00:09.090	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:09.093	ID:1	|P: 1| [NODE:3; QoS:1] L:92 -> NODE 6 QoS 0
+00:09.096	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:3, D:92, Q:0 from 3
+00:09.099	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:09.102	ID:1	|P: 1| [NODE:3; QoS:1] L:92 -> NODE 7 QoS 0
+00:09.106	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (13)
+00:09.109	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:09.112	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:09.119	ID:5	|N: 5| [NODE:3] L:92
+00:09.134	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:09.135	ID:6	|N: 6| [NODE:3] L:92
+00:09.152	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:09.159	ID:7	|N: 7| [NODE:3] L:92
+00:09.172	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:09.182	ID:4	|N: 4| [NODE:3] L:92
+00:09.317	ID:2	|N: 2| Read n(3) H: 47
+00:09.321	ID:2	DEBUG: |N: 2| <PM> Publishing to 1 T:2, D:47, Q:0 from 2
+00:09.325	ID:2	DEBUG: |N: 2| <QS> Message sent out of order 
+00:09.329	ID:1	|P: 1| [NODE:2; QoS:0] H:47
+00:09.333	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:2, D:47, Q:0 from 2
+00:09.335	ID:6	|N: 6| Read n(2) H: 14
+00:09.336	ID:1	DEBUG: |P: 1| <QS> Message sent out of order 
+00:09.340	ID:6	DEBUG: |N: 6| <PM> Publishing to 1 T:2, D:14, Q:0 from 6
+00:09.340	ID:1	|P: 1| [NODE:2; QoS:0] H:47 -> NODE 3 QoS 0
+00:09.341	ID:3	|N: 3| [NODE:2] H:47
+00:09.343	ID:6	DEBUG: |N: 6| <QS> Message sent out of order 
+00:09.344	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:2, D:47, Q:0 from 2
+00:09.346	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:09.350	ID:1	|P: 1| [NODE:2; QoS:0] H:47 -> NODE 6 QoS 0
+00:09.353	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:2, D:47, Q:0 from 2
+00:09.356	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:09.359	ID:1	|P: 1| [NODE:2; QoS:0] H:47 -> NODE 7 QoS 0
+00:09.364	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:09.366	ID:1	|P: 1| [NODE:6; QoS:0] H:14
+00:09.371	ID:6	|N: 6| [NODE:2] H:47
+00:09.371	ID:1	DEBUG: |P: 1| <PM> Publishing to 2 T:2, D:14, Q:0 from 6
+00:09.373	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:09.377	ID:1	|P: 1| [NODE:6; QoS:0] H:14 -> NODE 2 QoS 0
+00:09.380	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:2, D:14, Q:0 from 6
+00:09.383	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:09.386	ID:1	|P: 1| [NODE:6; QoS:0] H:14 -> NODE 3 QoS 0
+00:09.390	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:2, D:14, Q:0 from 6
+00:09.392	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:09.396	ID:1	|P: 1| [NODE:6; QoS:0] H:14 -> NODE 7 QoS 0
+00:09.399	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:09.407	ID:7	|N: 7| [NODE:2] H:47
+00:09.426	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:09.437	ID:2	|N: 2| [NODE:6] H:14
+00:09.445	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:09.454	ID:3	|N: 3| [NODE:6] H:14
+00:09.465	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:09.477	ID:7	|N: 7| [NODE:6] H:14
+00:09.510	ID:7	|N: 7| Read n(4) L: 51
+00:09.513	ID:7	DEBUG: |N: 7| <PM> Publishing to 1 T:3, D:51, Q:1 from 7
+00:09.516	ID:7	DEBUG: |N: 7| <QS> Message succesfully added in queue!
+00:09.520	ID:7	DEBUG: |N: 7| <QS> Message sent from queue
+00:09.524	ID:1	|P: 1| [NODE:7; QoS:1] L:51
+00:09.527	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:51, Q:1 from 7
+00:09.530	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:09.533	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:09.536	ID:1	|P: 1| [NODE:7; QoS:1] L:51 -> NODE 4 QoS 1
+00:09.541	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:51, Q:1 from 7
+00:09.542	ID:4	|N: 4| [NODE:7] L:51
+00:09.544	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:09.547	ID:1	|P: 1| [NODE:7; QoS:1] L:51 -> NODE 5 QoS 1
+00:09.551	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:51, Q:0 from 7
+00:09.553	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:09.557	ID:1	|P: 1| [NODE:7; QoS:1] L:51 -> NODE 6 QoS 0
+00:09.560	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (14)
+00:09.563	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:09.566	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:09.574	ID:5	|N: 5| [NODE:7] L:51
+00:09.582	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:09.594	ID:6	|N: 6| [NODE:7] L:51
+00:09.602	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:09.605	ID:4	|N: 4| [NODE:7] L:51
+00:09.774	ID:9	|N: 9| Read n(4): T: 11
+00:09.778	ID:9	DEBUG: |N: 9| <PM> Publishing to 1 T:1, D:11, Q:1 from 9
+00:09.781	ID:9	DEBUG: |N: 9| <QS> Message succesfully added in queue!
+00:09.784	ID:9	DEBUG: |N: 9| <QS> Message sent from queue
+00:09.794	ID:1	|P: 1| [NODE:9; QoS:1] T:11
+00:09.798	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:11, Q:1 from 9
+00:09.799	ID:5	|N: 5| Read n(3): T: 10
+00:09.800	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:09.803	ID:5	DEBUG: |N: 5| <PM> Publishing to 1 T:1, D:10, Q:1 from 5
+00:09.804	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:09.806	ID:5	DEBUG: |N: 5| <QS> Message succesfully added in queue!
+00:09.807	ID:1	|P: 1| [NODE:9; QoS:1] T:11 -> NODE 3 QoS 1
+00:09.810	ID:5	DEBUG: |N: 5| <QS> Message sent from queue
+00:09.811	ID:3	|N: 3| [NODE:9] T:11
+00:09.811	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:1, D:11, Q:1 from 9
+00:09.814	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:09.818	ID:1	|P: 1| [NODE:9; QoS:1] T:11 -> NODE 5 QoS 1
+00:09.821	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:11, Q:1 from 9
+00:09.824	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:09.827	ID:1	|P: 1| [NODE:9; QoS:1] T:11 -> NODE 7 QoS 1
+00:09.828	ID:5	DEBUG: |N: 5| <QS> Re-pushing message in queue (4)
+00:09.832	ID:5	DEBUG: |N: 5| <QS> Message succesfully added in queue!
+00:09.832	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (15)
+00:09.835	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:09.837	ID:1	|P: 1| [NODE:5; QoS:1] T:10
+00:09.841	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:10, Q:1 from 5
+00:09.843	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:09.847	ID:1	|P: 1| [NODE:5; QoS:1] T:10 -> NODE 3 QoS 1
+00:09.850	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:10, Q:1 from 5
+00:09.853	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:09.856	ID:1	|P: 1| [NODE:5; QoS:1] T:10 -> NODE 7 QoS 1
+00:09.860	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:09.868	ID:5	|N: 5| [NODE:9] T:11
+00:09.875	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:09.885	ID:7	|N: 7| [NODE:9] T:11
+00:09.895	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:09.902	ID:3	|N: 3| [NODE:9] T:11
+00:09.915	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:09.917	ID:3	|N: 3| [NODE:5] T:10
+00:09.934	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:09.945	ID:7	|N: 7| [NODE:5] T:10
+00:10.014	ID:3	|N: 3| Read n(4) L: 102
+00:10.018	ID:3	DEBUG: |N: 3| <PM> Publishing to 1 T:3, D:102, Q:1 from 3
+00:10.021	ID:3	DEBUG: |N: 3| <QS> Message succesfully added in queue!
+00:10.024	ID:3	DEBUG: |N: 3| <QS> Message sent from queue
+00:10.029	ID:1	|P: 1| [NODE:3; QoS:1] L:102
+00:10.033	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:102, Q:1 from 3
+00:10.036	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:10.039	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:10.043	ID:1	|P: 1| [NODE:3; QoS:1] L:102 -> NODE 4 QoS 1
+00:10.047	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:102, Q:1 from 3
+00:10.050	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:10.050	ID:4	|N: 4| [NODE:3] L:102
+00:10.053	ID:1	|P: 1| [NODE:3; QoS:1] L:102 -> NODE 5 QoS 1
+00:10.057	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:102, Q:0 from 3
+00:10.060	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:10.063	ID:1	|P: 1| [NODE:3; QoS:1] L:102 -> NODE 6 QoS 0
+00:10.067	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:3, D:102, Q:0 from 3
+00:10.070	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:10.073	ID:1	|P: 1| [NODE:3; QoS:1] L:102 -> NODE 7 QoS 0
+00:10.077	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (16)
+00:10.079	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:10.083	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:10.092	ID:5	|N: 5| [NODE:3] L:102
+00:10.103	ID:5	DEBUG: |N: 5| <QS> Message sent from queue
+00:10.110	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:10.121	ID:5	DEBUG: |N: 5| <QS> Re-pushing message in queue (5)
+00:10.124	ID:5	DEBUG: |N: 5| <QS> Message succesfully added in queue!
+00:10.129	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:10.149	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:10.161	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (17)
+00:10.163	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:10.168	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:10.183	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (18)
+00:10.185	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:10.190	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:10.199	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (19)
+00:10.202	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:10.208	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:10.218	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (20)
+00:10.221	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:10.227	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:10.230	ID:4	|N: 4| [NODE:3] L:102
+00:10.294	ID:2	|N: 2| Read n(4) H: 70
+00:10.298	ID:2	DEBUG: |N: 2| <PM> Publishing to 1 T:2, D:70, Q:0 from 2
+00:10.301	ID:2	DEBUG: |N: 2| <QS> Message sent out of order 
+00:10.310	ID:1	|P: 1| [NODE:2; QoS:0] H:70
+00:10.312	ID:6	|N: 6| Read n(3) H: 63
+00:10.314	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:2, D:70, Q:0 from 2
+00:10.315	ID:6	DEBUG: |N: 6| <PM> Publishing to 1 T:2, D:63, Q:0 from 6
+00:10.317	ID:1	DEBUG: |P: 1| <QS> Message sent out of order 
+00:10.319	ID:6	DEBUG: |N: 6| <QS> Message sent out of order 
+00:10.321	ID:1	|P: 1| [NODE:2; QoS:0] H:70 -> NODE 3 QoS 0
+00:10.325	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:2, D:70, Q:0 from 2
+00:10.328	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:10.331	ID:1	|P: 1| [NODE:2; QoS:0] H:70 -> NODE 6 QoS 0
+00:10.335	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:2, D:70, Q:0 from 2
+00:10.337	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:10.340	ID:1	|P: 1| [NODE:2; QoS:0] H:70 -> NODE 7 QoS 0
+00:10.344	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:10.355	ID:6	|N: 6| [NODE:2] H:70
+00:10.363	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:10.375	ID:7	|N: 7| [NODE:2] H:70
+00:10.396	ID:5	DEBUG: |N: 5| <QS> Message sent from queue
+00:10.404	ID:1	|P: 1| [NODE:5; QoS:1] T:10
+00:10.408	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:10, Q:1 from 5
+00:10.411	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:10.415	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:10.417	ID:3	|N: 3| [NODE:5] T:10
+00:10.418	ID:1	|P: 1| [NODE:5; QoS:1] T:10 -> NODE 3 QoS 1
+00:10.422	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:10, Q:1 from 5
+00:10.425	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:10.428	ID:1	|P: 1| [NODE:5; QoS:1] T:10 -> NODE 7 QoS 1
+00:10.432	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (21)
+00:10.434	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:10.442	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:10.447	ID:7	|N: 7| [NODE:5] T:10
+00:10.461	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:10.467	ID:3	|N: 3| [NODE:5] T:10
+00:10.486	ID:7	|N: 7| Read n(5) L: 574
+00:10.490	ID:7	DEBUG: |N: 7| <PM> Publishing to 1 T:3, D:574, Q:1 from 7
+00:10.493	ID:7	DEBUG: |N: 7| <QS> Message succesfully added in queue!
+00:10.496	ID:7	DEBUG: |N: 7| <QS> Message sent from queue
+00:10.508	ID:1	|P: 1| [NODE:7; QoS:1] L:574
+00:10.512	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:574, Q:1 from 7
+00:10.515	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:10.518	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:10.522	ID:1	|P: 1| [NODE:7; QoS:1] L:574 -> NODE 4 QoS 1
+00:10.523	ID:4	|N: 4| [NODE:7] L:574
+00:10.526	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:574, Q:1 from 7
+00:10.529	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:10.532	ID:1	|P: 1| [NODE:7; QoS:1] L:574 -> NODE 5 QoS 1
+00:10.536	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:574, Q:0 from 7
+00:10.539	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:10.542	ID:1	|P: 1| [NODE:7; QoS:1] L:574 -> NODE 6 QoS 0
+00:10.546	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (22)
+00:10.549	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:10.552	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:10.562	ID:5	|N: 5| [NODE:7] L:574
+00:10.579	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:10.582	ID:6	|N: 6| [NODE:7] L:574
+00:10.599	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:10.601	ID:4	|N: 4| [NODE:7] L:574
+00:10.751	ID:9	|N: 9| Read n(5): T: 15
+00:10.754	ID:9	DEBUG: |N: 9| <PM> Publishing to 1 T:1, D:15, Q:1 from 9
+00:10.757	ID:9	DEBUG: |N: 9| <QS> Message succesfully added in queue!
+00:10.761	ID:9	DEBUG: |N: 9| <QS> Message sent from queue
+00:10.764	ID:1	|P: 1| [NODE:9; QoS:1] T:15
+00:10.767	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:15, Q:1 from 9
+00:10.770	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:10.774	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:10.776	ID:5	|N: 5| Read n(4): T: 37
+00:10.777	ID:1	|P: 1| [NODE:9; QoS:1] T:15 -> NODE 3 QoS 1
+00:10.781	ID:5	DEBUG: |N: 5| <PM> Publishing to 1 T:1, D:37, Q:1 from 5
+00:10.781	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:1, D:15, Q:1 from 9
+00:10.782	ID:3	|N: 3| [NODE:9] T:15
+00:10.783	ID:5	DEBUG: |N: 5| <QS> Message succesfully added in queue!
+00:10.784	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:10.787	ID:5	DEBUG: |N: 5| <QS> Message sent from queue
+00:10.787	ID:1	|P: 1| [NODE:9; QoS:1] T:15 -> NODE 5 QoS 1
+00:10.791	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:15, Q:1 from 9
+00:10.794	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:10.797	ID:1	|P: 1| [NODE:9; QoS:1] T:15 -> NODE 7 QoS 1
+00:10.801	ID:5	DEBUG: |N: 5| <QS> Re-pushing message in queue (6)
+00:10.802	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (23)
+00:10.804	ID:5	DEBUG: |N: 5| <QS> Message succesfully added in queue!
+00:10.805	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:10.807	ID:1	|P: 1| [NODE:5; QoS:1] T:37
+00:10.811	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:37, Q:1 from 5
+00:10.813	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:10.817	ID:1	|P: 1| [NODE:5; QoS:1] T:37 -> NODE 3 QoS 1
+00:10.820	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:37, Q:1 from 5
+00:10.823	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:10.826	ID:1	|P: 1| [NODE:5; QoS:1] T:37 -> NODE 7 QoS 1
+00:10.830	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:10.841	ID:5	|N: 5| [NODE:9] T:15
+00:10.852	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:10.862	ID:7	|N: 7| [NODE:9] T:15
+00:10.871	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:10.877	ID:3	|N: 3| [NODE:9] T:15
+00:10.891	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:10.899	ID:3	|N: 3| [NODE:5] T:37
+00:10.910	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:10.919	ID:7	|N: 7| [NODE:5] T:37
+00:10.981	ID:5	DEBUG: |N: 5| <QS> Message sent from queue
+00:10.989	ID:1	|P: 1| [NODE:5; QoS:1] T:37
+00:10.991	ID:3	|N: 3| Read n(5) L: 894
+00:10.993	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:37, Q:1 from 5
+00:10.994	ID:3	DEBUG: |N: 3| <PM> Publishing to 1 T:3, D:894, Q:1 from 3
+00:10.995	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:10.997	ID:3	DEBUG: |N: 3| <QS> Message succesfully added in queue!
+00:10.999	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:11.002	ID:3	DEBUG: |N: 3| <QS> Message sent from queue
+00:11.003	ID:1	|P: 1| [NODE:5; QoS:1] T:37 -> NODE 3 QoS 1
+00:11.004	ID:3	|N: 3| [NODE:5] T:37
+00:11.007	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:37, Q:1 from 5
+00:11.009	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:11.013	ID:1	|P: 1| [NODE:5; QoS:1] T:37 -> NODE 7 QoS 1
+00:11.017	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (24)
+00:11.018	ID:3	DEBUG: |N: 3| <QS> Re-pushing message in queue (2)
+00:11.020	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:11.021	ID:3	DEBUG: |N: 3| <QS> Message succesfully added in queue!
+00:11.023	ID:1	|P: 1| [NODE:3; QoS:1] L:894
+00:11.026	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:894, Q:1 from 3
+00:11.029	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:11.032	ID:1	|P: 1| [NODE:3; QoS:1] L:894 -> NODE 4 QoS 1
+00:11.036	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:894, Q:1 from 3
+00:11.039	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:11.042	ID:1	|P: 1| [NODE:3; QoS:1] L:894 -> NODE 5 QoS 1
+00:11.046	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:894, Q:0 from 3
+00:11.049	ID:1	DEBUG: |P: 1| <QS> Message sent out of order 
+00:11.053	ID:1	|P: 1| [NODE:3; QoS:1] L:894 -> NODE 6 QoS 0
+00:11.056	ID:6	|N: 6| [NODE:3] L:894
+00:11.057	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:3, D:894, Q:0 from 3
+00:11.060	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:11.063	ID:1	|P: 1| [NODE:3; QoS:1] L:894 -> NODE 7 QoS 0
+00:11.068	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:11.071	ID:7	|N: 7| [NODE:5] T:37
+00:11.086	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:11.095	ID:3	|N: 3| [NODE:5] T:37
+00:11.098	ID:3	DEBUG: |N: 3| <QS> Message sent from queue
+00:11.107	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:11.110	ID:1	|P: 1| [NODE:3; QoS:1] L:894
+00:11.113	ID:4	|N: 4| [NODE:3] L:894
+00:11.114	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:894, Q:1 from 3
+00:11.117	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:11.120	ID:1	|P: 1| [NODE:3; QoS:1] L:894 -> NODE 4 QoS 1
+00:11.124	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:894, Q:1 from 3
+00:11.127	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:11.130	ID:1	|P: 1| [NODE:3; QoS:1] L:894 -> NODE 5 QoS 1
+00:11.134	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:894, Q:0 from 3
+00:11.137	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:11.140	ID:1	|P: 1| [NODE:3; QoS:1] L:894 -> NODE 6 QoS 0
+00:11.144	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:3, D:894, Q:0 from 3
+00:11.146	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:11.150	ID:1	|P: 1| [NODE:3; QoS:1] L:894 -> NODE 7 QoS 0
+00:11.153	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (25)
+00:11.156	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:11.159	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:11.167	ID:5	|N: 5| [NODE:3] L:894
+00:11.184	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:11.189	ID:7	|N: 7| [NODE:3] L:894
+00:11.203	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:11.209	ID:4	|N: 4| [NODE:3] L:894
+00:11.223	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:11.227	ID:5	|N: 5| [NODE:3] L:894
+00:11.242	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:11.254	ID:6	|N: 6| [NODE:3] L:894
+00:11.263	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:11.264	ID:7	|N: 7| [NODE:3] L:894
+00:11.271	ID:2	|N: 2| Read n(5) H: 66
+00:11.274	ID:2	DEBUG: |N: 2| <PM> Publishing to 1 T:2, D:66, Q:0 from 2
+00:11.278	ID:2	DEBUG: |N: 2| <QS> Message sent out of order 
+00:11.281	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:11.288	ID:1	|P: 1| [NODE:2; QoS:0] H:66
+00:11.289	ID:4	|N: 4| [NODE:3] L:894
+00:11.289	ID:6	|N: 6| Read n(4) H: 43
+00:11.291	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:2, D:66, Q:0 from 2
+00:11.293	ID:6	DEBUG: |N: 6| <PM> Publishing to 1 T:2, D:43, Q:0 from 6
+00:11.294	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:11.296	ID:6	DEBUG: |N: 6| <QS> Message sent out of order 
+00:11.297	ID:1	|P: 1| [NODE:2; QoS:0] H:66 -> NODE 3 QoS 0
+00:11.301	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:2, D:66, Q:0 from 2
+00:11.304	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:11.307	ID:1	|P: 1| [NODE:2; QoS:0] H:66 -> NODE 6 QoS 0
+00:11.311	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:2, D:66, Q:0 from 2
+00:11.313	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:11.317	ID:1	|P: 1| [NODE:2; QoS:0] H:66 -> NODE 7 QoS 0
+00:11.321	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (26)
+00:11.324	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:11.327	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:11.330	ID:1	|P: 1| [NODE:6; QoS:0] H:43
+00:11.332	ID:3	|N: 3| [NODE:2] H:66
+00:11.334	ID:1	DEBUG: |P: 1| <PM> Publishing to 2 T:2, D:43, Q:0 from 6
+00:11.337	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:11.340	ID:1	|P: 1| [NODE:6; QoS:0] H:43 -> NODE 2 QoS 0
+00:11.343	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:2, D:43, Q:0 from 6
+00:11.346	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:11.349	ID:1	|P: 1| [NODE:6; QoS:0] H:43 -> NODE 3 QoS 0
+00:11.353	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:2, D:43, Q:0 from 6
+00:11.356	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:11.359	ID:1	|P: 1| [NODE:6; QoS:0] H:43 -> NODE 7 QoS 0
+00:11.363	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:11.371	ID:6	|N: 6| [NODE:2] H:66
+00:11.379	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:11.391	ID:7	|N: 7| [NODE:2] H:66
+00:11.399	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:11.406	ID:4	|N: 4| [NODE:3] L:894
+00:11.419	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:11.422	ID:2	|N: 2| [NODE:6] H:43
+00:11.438	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:11.445	ID:3	|N: 3| [NODE:6] H:43
+00:11.457	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:11.463	ID:7	|N: 7| Read n(6) L: 195
+00:11.468	ID:7	DEBUG: |N: 7| <PM> Publishing to 1 T:3, D:195, Q:1 from 7
+00:11.470	ID:7	DEBUG: |N: 7| <QS> Message succesfully added in queue!
+00:11.474	ID:7	DEBUG: |N: 7| <QS> Message sent from queue
+00:11.475	ID:7	|N: 7| [NODE:6] H:43
+00:11.484	ID:1	|P: 1| [NODE:7; QoS:1] L:195
+00:11.488	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:195, Q:1 from 7
+00:11.491	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:11.494	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:11.497	ID:1	|P: 1| [NODE:7; QoS:1] L:195 -> NODE 4 QoS 1
+00:11.502	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:195, Q:1 from 7
+00:11.505	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:11.505	ID:4	|N: 4| [NODE:7] L:195
+00:11.508	ID:1	|P: 1| [NODE:7; QoS:1] L:195 -> NODE 5 QoS 1
+00:11.512	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:195, Q:0 from 7
+00:11.515	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:11.518	ID:1	|P: 1| [NODE:7; QoS:1] L:195 -> NODE 6 QoS 0
+00:11.522	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (27)
+00:11.524	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:11.528	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:11.537	ID:5	|N: 5| [NODE:7] L:195
+00:11.555	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:11.559	ID:6	|N: 6| [NODE:7] L:195
+00:11.574	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:11.586	ID:4	|N: 4| [NODE:7] L:195
+00:11.727	ID:9	|N: 9| Read n(6): T: 30
+00:11.731	ID:9	DEBUG: |N: 9| <PM> Publishing to 1 T:1, D:30, Q:1 from 9
+00:11.734	ID:9	DEBUG: |N: 9| <QS> Message succesfully added in queue!
+00:11.739	ID:9	DEBUG: |N: 9| <QS> Message sent from queue
+00:11.740	ID:1	|P: 1| [NODE:9; QoS:1] T:30
+00:11.744	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:30, Q:1 from 9
+00:11.746	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:11.750	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:11.753	ID:5	|N: 5| Read n(5): T: 30
+00:11.753	ID:1	|P: 1| [NODE:9; QoS:1] T:30 -> NODE 3 QoS 1
+00:11.757	ID:5	DEBUG: |N: 5| <PM> Publishing to 1 T:1, D:30, Q:1 from 5
+00:11.758	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:1, D:30, Q:1 from 9
+00:11.759	ID:3	|N: 3| [NODE:9] T:30
+00:11.760	ID:5	DEBUG: |N: 5| <QS> Message succesfully added in queue!
+00:11.760	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:11.763	ID:5	DEBUG: |N: 5| <QS> Message sent from queue
+00:11.763	ID:1	|P: 1| [NODE:9; QoS:1] T:30 -> NODE 5 QoS 1
+00:11.767	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:30, Q:1 from 9
+00:11.770	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:11.773	ID:1	|P: 1| [NODE:9; QoS:1] T:30 -> NODE 7 QoS 1
+00:11.778	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (28)
+00:11.781	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:11.783	ID:1	|P: 1| [NODE:5; QoS:1] T:30
+00:11.787	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:30, Q:1 from 5
+00:11.790	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:11.793	ID:1	|P: 1| [NODE:5; QoS:1] T:30 -> NODE 3 QoS 1
+00:11.796	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:30, Q:1 from 5
+00:11.799	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:11.802	ID:1	|P: 1| [NODE:5; QoS:1] T:30 -> NODE 7 QoS 1
+00:11.806	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:11.814	ID:5	|N: 5| [NODE:9] T:30
+00:11.828	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:11.837	ID:7	|N: 7| [NODE:9] T:30
+00:11.848	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:11.854	ID:3	|N: 3| [NODE:9] T:30
+00:11.868	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:11.871	ID:3	|N: 3| [NODE:5] T:30
+00:11.887	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:11.897	ID:7	|N: 7| [NODE:5] T:30
+00:11.967	ID:3	|N: 3| Read n(6) L: 479
+00:11.971	ID:3	DEBUG: |N: 3| <PM> Publishing to 1 T:3, D:479, Q:1 from 3
+00:11.974	ID:3	DEBUG: |N: 3| <QS> Message succesfully added in queue!
+00:11.977	ID:3	DEBUG: |N: 3| <QS> Message sent from queue
+00:11.986	ID:1	|P: 1| [NODE:3; QoS:1] L:479
+00:11.990	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:479, Q:1 from 3
+00:11.993	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:11.997	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:11.999	ID:4	|N: 4| [NODE:3] L:479
+00:12.000	ID:1	|P: 1| [NODE:3; QoS:1] L:479 -> NODE 4 QoS 1
+00:12.004	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:479, Q:1 from 3
+00:12.007	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:12.010	ID:1	|P: 1| [NODE:3; QoS:1] L:479 -> NODE 5 QoS 1
+00:12.014	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:479, Q:0 from 3
+00:12.017	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:12.020	ID:1	|P: 1| [NODE:3; QoS:1] L:479 -> NODE 6 QoS 0
+00:12.024	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:3, D:479, Q:0 from 3
+00:12.027	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:12.030	ID:1	|P: 1| [NODE:3; QoS:1] L:479 -> NODE 7 QoS 0
+00:12.034	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (29)
+00:12.036	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:12.040	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:12.043	ID:5	|N: 5| [NODE:3] L:479
+00:12.063	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:12.070	ID:6	|N: 6| [NODE:3] L:479
+00:12.082	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:12.093	ID:7	|N: 7| [NODE:3] L:479
+00:12.102	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:12.109	ID:4	|N: 4| [NODE:3] L:479
+00:12.247	ID:2	|N: 2| Read n(6) H: 65
+00:12.251	ID:2	DEBUG: |N: 2| <PM> Publishing to 1 T:2, D:65, Q:0 from 2
+00:12.254	ID:2	DEBUG: |N: 2| <QS> Message sent out of order 
+00:12.263	ID:1	|P: 1| [NODE:2; QoS:0] H:65
+00:12.265	ID:6	|N: 6| Read n(5) H: 30
+00:12.266	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:2, D:65, Q:0 from 2
+00:12.268	ID:6	DEBUG: |N: 6| <PM> Publishing to 1 T:2, D:30, Q:0 from 6
+00:12.270	ID:1	DEBUG: |P: 1| <QS> Message sent out of order 
+00:12.272	ID:6	DEBUG: |N: 6| <QS> Message sent out of order 
+00:12.273	ID:1	|P: 1| [NODE:2; QoS:0] H:65 -> NODE 3 QoS 0
+00:12.277	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:2, D:65, Q:0 from 2
+00:12.278	ID:3	|N: 3| [NODE:2] H:65
+00:12.280	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:12.284	ID:1	|P: 1| [NODE:2; QoS:0] H:65 -> NODE 6 QoS 0
+00:12.287	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:2, D:65, Q:0 from 2
+00:12.290	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:12.293	ID:1	|P: 1| [NODE:2; QoS:0] H:65 -> NODE 7 QoS 0
+00:12.297	ID:1	|P: 1| [NODE:6; QoS:0] H:30
+00:12.300	ID:1	DEBUG: |P: 1| <PM> Publishing to 2 T:2, D:30, Q:0 from 6
+00:12.304	ID:1	DEBUG: |P: 1| <QS> Message sent out of order 
+00:12.307	ID:1	|P: 1| [NODE:6; QoS:0] H:30 -> NODE 2 QoS 0
+00:12.311	ID:2	|N: 2| [NODE:6] H:30
+00:12.311	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:2, D:30, Q:0 from 6
+00:12.314	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:12.317	ID:1	|P: 1| [NODE:6; QoS:0] H:30 -> NODE 3 QoS 0
+00:12.321	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:2, D:30, Q:0 from 6
+00:12.324	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:12.327	ID:1	|P: 1| [NODE:6; QoS:0] H:30 -> NODE 7 QoS 0
+00:12.331	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:12.337	ID:6	|N: 6| [NODE:2] H:65
+00:12.356	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:12.366	ID:7	|N: 7| [NODE:2] H:65
+00:12.375	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:12.383	ID:3	|N: 3| [NODE:6] H:30
+00:12.395	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:12.402	ID:7	|N: 7| [NODE:6] H:30
+00:12.439	ID:7	|N: 7| Read n(7) L: 298
+00:12.443	ID:7	DEBUG: |N: 7| <PM> Publishing to 1 T:3, D:298, Q:1 from 7
+00:12.446	ID:7	DEBUG: |N: 7| <QS> Message succesfully added in queue!
+00:12.449	ID:7	DEBUG: |N: 7| <QS> Message sent from queue
+00:12.458	ID:1	|P: 1| [NODE:7; QoS:1] L:298
+00:12.462	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:298, Q:1 from 7
+00:12.465	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:12.468	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:12.471	ID:1	|P: 1| [NODE:7; QoS:1] L:298 -> NODE 4 QoS 1
+00:12.476	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:298, Q:1 from 7
+00:12.478	ID:4	|N: 4| [NODE:7] L:298
+00:12.479	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:12.482	ID:1	|P: 1| [NODE:7; QoS:1] L:298 -> NODE 5 QoS 1
+00:12.486	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:298, Q:0 from 7
+00:12.489	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:12.492	ID:1	|P: 1| [NODE:7; QoS:1] L:298 -> NODE 6 QoS 0
+00:12.496	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (30)
+00:12.498	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:12.502	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:12.506	ID:5	|N: 5| [NODE:7] L:298
+00:12.512	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:12.517	ID:6	|N: 6| [NODE:7] L:298
+00:12.531	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:12.539	ID:4	|N: 4| [NODE:7] L:298
+00:12.704	ID:9	|N: 9| Read n(7): T: 11
+00:12.708	ID:9	DEBUG: |N: 9| <PM> Publishing to 1 T:1, D:11, Q:1 from 9
+00:12.710	ID:9	DEBUG: |N: 9| <QS> Message succesfully added in queue!
+00:12.714	ID:9	DEBUG: |N: 9| <QS> Message sent from queue
+00:12.720	ID:1	|P: 1| [NODE:9; QoS:1] T:11
+00:12.724	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:11, Q:1 from 9
+00:12.726	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:12.730	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:12.730	ID:5	|N: 5| Read n(6): T: 26
+00:12.733	ID:1	|P: 1| [NODE:9; QoS:1] T:11 -> NODE 3 QoS 1
+00:12.734	ID:5	DEBUG: |N: 5| <PM> Publishing to 1 T:1, D:26, Q:1 from 5
+00:12.737	ID:5	DEBUG: |N: 5| <QS> Message succesfully added in queue!
+00:12.737	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:1, D:11, Q:1 from 9
+00:12.740	ID:3	|N: 3| [NODE:9] T:11
+00:12.740	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:12.741	ID:5	DEBUG: |N: 5| <QS> Message sent from queue
+00:12.743	ID:1	|P: 1| [NODE:9; QoS:1] T:11 -> NODE 5 QoS 1
+00:12.747	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:11, Q:1 from 9
+00:12.750	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:12.752	ID:5	DEBUG: |N: 5| <QS> Re-pushing message in queue (7)
+00:12.753	ID:1	|P: 1| [NODE:9; QoS:1] T:11 -> NODE 7 QoS 1
+00:12.756	ID:5	DEBUG: |N: 5| <QS> Message succesfully added in queue!
+00:12.758	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (31)
+00:12.761	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:12.763	ID:1	|P: 1| [NODE:5; QoS:1] T:26
+00:12.767	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:26, Q:1 from 5
+00:12.769	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:12.773	ID:1	|P: 1| [NODE:5; QoS:1] T:26 -> NODE 3 QoS 1
+00:12.776	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:26, Q:1 from 5
+00:12.779	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:12.782	ID:1	|P: 1| [NODE:5; QoS:1] T:26 -> NODE 7 QoS 1
+00:12.786	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:12.789	ID:5	|N: 5| [NODE:9] T:11
+00:12.805	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:12.815	ID:7	|N: 7| [NODE:9] T:11
+00:12.824	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:12.832	ID:3	|N: 3| [NODE:9] T:11
+00:12.844	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:12.856	ID:3	|N: 3| [NODE:5] T:26
+00:12.863	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:12.871	ID:7	|N: 7| [NODE:5] T:26
+00:12.944	ID:3	|N: 3| Read n(7) L: 498
+00:12.947	ID:3	DEBUG: |N: 3| <PM> Publishing to 1 T:3, D:498, Q:1 from 3
+00:12.950	ID:3	DEBUG: |N: 3| <QS> Message succesfully added in queue!
+00:12.953	ID:3	DEBUG: |N: 3| <QS> Message sent from queue
+00:12.965	ID:1	|P: 1| [NODE:3; QoS:1] L:498
+00:12.969	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:498, Q:1 from 3
+00:12.972	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:12.975	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:12.979	ID:1	|P: 1| [NODE:3; QoS:1] L:498 -> NODE 4 QoS 1
+00:12.982	ID:4	|N: 4| [NODE:3] L:498
+00:12.983	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:498, Q:1 from 3
+00:12.986	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:12.989	ID:1	|P: 1| [NODE:3; QoS:1] L:498 -> NODE 5 QoS 1
+00:12.993	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:498, Q:0 from 3
+00:12.996	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:12.999	ID:1	|P: 1| [NODE:3; QoS:1] L:498 -> NODE 6 QoS 0
+00:13.003	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:3, D:498, Q:0 from 3
+00:13.005	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:13.009	ID:1	|P: 1| [NODE:3; QoS:1] L:498 -> NODE 7 QoS 0
+00:13.012	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (32)
+00:13.015	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:13.019	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:13.030	ID:5	|N: 5| [NODE:3] L:498
+00:13.034	ID:5	DEBUG: |N: 5| <QS> Message sent from queue
+00:13.041	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:13.044	ID:1	|P: 1| [NODE:5; QoS:1] T:26
+00:13.045	ID:6	|N: 6| [NODE:3] L:498
+00:13.047	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:26, Q:1 from 5
+00:13.050	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:13.053	ID:1	|P: 1| [NODE:5; QoS:1] T:26 -> NODE 3 QoS 1
+00:13.057	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:26, Q:1 from 5
+00:13.060	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:13.063	ID:1	|P: 1| [NODE:5; QoS:1] T:26 -> NODE 7 QoS 1
+00:13.078	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:13.083	ID:7	|N: 7| [NODE:3] L:498
+00:13.098	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:13.108	ID:4	|N: 4| [NODE:3] L:498
+00:13.117	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:13.125	ID:3	|N: 3| [NODE:5] T:26
+00:13.137	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:13.142	ID:7	|N: 7| [NODE:5] T:26
+00:13.224	ID:2	|N: 2| Read n(7) H: 36
+00:13.227	ID:2	DEBUG: |N: 2| <PM> Publishing to 1 T:2, D:36, Q:0 from 2
+00:13.231	ID:2	DEBUG: |N: 2| <QS> Message sent out of order 
+00:13.235	ID:1	|P: 1| [NODE:2; QoS:0] H:36
+00:13.239	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:2, D:36, Q:0 from 2
+00:13.241	ID:6	|N: 6| Read n(6) H: 53
+00:13.242	ID:1	DEBUG: |P: 1| <QS> Message sent out of order 
+00:13.245	ID:6	DEBUG: |N: 6| <PM> Publishing to 1 T:2, D:53, Q:0 from 6
+00:13.245	ID:1	|P: 1| [NODE:2; QoS:0] H:36 -> NODE 3 QoS 0
+00:13.248	ID:6	DEBUG: |N: 6| <QS> Message sent out of order 
+00:13.250	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:2, D:36, Q:0 from 2
+00:13.252	ID:3	|N: 3| [NODE:2] H:36
+00:13.252	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:13.256	ID:1	|P: 1| [NODE:2; QoS:0] H:36 -> NODE 6 QoS 0
+00:13.259	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:2, D:36, Q:0 from 2
+00:13.262	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:13.265	ID:1	|P: 1| [NODE:2; QoS:0] H:36 -> NODE 7 QoS 0
+00:13.270	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:13.273	ID:1	|P: 1| [NODE:6; QoS:0] H:53
+00:13.274	ID:6	|N: 6| [NODE:2] H:36
+00:13.277	ID:1	DEBUG: |P: 1| <PM> Publishing to 2 T:2, D:53, Q:0 from 6
+00:13.279	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:13.282	ID:1	|P: 1| [NODE:6; QoS:0] H:53 -> NODE 2 QoS 0
+00:13.286	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:2, D:53, Q:0 from 6
+00:13.289	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:13.292	ID:1	|P: 1| [NODE:6; QoS:0] H:53 -> NODE 3 QoS 0
+00:13.296	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:2, D:53, Q:0 from 6
+00:13.298	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:13.302	ID:1	|P: 1| [NODE:6; QoS:0] H:53 -> NODE 7 QoS 0
+00:13.305	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:13.310	ID:7	|N: 7| [NODE:2] H:36
+00:13.313	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:13.324	ID:2	|N: 2| [NODE:6] H:53
+00:13.333	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:13.335	ID:3	|N: 3| [NODE:6] H:53
+00:13.352	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:13.354	ID:7	|N: 7| [NODE:6] H:53
+00:13.416	ID:7	|N: 7| Read n(8) L: 525
+00:13.420	ID:7	DEBUG: |N: 7| <PM> Publishing to 1 T:3, D:525, Q:1 from 7
+00:13.422	ID:7	DEBUG: |N: 7| <QS> Message succesfully added in queue!
+00:13.426	ID:7	DEBUG: |N: 7| <QS> Message sent from queue
+00:13.433	ID:1	|P: 1| [NODE:7; QoS:1] L:525
+00:13.437	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:525, Q:1 from 7
+00:13.440	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:13.443	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:13.447	ID:1	|P: 1| [NODE:7; QoS:1] L:525 -> NODE 4 QoS 1
+00:13.450	ID:4	|N: 4| [NODE:7] L:525
+00:13.451	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:525, Q:1 from 7
+00:13.454	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:13.457	ID:1	|P: 1| [NODE:7; QoS:1] L:525 -> NODE 5 QoS 1
+00:13.461	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:525, Q:0 from 7
+00:13.464	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:13.467	ID:1	|P: 1| [NODE:7; QoS:1] L:525 -> NODE 6 QoS 0
+00:13.471	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (33)
+00:13.473	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:13.477	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:13.480	ID:5	|N: 5| [NODE:7] L:525
+00:13.488	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:13.494	ID:6	|N: 6| [NODE:7] L:525
+00:13.508	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:13.516	ID:4	|N: 4| [NODE:7] L:525
+00:13.680	ID:9	|N: 9| Read n(8): T: 3
+00:13.684	ID:9	DEBUG: |N: 9| <PM> Publishing to 1 T:1, D:3, Q:1 from 9
+00:13.687	ID:9	DEBUG: |N: 9| <QS> Message succesfully added in queue!
+00:13.690	ID:9	DEBUG: |N: 9| <QS> Message sent from queue
+00:13.695	ID:1	|P: 1| [NODE:9; QoS:1] T:3
+00:13.699	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:3, Q:1 from 9
+00:13.702	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:13.705	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:13.706	ID:5	|N: 5| Read n(7): T: 39
+00:13.708	ID:1	|P: 1| [NODE:9; QoS:1] T:3 -> NODE 3 QoS 1
+00:13.709	ID:5	DEBUG: |N: 5| <PM> Publishing to 1 T:1, D:39, Q:1 from 5
+00:13.712	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:1, D:3, Q:1 from 9
+00:13.712	ID:5	DEBUG: |N: 5| <QS> Message succesfully added in queue!
+00:13.715	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:13.716	ID:3	|N: 3| [NODE:9] T:3
+00:13.716	ID:5	DEBUG: |N: 5| <QS> Message sent from queue
+00:13.718	ID:1	|P: 1| [NODE:9; QoS:1] T:3 -> NODE 5 QoS 1
+00:13.722	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:3, Q:1 from 9
+00:13.725	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:13.728	ID:1	|P: 1| [NODE:9; QoS:1] T:3 -> NODE 7 QoS 1
+00:13.733	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (34)
+00:13.736	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:13.738	ID:1	|P: 1| [NODE:5; QoS:1] T:39
+00:13.742	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:39, Q:1 from 5
+00:13.744	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:13.747	ID:1	|P: 1| [NODE:5; QoS:1] T:39 -> NODE 3 QoS 1
+00:13.751	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:39, Q:1 from 5
+00:13.754	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:13.757	ID:1	|P: 1| [NODE:5; QoS:1] T:39 -> NODE 7 QoS 1
+00:13.760	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:13.766	ID:5	|N: 5| [NODE:9] T:3
+00:13.782	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:13.785	ID:7	|N: 7| [NODE:9] T:3
+00:13.801	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:13.813	ID:3	|N: 3| [NODE:9] T:3
+00:13.820	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:13.826	ID:3	|N: 3| [NODE:5] T:39
+00:13.840	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:13.847	ID:7	|N: 7| [NODE:5] T:39
+00:13.920	ID:3	|N: 3| Read n(8) L: 527
+00:13.924	ID:3	DEBUG: |N: 3| <PM> Publishing to 1 T:3, D:527, Q:1 from 3
+00:13.927	ID:3	DEBUG: |N: 3| <QS> Message succesfully added in queue!
+00:13.930	ID:3	DEBUG: |N: 3| <QS> Message sent from queue
+00:13.940	ID:1	|P: 1| [NODE:3; QoS:1] L:527
+00:13.944	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:527, Q:1 from 3
+00:13.946	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:13.950	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:13.953	ID:4	|N: 4| [NODE:3] L:527
+00:13.954	ID:1	|P: 1| [NODE:3; QoS:1] L:527 -> NODE 4 QoS 1
+00:13.958	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:527, Q:1 from 3
+00:13.960	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:13.964	ID:1	|P: 1| [NODE:3; QoS:1] L:527 -> NODE 5 QoS 1
+00:13.968	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:527, Q:0 from 3
+00:13.970	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:13.974	ID:1	|P: 1| [NODE:3; QoS:1] L:527 -> NODE 6 QoS 0
+00:13.977	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:3, D:527, Q:0 from 3
+00:13.980	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:13.983	ID:1	|P: 1| [NODE:3; QoS:1] L:527 -> NODE 7 QoS 0
+00:13.987	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (35)
+00:13.990	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:13.993	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:14.001	ID:5	|N: 5| [NODE:3] L:527
+00:14.016	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:14.024	ID:6	|N: 6| [NODE:3] L:527
+00:14.035	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:14.044	ID:7	|N: 7| [NODE:3] L:527
+00:14.055	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:14.064	ID:4	|N: 4| [NODE:3] L:527
+00:14.200	ID:2	|N: 2| Read n(8) H: 98
+00:14.204	ID:2	DEBUG: |N: 2| <PM> Publishing to 1 T:2, D:98, Q:0 from 2
+00:14.207	ID:2	DEBUG: |N: 2| <QS> Message sent out of order 
+00:14.213	ID:1	|P: 1| [NODE:2; QoS:0] H:98
+00:14.216	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:2, D:98, Q:0 from 2
+00:14.218	ID:6	|N: 6| Read n(7) H: 37
+00:14.220	ID:1	DEBUG: |P: 1| <QS> Message sent out of order 
+00:14.221	ID:6	DEBUG: |N: 6| <PM> Publishing to 1 T:2, D:37, Q:0 from 6
+00:14.223	ID:1	|P: 1| [NODE:2; QoS:0] H:98 -> NODE 3 QoS 0
+00:14.225	ID:6	DEBUG: |N: 6| <QS> Message sent out of order 
+00:14.227	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:2, D:98, Q:0 from 2
+00:14.229	ID:3	|N: 3| [NODE:2] H:98
+00:14.230	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:14.234	ID:1	|P: 1| [NODE:2; QoS:0] H:98 -> NODE 6 QoS 0
+00:14.237	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:2, D:98, Q:0 from 2
+00:14.240	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:14.243	ID:1	|P: 1| [NODE:2; QoS:0] H:98 -> NODE 7 QoS 0
+00:14.248	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:14.250	ID:1	|P: 1| [NODE:6; QoS:0] H:37
+00:14.254	ID:1	DEBUG: |P: 1| <PM> Publishing to 2 T:2, D:37, Q:0 from 6
+00:14.254	ID:6	|N: 6| [NODE:2] H:98
+00:14.257	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:14.260	ID:1	|P: 1| [NODE:6; QoS:0] H:37 -> NODE 2 QoS 0
+00:14.264	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:2, D:37, Q:0 from 6
+00:14.267	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:14.270	ID:1	|P: 1| [NODE:6; QoS:0] H:37 -> NODE 3 QoS 0
+00:14.273	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:2, D:37, Q:0 from 6
+00:14.276	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:14.279	ID:1	|P: 1| [NODE:6; QoS:0] H:37 -> NODE 7 QoS 0
+00:14.283	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:14.289	ID:7	|N: 7| [NODE:2] H:98
+00:14.309	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:14.314	ID:2	|N: 2| [NODE:6] H:37
+00:14.328	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:14.337	ID:3	|N: 3| [NODE:6] H:37
+00:14.349	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:14.351	ID:7	|N: 7| [NODE:6] H:37
+00:14.392	ID:7	|N: 7| Read n(9) L: 913
+00:14.396	ID:7	DEBUG: |N: 7| <PM> Publishing to 1 T:3, D:913, Q:1 from 7
+00:14.399	ID:7	DEBUG: |N: 7| <QS> Message succesfully added in queue!
+00:14.402	ID:7	DEBUG: |N: 7| <QS> Message sent from queue
+00:14.415	ID:1	|P: 1| [NODE:7; QoS:1] L:913
+00:14.419	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:913, Q:1 from 7
+00:14.421	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:14.425	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:14.429	ID:1	|P: 1| [NODE:7; QoS:1] L:913 -> NODE 4 QoS 1
+00:14.429	ID:4	|N: 4| [NODE:7] L:913
+00:14.433	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:913, Q:1 from 7
+00:14.435	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:14.439	ID:1	|P: 1| [NODE:7; QoS:1] L:913 -> NODE 5 QoS 1
+00:14.443	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:913, Q:0 from 7
+00:14.445	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:14.449	ID:1	|P: 1| [NODE:7; QoS:1] L:913 -> NODE 6 QoS 0
+00:14.452	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (36)
+00:14.455	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:14.460	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:14.461	ID:5	|N: 5| [NODE:7] L:913
+00:14.465	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:14.469	ID:6	|N: 6| [NODE:7] L:913
+00:14.485	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:14.494	ID:4	|N: 4| [NODE:7] L:913
+00:14.657	ID:9	|N: 9| Read n(9): T: 31
+00:14.661	ID:9	DEBUG: |N: 9| <PM> Publishing to 1 T:1, D:31, Q:1 from 9
+00:14.663	ID:9	DEBUG: |N: 9| <QS> Message succesfully added in queue!
+00:14.667	ID:9	DEBUG: |N: 9| <QS> Message sent from queue
+00:14.671	ID:1	|P: 1| [NODE:9; QoS:1] T:31
+00:14.675	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:31, Q:1 from 9
+00:14.677	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:14.681	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:14.682	ID:5	|N: 5| Read n(8): T: 2
+00:14.684	ID:1	|P: 1| [NODE:9; QoS:1] T:31 -> NODE 3 QoS 1
+00:14.686	ID:5	DEBUG: |N: 5| <PM> Publishing to 1 T:1, D:2, Q:1 from 5
+00:14.688	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:1, D:31, Q:1 from 9
+00:14.689	ID:5	DEBUG: |N: 5| <QS> Message succesfully added in queue!
+00:14.691	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:14.691	ID:3	|N: 3| [NODE:9] T:31
+00:14.693	ID:5	DEBUG: |N: 5| <QS> Message sent from queue
+00:14.694	ID:1	|P: 1| [NODE:9; QoS:1] T:31 -> NODE 5 QoS 1
+00:14.698	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:31, Q:1 from 9
+00:14.701	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:14.704	ID:1	|P: 1| [NODE:9; QoS:1] T:31 -> NODE 7 QoS 1
+00:14.709	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (37)
+00:14.712	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:14.714	ID:1	|P: 1| [NODE:5; QoS:1] T:2
+00:14.718	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:2, Q:1 from 5
+00:14.720	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:14.723	ID:1	|P: 1| [NODE:5; QoS:1] T:2 -> NODE 3 QoS 1
+00:14.727	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:2, Q:1 from 5
+00:14.730	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:14.733	ID:1	|P: 1| [NODE:5; QoS:1] T:2 -> NODE 7 QoS 1
+00:14.736	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:14.747	ID:5	|N: 5| [NODE:9] T:31
+00:14.758	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:14.765	ID:7	|N: 7| [NODE:9] T:31
+00:14.777	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:14.789	ID:3	|N: 3| [NODE:9] T:31
+00:14.797	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:14.809	ID:3	|N: 3| [NODE:5] T:2
+00:14.817	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:14.828	ID:7	|N: 7| [NODE:5] T:2
+00:14.897	ID:3	|N: 3| Read n(9) L: 654
+00:14.901	ID:3	DEBUG: |N: 3| <PM> Publishing to 1 T:3, D:654, Q:1 from 3
+00:14.903	ID:3	DEBUG: |N: 3| <QS> Message succesfully added in queue!
+00:14.907	ID:3	DEBUG: |N: 3| <QS> Message sent from queue
+00:14.919	ID:1	|P: 1| [NODE:3; QoS:1] L:654
+00:14.923	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:654, Q:1 from 3
+00:14.925	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:14.929	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:14.932	ID:1	|P: 1| [NODE:3; QoS:1] L:654 -> NODE 4 QoS 1
+00:14.936	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:654, Q:1 from 3
+00:14.939	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:14.941	ID:4	|N: 4| [NODE:3] L:654
+00:14.943	ID:1	|P: 1| [NODE:3; QoS:1] L:654 -> NODE 5 QoS 1
+00:14.947	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:654, Q:0 from 3
+00:14.949	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:14.953	ID:1	|P: 1| [NODE:3; QoS:1] L:654 -> NODE 6 QoS 0
+00:14.956	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:3, D:654, Q:0 from 3
+00:14.959	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:14.962	ID:1	|P: 1| [NODE:3; QoS:1] L:654 -> NODE 7 QoS 0
+00:14.966	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (38)
+00:14.969	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:14.974	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:14.975	ID:5	|N: 5| [NODE:3] L:654
+00:14.977	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:14.984	ID:6	|N: 6| [NODE:3] L:654
+00:14.992	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:15.001	ID:7	|N: 7| [NODE:3] L:654
+00:15.012	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:15.021	ID:4	|N: 4| [NODE:3] L:654
+00:15.177	ID:2	|N: 2| Read n(9) H: 77
+00:15.181	ID:2	DEBUG: |N: 2| <PM> Publishing to 1 T:2, D:77, Q:0 from 2
+00:15.184	ID:2	DEBUG: |N: 2| <QS> Message sent out of order 
+00:15.194	ID:1	|P: 1| [NODE:2; QoS:0] H:77
+00:15.194	ID:6	|N: 6| Read n(8) H: 76
+00:15.198	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:2, D:77, Q:0 from 2
+00:15.198	ID:6	DEBUG: |N: 6| <PM> Publishing to 1 T:2, D:76, Q:0 from 6
+00:15.201	ID:1	DEBUG: |P: 1| <QS> Message sent out of order 
+00:15.201	ID:6	DEBUG: |N: 6| <QS> Message sent out of order 
+00:15.204	ID:1	|P: 1| [NODE:2; QoS:0] H:77 -> NODE 3 QoS 0
+00:15.209	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:2, D:77, Q:0 from 2
+00:15.210	ID:3	|N: 3| [NODE:2] H:77
+00:15.212	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:15.215	ID:1	|P: 1| [NODE:2; QoS:0] H:77 -> NODE 6 QoS 0
+00:15.219	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:2, D:77, Q:0 from 2
+00:15.221	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:15.224	ID:1	|P: 1| [NODE:2; QoS:0] H:77 -> NODE 7 QoS 0
+00:15.228	ID:1	|P: 1| [NODE:6; QoS:0] H:76
+00:15.232	ID:1	DEBUG: |P: 1| <PM> Publishing to 2 T:2, D:76, Q:0 from 6
+00:15.235	ID:1	DEBUG: |P: 1| <QS> Message sent out of order 
+00:15.238	ID:1	|P: 1| [NODE:6; QoS:0] H:76 -> NODE 2 QoS 0
+00:15.243	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:2, D:76, Q:0 from 6
+00:15.244	ID:2	|N: 2| [NODE:6] H:76
+00:15.245	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:15.249	ID:1	|P: 1| [NODE:6; QoS:0] H:76 -> NODE 3 QoS 0
+00:15.252	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:2, D:76, Q:0 from 6
+00:15.255	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:15.258	ID:1	|P: 1| [NODE:6; QoS:0] H:76 -> NODE 7 QoS 0
+00:15.263	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:15.265	ID:6	|N: 6| [NODE:2] H:77
+00:15.266	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:15.273	ID:7	|N: 7| [NODE:2] H:77
+00:15.286	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:15.288	ID:3	|N: 3| [NODE:6] H:76
+00:15.305	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:15.314	ID:7	|N: 7| [NODE:6] H:76
+00:15.369	ID:7	|N: 7| Read n(10) L: 909
+00:15.373	ID:7	DEBUG: |N: 7| <PM> Publishing to 1 T:3, D:909, Q:1 from 7
+00:15.376	ID:7	DEBUG: |N: 7| <QS> Message succesfully added in queue!
+00:15.379	ID:7	DEBUG: |N: 7| <QS> Message sent from queue
+00:15.387	ID:1	|P: 1| [NODE:7; QoS:1] L:909
+00:15.391	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:909, Q:1 from 7
+00:15.394	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:15.397	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:15.400	ID:1	|P: 1| [NODE:7; QoS:1] L:909 -> NODE 4 QoS 1
+00:15.405	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:909, Q:1 from 7
+00:15.405	ID:4	|N: 4| [NODE:7] L:909
+00:15.408	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:15.411	ID:1	|P: 1| [NODE:7; QoS:1] L:909 -> NODE 5 QoS 1
+00:15.415	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:909, Q:0 from 7
+00:15.418	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:15.421	ID:1	|P: 1| [NODE:7; QoS:1] L:909 -> NODE 6 QoS 0
+00:15.425	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (39)
+00:15.427	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:15.431	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:15.434	ID:5	|N: 5| [NODE:7] L:909
+00:15.442	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:15.451	ID:6	|N: 6| [NODE:7] L:909
+00:15.462	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:15.465	ID:4	|N: 4| [NODE:7] L:909
+00:15.634	ID:9	|N: 9| Read n(10): T: 1
+00:15.637	ID:9	DEBUG: |N: 9| <PM> Publishing to 1 T:1, D:1, Q:1 from 9
+00:15.640	ID:9	DEBUG: |N: 9| <QS> Message succesfully added in queue!
+00:15.643	ID:9	DEBUG: |N: 9| <QS> Message sent from queue
+00:15.649	ID:1	|P: 1| [NODE:9; QoS:1] T:1
+00:15.652	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:1, Q:1 from 9
+00:15.655	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:15.659	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:15.660	ID:5	|N: 5| Read n(9): T: 27
+00:15.662	ID:3	|N: 3| [NODE:9] T:1
+00:15.663	ID:1	|P: 1| [NODE:9; QoS:1] T:1 -> NODE 3 QoS 1
+00:15.664	ID:5	DEBUG: |N: 5| <PM> Publishing to 1 T:1, D:27, Q:1 from 5
+00:15.666	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:1, D:1, Q:1 from 9
+00:15.666	ID:5	DEBUG: |N: 5| <QS> Message succesfully added in queue!
+00:15.669	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:15.670	ID:5	DEBUG: |N: 5| <QS> Message sent from queue
+00:15.672	ID:1	|P: 1| [NODE:9; QoS:1] T:1 -> NODE 5 QoS 1
+00:15.676	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:1, Q:1 from 9
+00:15.678	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:15.681	ID:1	|P: 1| [NODE:9; QoS:1] T:1 -> NODE 7 QoS 1
+00:15.686	ID:5	DEBUG: |N: 5| <QS> Re-pushing message in queue (8)
+00:15.686	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (40)
+00:15.688	ID:5	DEBUG: |N: 5| <QS> Message succesfully added in queue!
+00:15.689	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:15.691	ID:1	|P: 1| [NODE:5; QoS:1] T:27
+00:15.695	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:27, Q:1 from 5
+00:15.698	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:15.701	ID:1	|P: 1| [NODE:5; QoS:1] T:27 -> NODE 3 QoS 1
+00:15.705	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:27, Q:1 from 5
+00:15.707	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:15.711	ID:1	|P: 1| [NODE:5; QoS:1] T:27 -> NODE 7 QoS 1
+00:15.714	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:15.719	ID:5	|N: 5| [NODE:9] T:1
+00:15.735	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:15.742	ID:7	|N: 7| [NODE:9] T:1
+00:15.755	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:15.757	ID:3	|N: 3| [NODE:9] T:1
+00:15.774	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:15.777	ID:3	|N: 3| [NODE:5] T:27
+00:15.793	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:15.801	ID:7	|N: 7| [NODE:5] T:27
+00:15.873	ID:3	|N: 3| Read n(10) L: 10
+00:15.877	ID:3	DEBUG: |N: 3| <PM> Publishing to 1 T:3, D:10, Q:1 from 3
+00:15.880	ID:3	DEBUG: |N: 3| <QS> Message succesfully added in queue!
+00:15.883	ID:3	DEBUG: |N: 3| <QS> Message sent from queue
+00:15.889	ID:1	|P: 1| [NODE:3; QoS:1] L:10
+00:15.893	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:10, Q:1 from 3
+00:15.896	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:15.900	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:15.902	ID:4	|N: 4| [NODE:3] L:10
+00:15.903	ID:1	|P: 1| [NODE:3; QoS:1] L:10 -> NODE 4 QoS 1
+00:15.907	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:10, Q:1 from 3
+00:15.910	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:15.913	ID:1	|P: 1| [NODE:3; QoS:1] L:10 -> NODE 5 QoS 1
+00:15.917	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:10, Q:0 from 3
+00:15.919	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:15.922	ID:1	|P: 1| [NODE:3; QoS:1] L:10 -> NODE 6 QoS 0
+00:15.926	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:3, D:10, Q:0 from 3
+00:15.929	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:15.932	ID:1	|P: 1| [NODE:3; QoS:1] L:10 -> NODE 7 QoS 0
+00:15.936	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (41)
+00:15.938	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:15.942	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:15.950	ID:5	|N: 5| [NODE:3] L:10
+00:15.963	ID:5	DEBUG: |N: 5| <QS> Message sent from queue
+00:15.966	ID:1	|P: 1| [NODE:5; QoS:1] T:27
+00:15.970	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:27, Q:1 from 5
+00:15.972	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:15.976	ID:1	|P: 1| [NODE:5; QoS:1] T:27 -> NODE 3 QoS 1
+00:15.979	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:27, Q:1 from 5
+00:15.982	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:15.985	ID:1	|P: 1| [NODE:5; QoS:1] T:27 -> NODE 7 QoS 1
+00:15.989	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:15.997	ID:6	|N: 6| [NODE:3] L:10
+00:16.008	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:16.012	ID:7	|N: 7| [NODE:3] L:10
+00:16.028	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:16.031	ID:4	|N: 4| [NODE:3] L:10
+00:16.047	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:16.057	ID:3	|N: 3| [NODE:5] T:27
+00:16.067	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:16.077	ID:7	|N: 7| [NODE:5] T:27
+00:16.153	ID:2	|N: 2| Read n(10) H: 0
+00:16.157	ID:2	DEBUG: |N: 2| <PM> Publishing to 1 T:2, D:0, Q:0 from 2
+00:16.161	ID:2	DEBUG: |N: 2| <QS> Message sent out of order 
+00:16.165	ID:1	|P: 1| [NODE:2; QoS:0] H:0
+00:16.168	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:2, D:0, Q:0 from 2
+00:16.171	ID:6	|N: 6| Read n(9) H: 82
+00:16.172	ID:1	DEBUG: |P: 1| <QS> Message sent out of order 
+00:16.174	ID:3	|N: 3| [NODE:2] H:0
+00:16.175	ID:1	|P: 1| [NODE:2; QoS:0] H:0 -> NODE 3 QoS 0
+00:16.176	ID:6	DEBUG: |N: 6| <PM> Publishing to 1 T:2, D:82, Q:0 from 6
+00:16.179	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:2, D:0, Q:0 from 2
+00:16.179	ID:6	DEBUG: |N: 6| <QS> Message sent out of order 
+00:16.182	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:16.185	ID:1	|P: 1| [NODE:2; QoS:0] H:0 -> NODE 6 QoS 0
+00:16.188	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:2, D:0, Q:0 from 2
+00:16.191	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:16.194	ID:1	|P: 1| [NODE:2; QoS:0] H:0 -> NODE 7 QoS 0
+00:16.199	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:16.201	ID:1	|P: 1| [NODE:6; QoS:0] H:82
+00:16.205	ID:6	|N: 6| [NODE:2] H:0
+00:16.205	ID:1	DEBUG: |P: 1| <PM> Publishing to 2 T:2, D:82, Q:0 from 6
+00:16.208	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:16.211	ID:1	|P: 1| [NODE:6; QoS:0] H:82 -> NODE 2 QoS 0
+00:16.215	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:2, D:82, Q:0 from 6
+00:16.218	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:16.221	ID:1	|P: 1| [NODE:6; QoS:0] H:82 -> NODE 3 QoS 0
+00:16.225	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:2, D:82, Q:0 from 6
+00:16.227	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:16.230	ID:1	|P: 1| [NODE:6; QoS:0] H:82 -> NODE 7 QoS 0
+00:16.234	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:16.242	ID:7	|N: 7| [NODE:2] H:0
+00:16.262	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:16.270	ID:2	|N: 2| [NODE:6] H:82
+00:16.281	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:16.288	ID:3	|N: 3| [NODE:6] H:82
+00:16.301	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:16.309	ID:7	|N: 7| [NODE:6] H:82
+00:16.346	ID:7	|N: 7| Read n(11) L: 450
+00:16.349	ID:7	DEBUG: |N: 7| <PM> Publishing to 1 T:3, D:450, Q:1 from 7
+00:16.352	ID:7	DEBUG: |N: 7| <QS> Message succesfully added in queue!
+00:16.355	ID:7	DEBUG: |N: 7| <QS> Message sent from queue
+00:16.363	ID:1	|P: 1| [NODE:7; QoS:1] L:450
+00:16.367	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:450, Q:1 from 7
+00:16.370	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:16.373	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:16.378	ID:1	|P: 1| [NODE:7; QoS:1] L:450 -> NODE 4 QoS 1
+00:16.378	ID:4	|N: 4| [NODE:7] L:450
+00:16.381	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:450, Q:1 from 7
+00:16.384	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:16.387	ID:1	|P: 1| [NODE:7; QoS:1] L:450 -> NODE 5 QoS 1
+00:16.391	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:450, Q:0 from 7
+00:16.394	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:16.397	ID:1	|P: 1| [NODE:7; QoS:1] L:450 -> NODE 6 QoS 0
+00:16.401	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (42)
+00:16.404	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:16.407	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:16.419	ID:5	|N: 5| [NODE:7] L:450
+00:16.438	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:16.444	ID:6	|N: 6| [NODE:7] L:450
+00:16.457	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:16.465	ID:4	|N: 4| [NODE:7] L:450
+00:16.610	ID:9	|N: 9| Read n(11): T: 22
+00:16.614	ID:9	DEBUG: |N: 9| <PM> Publishing to 1 T:1, D:22, Q:1 from 9
+00:16.617	ID:9	DEBUG: |N: 9| <QS> Message succesfully added in queue!
+00:16.620	ID:9	DEBUG: |N: 9| <QS> Message sent from queue
+00:16.631	ID:1	|P: 1| [NODE:9; QoS:1] T:22
+00:16.635	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:22, Q:1 from 9
+00:16.635	ID:5	|N: 5| Read n(10): T: 0
+00:16.638	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:16.639	ID:5	DEBUG: |N: 5| <PM> Publishing to 1 T:1, D:0, Q:1 from 5
+00:16.641	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:16.642	ID:5	DEBUG: |N: 5| <QS> Message succesfully added in queue!
+00:16.644	ID:1	|P: 1| [NODE:9; QoS:1] T:22 -> NODE 3 QoS 1
+00:16.645	ID:5	DEBUG: |N: 5| <QS> Message sent from queue
+00:16.648	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:1, D:22, Q:1 from 9
+00:16.652	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:16.653	ID:3	|N: 3| [NODE:9] T:22
+00:16.655	ID:1	|P: 1| [NODE:9; QoS:1] T:22 -> NODE 5 QoS 1
+00:16.658	ID:5	DEBUG: |N: 5| <QS> Re-pushing message in queue (9)
+00:16.659	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:22, Q:1 from 9
+00:16.660	ID:5	DEBUG: |N: 5| <QS> Message succesfully added in queue!
+00:16.661	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:16.664	ID:1	|P: 1| [NODE:9; QoS:1] T:22 -> NODE 7 QoS 1
+00:16.669	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (43)
+00:16.672	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:16.674	ID:1	|P: 1| [NODE:5; QoS:1] T:0
+00:16.677	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:0, Q:1 from 5
+00:16.680	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:16.683	ID:1	|P: 1| [NODE:5; QoS:1] T:0 -> NODE 3 QoS 1
+00:16.687	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:0, Q:1 from 5
+00:16.689	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:16.692	ID:1	|P: 1| [NODE:5; QoS:1] T:0 -> NODE 7 QoS 1
+00:16.696	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:16.703	ID:5	|N: 5| [NODE:9] T:22
+00:16.711	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:16.718	ID:7	|N: 7| [NODE:9] T:22
+00:16.731	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:16.734	ID:3	|N: 3| [NODE:9] T:22
+00:16.750	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:16.760	ID:3	|N: 3| [NODE:5] T:0
+00:16.770	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:16.774	ID:7	|N: 7| [NODE:5] T:0
+00:16.841	ID:5	DEBUG: |N: 5| <QS> Message sent from queue
+00:16.850	ID:3	|N: 3| Read n(11) L: 231
+00:16.852	ID:1	|P: 1| [NODE:5; QoS:1] T:0
+00:16.855	ID:3	DEBUG: |N: 3| <PM> Publishing to 1 T:3, D:231, Q:1 from 3
+00:16.856	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:0, Q:1 from 5
+00:16.857	ID:3	DEBUG: |N: 3| <QS> Message succesfully added in queue!
+00:16.859	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:16.861	ID:3	DEBUG: |N: 3| <QS> Message sent from queue
+00:16.863	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:16.866	ID:1	|P: 1| [NODE:5; QoS:1] T:0 -> NODE 3 QoS 1
+00:16.867	ID:3	|N: 3| [NODE:5] T:0
+00:16.870	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:0, Q:1 from 5
+00:16.873	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:16.876	ID:1	|P: 1| [NODE:5; QoS:1] T:0 -> NODE 7 QoS 1
+00:16.877	ID:3	DEBUG: |N: 3| <QS> Re-pushing message in queue (3)
+00:16.880	ID:3	DEBUG: |N: 3| <QS> Message succesfully added in queue!
+00:16.881	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (44)
+00:16.883	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:16.886	ID:1	|P: 1| [NODE:3; QoS:1] L:231
+00:16.889	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:231, Q:1 from 3
+00:16.892	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:16.895	ID:1	|P: 1| [NODE:3; QoS:1] L:231 -> NODE 4 QoS 1
+00:16.899	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:231, Q:1 from 3
+00:16.902	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:16.905	ID:1	|P: 1| [NODE:3; QoS:1] L:231 -> NODE 5 QoS 1
+00:16.909	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:231, Q:0 from 3
+00:16.912	ID:1	DEBUG: |P: 1| <QS> Message sent out of order 
+00:16.916	ID:1	|P: 1| [NODE:3; QoS:1] L:231 -> NODE 6 QoS 0
+00:16.920	ID:6	|N: 6| [NODE:3] L:231
+00:16.920	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:3, D:231, Q:0 from 3
+00:16.923	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:16.926	ID:1	|P: 1| [NODE:3; QoS:1] L:231 -> NODE 7 QoS 0
+00:16.931	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:16.934	ID:7	|N: 7| [NODE:5] T:0
+00:16.945	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:16.954	ID:3	|N: 3| [NODE:5] T:0
+00:16.958	ID:3	DEBUG: |N: 3| <QS> Message sent from queue
+00:16.966	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:16.970	ID:1	|P: 1| [NODE:3; QoS:1] L:231
+00:16.971	ID:4	|N: 4| [NODE:3] L:231
+00:16.974	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:231, Q:1 from 3
+00:16.976	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:16.980	ID:1	|P: 1| [NODE:3; QoS:1] L:231 -> NODE 4 QoS 1
+00:16.983	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:231, Q:1 from 3
+00:16.986	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:16.989	ID:1	|P: 1| [NODE:3; QoS:1] L:231 -> NODE 5 QoS 1
+00:16.993	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:231, Q:0 from 3
+00:16.996	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:16.999	ID:1	|P: 1| [NODE:3; QoS:1] L:231 -> NODE 6 QoS 0
+00:17.003	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:3, D:231, Q:0 from 3
+00:17.006	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:17.009	ID:1	|P: 1| [NODE:3; QoS:1] L:231 -> NODE 7 QoS 0
+00:17.013	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (45)
+00:17.015	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:17.019	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.024	ID:5	|N: 5| [NODE:3] L:231
+00:17.043	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.050	ID:7	|N: 7| [NODE:3] L:231
+00:17.063	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.073	ID:4	|N: 4| [NODE:3] L:231
+00:17.082	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.092	ID:5	|N: 5| [NODE:3] L:231
+00:17.102	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.109	ID:6	|N: 6| [NODE:3] L:231
+00:17.121	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.131	ID:2	|N: 2| Read n(11) H: 94
+00:17.132	ID:7	|N: 7| [NODE:3] L:231
+00:17.135	ID:2	DEBUG: |N: 2| <PM> Publishing to 1 T:2, D:94, Q:0 from 2
+00:17.138	ID:2	DEBUG: |N: 2| <QS> Message sent out of order 
+00:17.141	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.147	ID:1	|P: 1| [NODE:2; QoS:0] H:94
+00:17.148	ID:6	|N: 6| Read n(10) H: 23
+00:17.151	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:2, D:94, Q:0 from 2
+00:17.152	ID:4	|N: 4| [NODE:3] L:231
+00:17.152	ID:6	DEBUG: |N: 6| <PM> Publishing to 1 T:2, D:23, Q:0 from 6
+00:17.154	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:17.156	ID:6	DEBUG: |N: 6| <QS> Message sent out of order 
+00:17.157	ID:1	|P: 1| [NODE:2; QoS:0] H:94 -> NODE 3 QoS 0
+00:17.161	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:2, D:94, Q:0 from 2
+00:17.164	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:17.167	ID:1	|P: 1| [NODE:2; QoS:0] H:94 -> NODE 6 QoS 0
+00:17.171	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:2, D:94, Q:0 from 2
+00:17.173	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:17.177	ID:1	|P: 1| [NODE:2; QoS:0] H:94 -> NODE 7 QoS 0
+00:17.181	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (46)
+00:17.184	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:17.187	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.190	ID:1	|P: 1| [NODE:6; QoS:0] H:23
+00:17.191	ID:3	|N: 3| [NODE:2] H:94
+00:17.194	ID:1	DEBUG: |P: 1| <PM> Publishing to 2 T:2, D:23, Q:0 from 6
+00:17.197	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:17.200	ID:1	|P: 1| [NODE:6; QoS:0] H:23 -> NODE 2 QoS 0
+00:17.203	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:2, D:23, Q:0 from 6
+00:17.206	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:17.209	ID:1	|P: 1| [NODE:6; QoS:0] H:23 -> NODE 3 QoS 0
+00:17.213	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:2, D:23, Q:0 from 6
+00:17.216	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:17.219	ID:1	|P: 1| [NODE:6; QoS:0] H:23 -> NODE 7 QoS 0
+00:17.223	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.226	ID:6	|N: 6| [NODE:2] H:94
+00:17.238	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.248	ID:7	|N: 7| [NODE:2] H:94
+00:17.258	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.266	ID:4	|N: 4| [NODE:3] L:231
+00:17.278	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.280	ID:2	|N: 2| [NODE:6] H:23
+00:17.298	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.300	ID:3	|N: 3| [NODE:6] H:23
+00:17.317	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.321	ID:7	|N: 7| [NODE:6] H:23
+00:17.324	ID:7	|N: 7| Read n(12) L: 249
+00:17.328	ID:7	DEBUG: |N: 7| <PM> Publishing to 1 T:3, D:249, Q:1 from 7
+00:17.330	ID:7	DEBUG: |N: 7| <QS> Message succesfully added in queue!
+00:17.334	ID:7	DEBUG: |N: 7| <QS> Message sent from queue
+00:17.344	ID:1	|P: 1| [NODE:7; QoS:1] L:249
+00:17.348	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:249, Q:1 from 7
+00:17.351	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:17.354	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.357	ID:1	|P: 1| [NODE:7; QoS:1] L:249 -> NODE 4 QoS 1
+00:17.362	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:249, Q:1 from 7
+00:17.364	ID:4	|N: 4| [NODE:7] L:249
+00:17.365	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:17.368	ID:1	|P: 1| [NODE:7; QoS:1] L:249 -> NODE 5 QoS 1
+00:17.372	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:249, Q:0 from 7
+00:17.375	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:17.378	ID:1	|P: 1| [NODE:7; QoS:1] L:249 -> NODE 6 QoS 0
+00:17.382	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (47)
+00:17.384	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:17.388	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.396	ID:5	|N: 5| [NODE:7] L:249
+00:17.414	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.426	ID:6	|N: 6| [NODE:7] L:249
+00:17.434	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.443	ID:4	|N: 4| [NODE:7] L:249
+00:17.587	ID:9	|N: 9| Read n(12): T: 17
+00:17.591	ID:9	DEBUG: |N: 9| <PM> Publishing to 1 T:1, D:17, Q:1 from 9
+00:17.593	ID:9	DEBUG: |N: 9| <QS> Message succesfully added in queue!
+00:17.597	ID:9	DEBUG: |N: 9| <QS> Message sent from queue
+00:17.605	ID:1	|P: 1| [NODE:9; QoS:1] T:17
+00:17.609	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:17, Q:1 from 9
+00:17.612	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:17.612	ID:5	|N: 5| Read n(11): T: 18
+00:17.615	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.616	ID:5	DEBUG: |N: 5| <PM> Publishing to 1 T:1, D:18, Q:1 from 5
+00:17.619	ID:1	|P: 1| [NODE:9; QoS:1] T:17 -> NODE 3 QoS 1
+00:17.620	ID:5	DEBUG: |N: 5| <QS> Message succesfully added in queue!
+00:17.620	ID:3	|N: 3| [NODE:9] T:17
+00:17.623	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:1, D:17, Q:1 from 9
+00:17.624	ID:5	DEBUG: |N: 5| <QS> Message sent from queue
+00:17.626	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:17.629	ID:1	|P: 1| [NODE:9; QoS:1] T:17 -> NODE 5 QoS 1
+00:17.633	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:17, Q:1 from 9
+00:17.634	ID:5	DEBUG: |N: 5| <QS> Re-pushing message in queue (10)
+00:17.635	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:17.637	ID:5	DEBUG: |N: 5| <QS> Message succesfully added in queue!
+00:17.638	ID:1	|P: 1| [NODE:9; QoS:1] T:17 -> NODE 7 QoS 1
+00:17.643	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (48)
+00:17.646	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:17.648	ID:1	|P: 1| [NODE:5; QoS:1] T:18
+00:17.652	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:18, Q:1 from 5
+00:17.655	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:17.658	ID:1	|P: 1| [NODE:5; QoS:1] T:18 -> NODE 3 QoS 1
+00:17.662	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:18, Q:1 from 5
+00:17.664	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:17.668	ID:1	|P: 1| [NODE:5; QoS:1] T:18 -> NODE 7 QoS 1
+00:17.671	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.677	ID:5	|N: 5| [NODE:9] T:17
+00:17.688	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.696	ID:7	|N: 7| [NODE:9] T:17
+00:17.707	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.713	ID:3	|N: 3| [NODE:9] T:17
+00:17.720	ID:5	DEBUG: |N: 5| <QS> Message sent from queue
+00:17.728	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.730	ID:1	|P: 1| [NODE:5; QoS:1] T:18
+00:17.734	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:18, Q:1 from 5
+00:17.737	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:17.740	ID:3	|N: 3| [NODE:5] T:18
+00:17.741	ID:1	|P: 1| [NODE:5; QoS:1] T:18 -> NODE 3 QoS 1
+00:17.744	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:18, Q:1 from 5
+00:17.747	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:17.750	ID:1	|P: 1| [NODE:5; QoS:1] T:18 -> NODE 7 QoS 1
+00:17.754	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (49)
+00:17.757	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:17.766	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.772	ID:7	|N: 7| [NODE:5] T:18
+00:17.785	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.792	ID:3	|N: 3| [NODE:5] T:18
+00:17.805	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.809	ID:7	|N: 7| [NODE:5] T:18
+00:17.824	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.827	ID:3	|N: 3| Read n(12) L: 849
+00:17.832	ID:3	DEBUG: |N: 3| <PM> Publishing to 1 T:3, D:849, Q:1 from 3
+00:17.835	ID:3	DEBUG: |N: 3| <QS> Message succesfully added in queue!
+00:17.838	ID:3	DEBUG: |N: 3| <QS> Message sent from queue
+00:17.840	ID:3	|N: 3| [NODE:5] T:18
+00:17.849	ID:1	|P: 1| [NODE:3; QoS:1] L:849
+00:17.853	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:849, Q:1 from 3
+00:17.856	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:17.859	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.863	ID:1	|P: 1| [NODE:3; QoS:1] L:849 -> NODE 4 QoS 1
+00:17.865	ID:4	|N: 4| [NODE:3] L:849
+00:17.867	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:849, Q:1 from 3
+00:17.870	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:17.873	ID:1	|P: 1| [NODE:3; QoS:1] L:849 -> NODE 5 QoS 1
+00:17.877	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:849, Q:0 from 3
+00:17.880	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:17.883	ID:1	|P: 1| [NODE:3; QoS:1] L:849 -> NODE 6 QoS 0
+00:17.887	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:3, D:849, Q:0 from 3
+00:17.889	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:17.893	ID:1	|P: 1| [NODE:3; QoS:1] L:849 -> NODE 7 QoS 0
+00:17.896	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (50)
+00:17.899	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:17.902	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.909	ID:5	|N: 5| [NODE:3] L:849
+00:17.923	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.926	ID:6	|N: 6| [NODE:3] L:849
+00:17.942	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.952	ID:7	|N: 7| [NODE:3] L:849
+00:17.961	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:17.967	ID:4	|N: 4| [NODE:3] L:849
+00:18.107	ID:2	|N: 2| Read n(12) H: 60
+00:18.110	ID:2	DEBUG: |N: 2| <PM> Publishing to 1 T:2, D:60, Q:0 from 2
+00:18.114	ID:2	DEBUG: |N: 2| <QS> Message sent out of order 
+00:18.121	ID:1	|P: 1| [NODE:2; QoS:0] H:60
+00:18.124	ID:6	|N: 6| Read n(11) H: 30
+00:18.124	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:2, D:60, Q:0 from 2
+00:18.128	ID:1	DEBUG: |P: 1| <QS> Message sent out of order 
+00:18.128	ID:6	DEBUG: |N: 6| <PM> Publishing to 1 T:2, D:30, Q:0 from 6
+00:18.132	ID:1	|P: 1| [NODE:2; QoS:0] H:60 -> NODE 3 QoS 0
+00:18.132	ID:3	|N: 3| [NODE:2] H:60
+00:18.133	ID:6	DEBUG: |N: 6| <QS> Message sent out of order 
+00:18.135	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:2, D:60, Q:0 from 2
+00:18.138	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:18.141	ID:1	|P: 1| [NODE:2; QoS:0] H:60 -> NODE 6 QoS 0
+00:18.145	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:2, D:60, Q:0 from 2
+00:18.148	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:18.151	ID:1	|P: 1| [NODE:2; QoS:0] H:60 -> NODE 7 QoS 0
+00:18.155	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:18.158	ID:1	|P: 1| [NODE:6; QoS:0] H:30
+00:18.162	ID:1	DEBUG: |P: 1| <PM> Publishing to 2 T:2, D:30, Q:0 from 6
+00:18.165	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:18.165	ID:6	|N: 6| [NODE:2] H:60
+00:18.168	ID:1	|P: 1| [NODE:6; QoS:0] H:30 -> NODE 2 QoS 0
+00:18.172	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:2, D:30, Q:0 from 6
+00:18.174	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:18.178	ID:1	|P: 1| [NODE:6; QoS:0] H:30 -> NODE 3 QoS 0
+00:18.181	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:2, D:30, Q:0 from 6
+00:18.184	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:18.187	ID:1	|P: 1| [NODE:6; QoS:0] H:30 -> NODE 7 QoS 0
+00:18.191	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:18.197	ID:7	|N: 7| [NODE:2] H:60
+00:18.215	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:18.226	ID:2	|N: 2| [NODE:6] H:30
+00:18.234	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:18.241	ID:3	|N: 3| [NODE:6] H:30
+00:18.255	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:18.258	ID:7	|N: 7| [NODE:6] H:30
+00:18.299	ID:7	|N: 7| Read n(13) L: 163
+00:18.303	ID:7	DEBUG: |N: 7| <PM> Publishing to 1 T:3, D:163, Q:1 from 7
+00:18.305	ID:7	DEBUG: |N: 7| <QS> Message succesfully added in queue!
+00:18.309	ID:7	DEBUG: |N: 7| <QS> Message sent from queue
+00:18.315	ID:1	|P: 1| [NODE:7; QoS:1] L:163
+00:18.318	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:163, Q:1 from 7
+00:18.321	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:18.324	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:18.328	ID:1	|P: 1| [NODE:7; QoS:1] L:163 -> NODE 4 QoS 1
+00:18.332	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:163, Q:1 from 7
+00:18.335	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:18.336	ID:4	|N: 4| [NODE:7] L:163
+00:18.338	ID:1	|P: 1| [NODE:7; QoS:1] L:163 -> NODE 5 QoS 1
+00:18.342	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:163, Q:0 from 7
+00:18.345	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:18.348	ID:1	|P: 1| [NODE:7; QoS:1] L:163 -> NODE 6 QoS 0
+00:18.352	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (51)
+00:18.355	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:18.358	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:18.366	ID:5	|N: 5| [NODE:7] L:163
+00:18.372	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:18.375	ID:6	|N: 6| [NODE:7] L:163
+00:18.392	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:18.394	ID:4	|N: 4| [NODE:7] L:163
+00:18.563	ID:9	|N: 9| Read n(13): T: 35
+00:18.567	ID:9	DEBUG: |N: 9| <PM> Publishing to 1 T:1, D:35, Q:1 from 9
+00:18.570	ID:9	DEBUG: |N: 9| <QS> Message succesfully added in queue!
+00:18.573	ID:9	DEBUG: |N: 9| <QS> Message sent from queue
+00:18.584	ID:1	|P: 1| [NODE:9; QoS:1] T:35
+00:18.587	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:35, Q:1 from 9
+00:18.589	ID:5	|N: 5| Read n(12): T: 31
+00:18.590	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:18.592	ID:5	DEBUG: |N: 5| <PM> Publishing to 1 T:1, D:31, Q:1 from 5
+00:18.593	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:18.595	ID:5	DEBUG: |N: 5| <QS> Message succesfully added in queue!
+00:18.596	ID:1	|P: 1| [NODE:9; QoS:1] T:35 -> NODE 3 QoS 1
+00:18.598	ID:5	DEBUG: |N: 5| <QS> Message sent from queue
+00:18.601	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:1, D:35, Q:1 from 9
+00:18.602	ID:3	|N: 3| [NODE:9] T:35
+00:18.604	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:18.607	ID:1	|P: 1| [NODE:9; QoS:1] T:35 -> NODE 5 QoS 1
+00:18.611	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:35, Q:1 from 9
+00:18.614	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:18.614	ID:5	DEBUG: |N: 5| <QS> Re-pushing message in queue (11)
+00:18.617	ID:5	DEBUG: |N: 5| <QS> Message succesfully added in queue!
+00:18.617	ID:1	|P: 1| [NODE:9; QoS:1] T:35 -> NODE 7 QoS 1
+00:18.622	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (52)
+00:18.624	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:18.627	ID:1	|P: 1| [NODE:5; QoS:1] T:31
+00:18.630	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:31, Q:1 from 5
+00:18.633	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:18.636	ID:1	|P: 1| [NODE:5; QoS:1] T:31 -> NODE 3 QoS 1
+00:18.640	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:31, Q:1 from 5
+00:18.643	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:18.646	ID:1	|P: 1| [NODE:5; QoS:1] T:31 -> NODE 7 QoS 1
+00:18.649	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:18.658	ID:5	|N: 5| [NODE:9] T:35
+00:18.664	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:18.673	ID:7	|N: 7| [NODE:9] T:35
+00:18.684	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:18.691	ID:3	|N: 3| [NODE:9] T:35
+00:18.703	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:18.710	ID:3	|N: 3| [NODE:5] T:31
+00:18.723	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:18.730	ID:7	|N: 7| [NODE:5] T:31
+00:18.803	ID:3	|N: 3| Read n(13) L: 227
+00:18.807	ID:3	DEBUG: |N: 3| <PM> Publishing to 1 T:3, D:227, Q:1 from 3
+00:18.810	ID:3	DEBUG: |N: 3| <QS> Message succesfully added in queue!
+00:18.813	ID:3	DEBUG: |N: 3| <QS> Message sent from queue
+00:18.820	ID:1	|P: 1| [NODE:3; QoS:1] L:227
+00:18.824	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:227, Q:1 from 3
+00:18.826	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:18.830	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:18.833	ID:1	|P: 1| [NODE:3; QoS:1] L:227 -> NODE 4 QoS 1
+00:18.837	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:227, Q:1 from 3
+00:18.840	ID:4	|N: 4| [NODE:3] L:227
+00:18.840	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:18.844	ID:1	|P: 1| [NODE:3; QoS:1] L:227 -> NODE 5 QoS 1
+00:18.848	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:227, Q:0 from 3
+00:18.850	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:18.854	ID:1	|P: 1| [NODE:3; QoS:1] L:227 -> NODE 6 QoS 0
+00:18.857	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:3, D:227, Q:0 from 3
+00:18.860	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:18.863	ID:1	|P: 1| [NODE:3; QoS:1] L:227 -> NODE 7 QoS 0
+00:18.867	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (53)
+00:18.870	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:18.873	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:18.882	ID:5	|N: 5| [NODE:3] L:227
+00:18.892	ID:5	DEBUG: |N: 5| <QS> Message sent from queue
+00:18.899	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:18.902	ID:1	|P: 1| [NODE:5; QoS:1] T:31
+00:18.905	ID:6	|N: 6| [NODE:3] L:227
+00:18.906	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:31, Q:1 from 5
+00:18.909	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:18.912	ID:1	|P: 1| [NODE:5; QoS:1] T:31 -> NODE 3 QoS 1
+00:18.916	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:31, Q:1 from 5
+00:18.918	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:18.921	ID:1	|P: 1| [NODE:5; QoS:1] T:31 -> NODE 7 QoS 1
+00:18.938	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:18.942	ID:7	|N: 7| [NODE:3] L:227
+00:18.958	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:18.961	ID:4	|N: 4| [NODE:3] L:227
+00:18.977	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:18.986	ID:3	|N: 3| [NODE:5] T:31
+00:18.996	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:19.006	ID:7	|N: 7| [NODE:5] T:31
+00:19.083	ID:2	|N: 2| Read n(13) H: 37
+00:19.087	ID:2	DEBUG: |N: 2| <PM> Publishing to 1 T:2, D:37, Q:0 from 2
+00:19.091	ID:2	DEBUG: |N: 2| <QS> Message sent out of order 
+00:19.093	ID:1	|P: 1| [NODE:2; QoS:0] H:37
+00:19.097	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:2, D:37, Q:0 from 2
+00:19.100	ID:1	DEBUG: |P: 1| <QS> Message sent out of order 
+00:19.101	ID:6	|N: 6| Read n(12) H: 57
+00:19.104	ID:1	|P: 1| [NODE:2; QoS:0] H:37 -> NODE 3 QoS 0
+00:19.105	ID:6	DEBUG: |N: 6| <PM> Publishing to 1 T:2, D:57, Q:0 from 6
+00:19.107	ID:3	|N: 3| [NODE:2] H:37
+00:19.108	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:2, D:37, Q:0 from 2
+00:19.109	ID:6	DEBUG: |N: 6| <QS> Message sent out of order 
+00:19.111	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:19.114	ID:1	|P: 1| [NODE:2; QoS:0] H:37 -> NODE 6 QoS 0
+00:19.118	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:2, D:37, Q:0 from 2
+00:19.121	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:19.124	ID:1	|P: 1| [NODE:2; QoS:0] H:37 -> NODE 7 QoS 0
+00:19.127	ID:1	|P: 1| [NODE:6; QoS:0] H:57
+00:19.131	ID:1	DEBUG: |P: 1| <PM> Publishing to 2 T:2, D:57, Q:0 from 6
+00:19.134	ID:1	DEBUG: |P: 1| <QS> Message sent out of order 
+00:19.138	ID:1	|P: 1| [NODE:6; QoS:0] H:57 -> NODE 2 QoS 0
+00:19.142	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:2, D:57, Q:0 from 6
+00:19.142	ID:2	|N: 2| [NODE:6] H:57
+00:19.145	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:19.148	ID:1	|P: 1| [NODE:6; QoS:0] H:57 -> NODE 3 QoS 0
+00:19.152	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:2, D:57, Q:0 from 6
+00:19.154	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:19.157	ID:1	|P: 1| [NODE:6; QoS:0] H:57 -> NODE 7 QoS 0
+00:19.161	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:19.168	ID:6	|N: 6| [NODE:2] H:37
+00:19.172	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:19.181	ID:7	|N: 7| [NODE:2] H:37
+00:19.192	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:19.202	ID:3	|N: 3| [NODE:6] H:57
+00:19.212	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:19.214	ID:7	|N: 7| [NODE:6] H:57
+00:19.275	ID:7	|N: 7| Read n(14) L: 919
+00:19.279	ID:7	DEBUG: |N: 7| <PM> Publishing to 1 T:3, D:919, Q:1 from 7
+00:19.282	ID:7	DEBUG: |N: 7| <QS> Message succesfully added in queue!
+00:19.285	ID:7	DEBUG: |N: 7| <QS> Message sent from queue
+00:19.292	ID:1	|P: 1| [NODE:7; QoS:1] L:919
+00:19.295	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:919, Q:1 from 7
+00:19.298	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:19.302	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:19.305	ID:4	|N: 4| [NODE:7] L:919
+00:19.306	ID:1	|P: 1| [NODE:7; QoS:1] L:919 -> NODE 4 QoS 1
+00:19.310	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:919, Q:1 from 7
+00:19.312	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:19.316	ID:1	|P: 1| [NODE:7; QoS:1] L:919 -> NODE 5 QoS 1
+00:19.319	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:919, Q:0 from 7
+00:19.322	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:19.325	ID:1	|P: 1| [NODE:7; QoS:1] L:919 -> NODE 6 QoS 0
+00:19.329	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (54)
+00:19.332	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:19.336	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:19.339	ID:5	|N: 5| [NODE:7] L:919
+00:19.348	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:19.359	ID:6	|N: 6| [NODE:7] L:919
+00:19.367	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:19.373	ID:4	|N: 4| [NODE:7] L:919
+00:19.540	ID:9	|N: 9| Read n(14): T: 5
+00:19.543	ID:9	DEBUG: |N: 9| <PM> Publishing to 1 T:1, D:5, Q:1 from 9
+00:19.546	ID:9	DEBUG: |N: 9| <QS> Message succesfully added in queue!
+00:19.549	ID:9	DEBUG: |N: 9| <QS> Message sent from queue
+00:19.562	ID:1	|P: 1| [NODE:9; QoS:1] T:5
+00:19.565	ID:5	|N: 5| Read n(13): T: 7
+00:19.565	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:5, Q:1 from 9
+00:19.568	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:19.569	ID:5	DEBUG: |N: 5| <PM> Publishing to 1 T:1, D:7, Q:1 from 5
+00:19.571	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:19.571	ID:5	DEBUG: |N: 5| <QS> Message succesfully added in queue!
+00:19.574	ID:1	|P: 1| [NODE:9; QoS:1] T:5 -> NODE 3 QoS 1
+00:19.575	ID:5	DEBUG: |N: 5| <QS> Message sent from queue
+00:19.579	ID:3	|N: 3| [NODE:9] T:5
+00:19.579	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:1, D:5, Q:1 from 9
+00:19.581	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:19.585	ID:1	|P: 1| [NODE:9; QoS:1] T:5 -> NODE 5 QoS 1
+00:19.588	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:5, Q:1 from 9
+00:19.591	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:19.593	ID:5	DEBUG: |N: 5| <QS> Re-pushing message in queue (12)
+00:19.594	ID:1	|P: 1| [NODE:9; QoS:1] T:5 -> NODE 7 QoS 1
+00:19.597	ID:5	DEBUG: |N: 5| <QS> Message succesfully added in queue!
+00:19.599	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (55)
+00:19.602	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:19.604	ID:1	|P: 1| [NODE:5; QoS:1] T:7
+00:19.607	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:7, Q:1 from 5
+00:19.610	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:19.613	ID:1	|P: 1| [NODE:5; QoS:1] T:7 -> NODE 3 QoS 1
+00:19.617	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:7, Q:1 from 5
+00:19.619	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:19.623	ID:1	|P: 1| [NODE:5; QoS:1] T:7 -> NODE 7 QoS 1
+00:19.626	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:19.630	ID:5	|N: 5| [NODE:9] T:5
+00:19.642	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:19.644	ID:7	|N: 7| [NODE:9] T:5
+00:19.660	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:19.670	ID:3	|N: 3| [NODE:9] T:5
+00:19.680	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:19.684	ID:3	|N: 3| [NODE:5] T:7
+00:19.699	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:19.704	ID:7	|N: 7| [NODE:5] T:7
+00:19.771	ID:5	DEBUG: |N: 5| <QS> Message sent from queue
+00:19.777	ID:1	|P: 1| [NODE:5; QoS:1] T:7
+00:19.780	ID:3	|N: 3| Read n(14) L: 151
+00:19.780	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:7, Q:1 from 5
+00:19.783	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:19.784	ID:3	DEBUG: |N: 3| <PM> Publishing to 1 T:3, D:151, Q:1 from 3
+00:19.786	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:19.786	ID:3	DEBUG: |N: 3| <QS> Message succesfully added in queue!
+00:19.790	ID:1	|P: 1| [NODE:5; QoS:1] T:7 -> NODE 3 QoS 1
+00:19.791	ID:3	DEBUG: |N: 3| <QS> Message sent from queue
+00:19.793	ID:3	|N: 3| [NODE:5] T:7
+00:19.794	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:7, Q:1 from 5
+00:19.797	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:19.800	ID:1	|P: 1| [NODE:5; QoS:1] T:7 -> NODE 7 QoS 1
+00:19.804	ID:3	DEBUG: |N: 3| <QS> Re-pushing message in queue (4)
+00:19.805	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (56)
+00:19.807	ID:3	DEBUG: |N: 3| <QS> Message succesfully added in queue!
+00:19.808	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:19.810	ID:1	|P: 1| [NODE:3; QoS:1] L:151
+00:19.814	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:151, Q:1 from 3
+00:19.816	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:19.820	ID:1	|P: 1| [NODE:3; QoS:1] L:151 -> NODE 4 QoS 1
+00:19.823	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:151, Q:1 from 3
+00:19.826	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:19.829	ID:1	|P: 1| [NODE:3; QoS:1] L:151 -> NODE 5 QoS 1
+00:19.833	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:151, Q:0 from 3
+00:19.837	ID:1	DEBUG: |P: 1| <QS> Message sent out of order 
+00:19.841	ID:1	|P: 1| [NODE:3; QoS:1] L:151 -> NODE 6 QoS 0
+00:19.843	ID:6	|N: 6| [NODE:3] L:151
+00:19.844	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:3, D:151, Q:0 from 3
+00:19.847	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:19.850	ID:1	|P: 1| [NODE:3; QoS:1] L:151 -> NODE 7 QoS 0
+00:19.854	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:19.862	ID:7	|N: 7| [NODE:5] T:7
+00:19.875	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:19.887	ID:3	DEBUG: |N: 3| <QS> Message sent from queue
+00:19.889	ID:3	|N: 3| [NODE:5] T:7
+00:19.897	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:19.899	ID:1	|P: 1| [NODE:3; QoS:1] L:151
+00:19.900	ID:4	|N: 4| [NODE:3] L:151
+00:19.903	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:151, Q:1 from 3
+00:19.906	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:19.909	ID:1	|P: 1| [NODE:3; QoS:1] L:151 -> NODE 4 QoS 1
+00:19.913	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:151, Q:1 from 3
+00:19.916	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:19.919	ID:1	|P: 1| [NODE:3; QoS:1] L:151 -> NODE 5 QoS 1
+00:19.923	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:151, Q:0 from 3
+00:19.926	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:19.929	ID:1	|P: 1| [NODE:3; QoS:1] L:151 -> NODE 6 QoS 0
+00:19.933	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:3, D:151, Q:0 from 3
+00:19.935	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:19.939	ID:1	|P: 1| [NODE:3; QoS:1] L:151 -> NODE 7 QoS 0
+00:19.942	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (57)
+00:19.945	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:19.948	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:19.958	ID:5	|N: 5| [NODE:3] L:151
+00:19.973	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:19.983	ID:7	|N: 7| [NODE:3] L:151
+00:19.992	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:20.001	ID:4	|N: 4| [NODE:3] L:151
+00:20.012	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:20.018	ID:5	|N: 5| [NODE:3] L:151
+00:20.031	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:20.042	ID:6	|N: 6| [NODE:3] L:151
+00:20.051	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:20.061	ID:2	|N: 2| Read n(14) H: 52
+00:20.062	ID:7	|N: 7| [NODE:3] L:151
+00:20.065	ID:2	DEBUG: |N: 2| <PM> Publishing to 1 T:2, D:52, Q:0 from 2
+00:20.068	ID:2	DEBUG: |N: 2| <QS> Message sent out of order 
+00:20.070	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:20.077	ID:6	|N: 6| Read n(13) H: 78
+00:20.078	ID:1	|P: 1| [NODE:2; QoS:0] H:52
+00:20.082	ID:6	DEBUG: |N: 6| <PM> Publishing to 1 T:2, D:78, Q:0 from 6
+00:20.082	ID:4	|N: 4| [NODE:3] L:151
+00:20.083	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:2, D:52, Q:0 from 2
+00:20.085	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:20.086	ID:6	DEBUG: |N: 6| <QS> Message sent out of order 
+00:20.089	ID:1	|P: 1| [NODE:2; QoS:0] H:52 -> NODE 3 QoS 0
+00:20.092	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:2, D:52, Q:0 from 2
+00:20.095	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:20.098	ID:1	|P: 1| [NODE:2; QoS:0] H:52 -> NODE 6 QoS 0
+00:20.102	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:2, D:52, Q:0 from 2
+00:20.105	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:20.108	ID:1	|P: 1| [NODE:2; QoS:0] H:52 -> NODE 7 QoS 0
+00:20.112	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (58)
+00:20.115	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:20.117	ID:1	|P: 1| [NODE:6; QoS:0] H:78
+00:20.121	ID:1	DEBUG: |P: 1| <PM> Publishing to 2 T:2, D:78, Q:0 from 6
+00:20.125	ID:1	DEBUG: |P: 1| <QS> Message sent out of order 
+00:20.128	ID:1	|P: 1| [NODE:6; QoS:0] H:78 -> NODE 2 QoS 0
+00:20.132	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:2, D:78, Q:0 from 6
+00:20.134	ID:2	|N: 2| [NODE:6] H:78
+00:20.135	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:20.138	ID:1	|P: 1| [NODE:6; QoS:0] H:78 -> NODE 3 QoS 0
+00:20.142	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:2, D:78, Q:0 from 6
+00:20.144	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:20.148	ID:1	|P: 1| [NODE:6; QoS:0] H:78 -> NODE 7 QoS 0
+00:20.152	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:20.155	ID:3	|N: 3| [NODE:2] H:52
+00:20.156	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:20.167	ID:6	|N: 6| [NODE:2] H:52
+00:20.168	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:20.179	ID:7	|N: 7| [NODE:2] H:52
+00:20.188	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:20.196	ID:4	|N: 4| [NODE:3] L:151
+00:20.207	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:20.216	ID:3	|N: 3| [NODE:6] H:78
+00:20.227	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:20.230	ID:7	|N: 7| [NODE:6] H:78
+00:20.252	ID:7	|N: 7| Read n(15) L: 303
+00:20.256	ID:7	DEBUG: |N: 7| <PM> Publishing to 1 T:3, D:303, Q:1 from 7
+00:20.258	ID:7	DEBUG: |N: 7| <QS> Message succesfully added in queue!
+00:20.262	ID:7	DEBUG: |N: 7| <QS> Message sent from queue
+00:20.266	ID:1	|P: 1| [NODE:7; QoS:1] L:303
+00:20.270	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:303, Q:1 from 7
+00:20.272	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:20.276	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:20.279	ID:4	|N: 4| [NODE:7] L:303
+00:20.280	ID:1	|P: 1| [NODE:7; QoS:1] L:303 -> NODE 4 QoS 1
+00:20.284	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:303, Q:1 from 7
+00:20.287	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:20.290	ID:1	|P: 1| [NODE:7; QoS:1] L:303 -> NODE 5 QoS 1
+00:20.294	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:303, Q:0 from 7
+00:20.296	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:20.300	ID:1	|P: 1| [NODE:7; QoS:1] L:303 -> NODE 6 QoS 0
+00:20.303	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (59)
+00:20.306	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:20.309	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:20.318	ID:5	|N: 5| [NODE:7] L:303
+00:20.324	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:20.330	ID:6	|N: 6| [NODE:7] L:303
+00:20.344	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:20.350	ID:4	|N: 4| [NODE:7] L:303
+00:20.516	ID:9	|N: 9| Read n(15): T: 7
+00:20.520	ID:9	DEBUG: |N: 9| <PM> Publishing to 1 T:1, D:7, Q:1 from 9
+00:20.523	ID:9	DEBUG: |N: 9| <QS> Message succesfully added in queue!
+00:20.526	ID:9	DEBUG: |N: 9| <QS> Message sent from queue
+00:20.538	ID:1	|P: 1| [NODE:9; QoS:1] T:7
+00:20.542	ID:5	|N: 5| Read n(14): T: 8
+00:20.542	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:7, Q:1 from 9
+00:20.544	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:20.545	ID:5	DEBUG: |N: 5| <PM> Publishing to 1 T:1, D:8, Q:1 from 5
+00:20.549	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:20.549	ID:5	DEBUG: |N: 5| <QS> Message succesfully added in queue!
+00:20.550	ID:3	|N: 3| [NODE:9] T:7
+00:20.552	ID:1	|P: 1| [NODE:9; QoS:1] T:7 -> NODE 3 QoS 1
+00:20.552	ID:5	DEBUG: |N: 5| <QS> Message sent from queue
+00:20.556	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:1, D:7, Q:1 from 9
+00:20.558	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:20.561	ID:1	|P: 1| [NODE:9; QoS:1] T:7 -> NODE 5 QoS 1
+00:20.565	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:7, Q:1 from 9
+00:20.567	ID:5	DEBUG: |N: 5| <QS> Re-pushing message in queue (13)
+00:20.568	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:20.569	ID:5	DEBUG: |N: 5| <QS> Message succesfully added in queue!
+00:20.571	ID:1	|P: 1| [NODE:9; QoS:1] T:7 -> NODE 7 QoS 1
+00:20.576	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (60)
+00:20.578	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:20.581	ID:1	|P: 1| [NODE:5; QoS:1] T:8
+00:20.584	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:8, Q:1 from 5
+00:20.587	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:20.590	ID:1	|P: 1| [NODE:5; QoS:1] T:8 -> NODE 3 QoS 1
+00:20.593	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:8, Q:1 from 5
+00:20.596	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:20.599	ID:1	|P: 1| [NODE:5; QoS:1] T:8 -> NODE 7 QoS 1
+00:20.603	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:20.606	ID:5	|N: 5| [NODE:9] T:7
+00:20.617	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:20.622	ID:7	|N: 7| [NODE:9] T:7
+00:20.637	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:20.644	ID:3	|N: 3| [NODE:9] T:7
+00:20.649	ID:5	DEBUG: |N: 5| <QS> Message sent from queue
+00:20.658	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:20.660	ID:1	|P: 1| [NODE:5; QoS:1] T:8
+00:20.664	ID:1	DEBUG: |P: 1| <PM> Publishing to 3 T:1, D:8, Q:1 from 5
+00:20.667	ID:3	|N: 3| [NODE:5] T:8
+00:20.667	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:20.670	ID:1	|P: 1| [NODE:5; QoS:1] T:8 -> NODE 3 QoS 1
+00:20.674	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:1, D:8, Q:1 from 5
+00:20.677	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:20.680	ID:1	|P: 1| [NODE:5; QoS:1] T:8 -> NODE 7 QoS 1
+00:20.683	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (61)
+00:20.686	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:20.695	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:20.707	ID:7	|N: 7| [NODE:5] T:8
+00:20.716	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:20.718	ID:3	|N: 3| [NODE:5] T:8
+00:20.734	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:20.742	ID:7	|N: 7| [NODE:5] T:8
+00:20.754	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:20.757	ID:3	|N: 3| Read n(15) L: 756
+00:20.762	ID:3	DEBUG: |N: 3| <PM> Publishing to 1 T:3, D:756, Q:1 from 3
+00:20.765	ID:3	DEBUG: |N: 3| <QS> Message succesfully added in queue!
+00:20.768	ID:3	DEBUG: |N: 3| <QS> Message sent from queue
+00:20.770	ID:3	|N: 3| [NODE:5] T:8
+00:20.779	ID:1	|P: 1| [NODE:3; QoS:1] L:756
+00:20.783	ID:1	DEBUG: |P: 1| <PM> Publishing to 4 T:3, D:756, Q:1 from 3
+00:20.786	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:20.789	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:20.793	ID:1	|P: 1| [NODE:3; QoS:1] L:756 -> NODE 4 QoS 1
+00:20.797	ID:1	DEBUG: |P: 1| <PM> Publishing to 5 T:3, D:756, Q:1 from 3
+00:20.799	ID:4	|N: 4| [NODE:3] L:756
+00:20.800	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:20.803	ID:1	|P: 1| [NODE:3; QoS:1] L:756 -> NODE 5 QoS 1
+00:20.807	ID:1	DEBUG: |P: 1| <PM> Publishing to 6 T:3, D:756, Q:0 from 3
+00:20.810	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:20.813	ID:1	|P: 1| [NODE:3; QoS:1] L:756 -> NODE 6 QoS 0
+00:20.817	ID:1	DEBUG: |P: 1| <PM> Publishing to 7 T:3, D:756, Q:0 from 3
+00:20.820	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:20.823	ID:1	|P: 1| [NODE:3; QoS:1] L:756 -> NODE 7 QoS 0
+00:20.827	ID:1	DEBUG: |P: 1| <QS> Re-pushing message in queue (62)
+00:20.829	ID:1	DEBUG: |P: 1| <QS> Message succesfully added in queue!
+00:20.833	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:20.842	ID:5	|N: 5| [NODE:3] L:756
+00:20.852	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:20.855	ID:6	|N: 6| [NODE:3] L:756
+00:20.871	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:20.877	ID:7	|N: 7| [NODE:3] L:756
+00:20.891	ID:1	DEBUG: |P: 1| <QS> Message sent from queue
+00:20.900	ID:4	|N: 4| [NODE:3] L:756
+00:21.036	ID:2	|N: 2| Read n(15) H: 65
+00:21.040	ID:2	DEBUG: |N: 2| <PM> Publishing to 1 T:2, D:65, Q:0 from 2
+00:21.043	ID:2	DEBUG: |N: 2| <QS> Message sent out of order 
