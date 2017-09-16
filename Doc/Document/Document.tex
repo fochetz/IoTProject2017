@@ -1,0 +1,67 @@
+\documentclass[10pt]{article}
+
+\usepackage{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm,headheight=2cm,headsep=2cm,footskip=1cm}
+
+\begin{document}
+\title{Lightweight publish-subscribe application protocol}
+\author{Luca Fochetta, Andrea Martino}
+
+\maketitle
+
+
+\section{Introduction}
+In this document we will try to summarise how we implemented
+\section{Implementation choices}
+
+\subsection{ActiveMessages}
+In this project we need to handle different kind of messages, with different content and different purposes. One of the possible choices was to add a \emph{packetId} field in the packet payload. Doing so we would have been able to understand the packet type just by simply looking at the first four bits of the payload. For example we could have used \emph{0010} as the type id for the \emph{PUBLISH} message and \emph{0011} as the type id for the \emph{SUBSCRIBE} message.\\We didn't particularly like the idea of having one single component doing this check passing through a single \emph{Receive}. So we decided to follow a different approach. We use as many components as the number of different packet we need to sort. For example in the \emph{PanC} we use three different modules (\emph{PublishModule}, \emph{SubscribeModule}, \emph{ConnectionModule}) that implements different \emph{Receive.receive} each. Every \emph{AMReceiverC} is built with different \emph{Active Message ID}. So when \emph{PanC} receive a \emph{Publish} message only one of those \emph{receive} event will be signaled.\\Doing this kind of check at \emph{Active Message} level makes our code cleaner and more expandable. It's very easy to add another type of message. You only need to initialize a \emph{AMReceiverC} with a not used \emph{Active Message ID}.
+
+\subsection{Events}
+Every component in our project heavily relies on events signaling in order to never wait for some data to be available. For example a publication is received in \emph{PublishModule} the \emph{PublishModule} itself will signal \emph{PublishModule.OnPublishReceive} that is implemented by the \emph{PanC} or the \emph{Client}. Doing so allow us to split some of the logic between modules and the main component without ever incurring in heavy coupling between components. For example in the \emph{PanC PublishModule.OnPublishReceive} publish message data is handled by \emph{SubscribeModule} to get the list of subcribed nodes and then sent to the proper nodes via \emph{PublishModule}.
+
+\subsection{Acks}
+
+We use explicit \emph{SUBACK} and \emph{CONNACK} messages in SubscribeModule and ConnectionModule but we have decided to use implicit \emph{Active Message} ack to easily handle ack request and check for messages with QoS 1.
+
+\subsection{Messages}
+
+We use three different message structures. \emph{struct} details can be seen in \emph{Common/packets.h}.
+\begin{itemize}
+\item \textbf{simple\_msg\_t}: it only contains the sender ID. It is used for "simple" messages like \emph{CONNECT}, \emph{CONNACK} and \emph{SUBACK};
+\item	\textbf{sub\_msg\_t}: contains every information for \emph{SUBSCRIBE} needed to handle subscriptions.
+\item \textbf{pub\_msg\_t}: contains every information for \emph{PUBLISH} needed to handle publishes.
+\end{itemize}
+
+\section{Modules}
+
+In this chapter we will discuss about the module we implemented in order to achieve a good separation between all the different operation that the Node and the PanC have to do.
+\subsection{Common}
+We have two components that are in common between the \emph{PanC} and the \emph{Client}:
+\begin{itemize}
+\item \textbf{QueueSender}: a special sender that receives a generic message, inserts in a queue and then sends it. QueueSender potentially can be used by any components that needs to send a message.
+\item \textbf{PublishModule}: This module sends the publish message(using the \emph{QueueSender}) and signals trough an event whenever a publish message is received.
+\end{itemize}
+
+\subsection{Client}
+
+For the \emph{Node} we have a principal module that is \textbf{ClientC}, that will integrate the components that are in common  and the three components that will be explained later on. It will handle the signaled event from the integrated component and tell them when a new message must be sent.
+In the Client we have implemented three specific components:
+
+\begin{itemize}
+\item \textbf{ConnectionModuleC}: sends \emph{CONNECT} message to the \emph{PanC} and receives \emph {CONNACK} message. When received, it signals an event to the \emph{Client} main component.
+\item \textbf{Subscribe ModuleC}: sends \emph{SUBSCRIBE} message (if the node wants to subscribe to some topic) and receives \emph{SUBACK} message. When received, it signals an event to the \emph{Client} main component.
+\item \textbf{FakeSensorP}: simulates different sensors and signals when a specific sensor is read to the \emph{Client} main component.
+\end{itemize}
+
+For the \emph{PanC} we have a principal module that is the \emph{ServerC}, that will integrate the components that are in common and the two components that will be explained later on. It will handle the signaled event from the integrated component and when a publish message is received, it will retrieve the subscribed node to a specific topic and pass them to the \emph{PublishModule} in order to redirect the message.
+\subsection{Server}
+In the Server we have implemented two specific components:
+\begin{itemize}
+\item \textbf{ConnectionModule}: handles the receive of the \emph{CONNECT} message, signals it to the \emph{Client} main component and implements the necessary method to send \emph{CONNACK} to the node and add the node to the list of connected devices. 
+\item \textbf{SubscribeModule}: handles the receive of the \emph{SUBSCRIBE} message, signals it to the \emph{Client} main component and implements the necessary method to send \emph{SUBACK} to the node and add the node to the list of subscribed devices. 
+\end{itemize}
+
+
+
+\end{document}
