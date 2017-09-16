@@ -14,8 +14,8 @@ implementation {
 	components PublishModuleAppC;
 
   	components ActiveMessageC;
-  	components new TimerMilliC();
- 	components new TimerMilliC() as TimerB;
+  	components new TimerMilliC() as ConnectionTimer;
+ 	components new TimerMilliC() as SubscribeTimer;
 	components new TimerMilliC() as SensorTimer;
   	components new FakeSensorC();
   	components SerialPrintfC;
@@ -28,8 +28,8 @@ implementation {
   	App.SplitControl -> ActiveMessageC;
 
   	//Timer interface
-  	App.MilliTimer -> TimerMilliC;
-  	App.SubscribeTimer -> TimerB;
+  	App.ConnectionTimer -> ConnectionTimer;
+  	App.SubscribeTimer -> SubscribeTimer;
 
 	//Fake Sensor read
 	App.TempRead -> FakeSensorC.TempRead;

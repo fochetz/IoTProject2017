@@ -15,7 +15,7 @@ module ClientC {
 		interface AMPacket;
 		interface Packet;
 		interface SplitControl;
-		interface Timer<TMilli> as MilliTimer;
+		interface Timer<TMilli> as ConnectionTimer;
 		interface Timer<TMilli> as SubscribeTimer;
 		interface Timer<TMilli> as SensorTimer;
 		interface Read<uint16_t> as TempRead;
@@ -72,7 +72,7 @@ module ClientC {
 		topic=getTopicsToSubscribe();
 		qos=getQosToSubscribe();
 		printfH("Connected to PANC\n");
-		call MilliTimer.stop();
+		call ConnectionTimer.stop();
 		if (topic) {
 			call SubscribeModule.setTopic(topic,qos);
 			call SubscribeModule.sendSubscribe();
@@ -90,7 +90,7 @@ module ClientC {
 			printfDebug("Radio ON.\n");
 			printfH("Ready\n");
 			call ConnectionModule.sendConnect();
-    			call MilliTimer.startPeriodic(1000);
+    			call ConnectionTimer.startPeriodic(1000);
 		}
 		else {		
 			call SplitControl.start();
@@ -102,7 +102,7 @@ module ClientC {
 
 	//***************** MilliTimer interface ********************//
 
-	event void MilliTimer.fired() {
+	event void ConnectionTimer.fired() {
 		if (call ConnectionModule.isConnected()==0)
 			call ConnectionModule.sendConnect();
 	}
