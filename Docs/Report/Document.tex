@@ -14,7 +14,7 @@
 
 
 \section{Introduction}
-In this document we will try to summarise how we implemented a lightweight version of \emph{MQTT} on \emph{TinyOS} running on \emph{TelosB} motes. We have extensively tested our implementation in a simulated environment provided by \emph{Cooja}.
+In this document we will try to summarise how we implemented a lightweight version of \emph{MQTT} on \emph{TinyOS} running on \emph{TelosB} motes. We have extensively tested our implementation in a simulated environment provided by \emph{Cooja}. You can find the complete implementation on \emph{https://github.com/fochetz/IoTProject2017}.
 
 \section{Modules}
 
@@ -43,21 +43,21 @@ We have two components that are in common between the \emph{PanC} and the \emph{
 \section{Execution flow}
 Here we summarise the execution flow of the simulated environment. For more details please check the log included in the repo.
 \subsection{Client}
-The node boots and starts the radio. When it's ready it starts a timer that will periodically ask the \emph{ConnectionModule} to send \emph{CONNECT} to \emph{PANC}. When {CONNACK} is received then the main module is notified and then another timer is started to periodically send, if necessary, a \emph{SUBSCRIBE} message through \emph{SubscribeModule}. When {SUBACK} is received then the main module is notified and it starts to periodically read data from sensors. Then, if needed, it asks \emph{PublishModule} to the data to the \emph{PanC} using the desired QoS. In our implementation QoS, publish topic and subscribe topic are function of the \emph{TOS\_NODE\_ID} but it can be easily changed. Meanwhile \emph{PublishModule} will receive published data by other nodes to which this node is subscribed to and will notify the main module passing the newly received data.
+The node boots and starts the radio. When it's ready it starts a timer that will periodically ask the \emph{ConnectionModule} to send \emph{CONNECT} to \emph{PanC}. When \emph{CONNACK} is received then the main module is notified and then another timer is started to periodically send, if necessary, a \emph{SUBSCRIBE} message through \emph{SubscribeModule}. When \emph{SUBACK} is received then the main module is notified and it starts to periodically read data from sensors. Then, if needed, it asks \emph{PublishModule} to the data to the \emph{PanC} using the desired QoS. In our implementation QoS, publish topic and subscribe topic are function of the \emph{TOS\_NODE\_ID} but it can be easily customized. Meanwhile \emph{PublishModule} will receive published data by other nodes to which this node is subscribed to and will notify the main module passing the newly received data.
 \subsection{Server}
-The node boots and starts the radio. \emph{ConnectioModule} signals the main module on every \emph{CONNECT} received. The main module then ask \emph{ConnectionModule} to reply to the sender with a \emph{CONNACK} message to end the connection process. \emph{SubscribeModule} notifies the main module on every \emph{SUBSCRIBE}. The main module then ask \emph{ConnectionModule} to check if the device is already connected. If so the main module accepts the subscription sending back a \emph{SUBACK}. \emph{PublishModule} signals the main module on every \emph{PUBLISH} received. The main module then check if the node is connected and the node is always sending message with the same topic. If it's the case then it asks \emph{SubscribeModule} the list of subscribed nodes to the topic and what QoS they prefer. The main module then finally sends the data through \emph{PublishModule}.
+The node boots and starts the radio. \emph{ConnectioModule} signals the main module on every \emph{CONNECT} received. The main module then asks \emph{ConnectionModule} to reply to the sender with a \emph{CONNACK} message to end the connection process. \emph{SubscribeModule} notifies the main module on every \emph{SUBSCRIBE}. The main module then ask \emph{ConnectionModule} to check if the device is already connected. If so the main module accepts the subscription sending back a \emph{SUBACK}. \emph{PublishModule} signals the main module on every \emph{PUBLISH} received. The main module then checks if the node is connected and if the node is always sending message with the same topic. If it's the case then it asks \emph{SubscribeModule} the list of subscribed nodes to the specified topic and what QoS they prefer. The main module then finally sends the data through \emph{PublishModule}.
 
 \section{Implementation choices}
 In this section we try to justify and explain our most important design choices.
 \subsection{ActiveMessages}
-In this project we need to handle different kind of messages, with different content and different purposes. One of the possible choices was to add a \emph{packetId} field in the packet payload. Doing so we would have been able to understand the packet type just by simply looking at the first four bits of the payload. For example we could have used \emph{0010} as the type id for the \emph{PUBLISH} message and \emph{0011} as the type id for the \emph{SUBSCRIBE} message.\\We didn't particularly like the idea of having one single component doing this check passing through a single \emph{Receive}. So we decided to follow a different approach. We use as many components as the number of different packet we need to sort. For example in the \emph{PanC} we use three different modules (\emph{PublishModule}, \emph{SubscribeModule}, \emph{ConnectionModule}) that implements different \emph{Receive.receive} each. Every \emph{AMReceiverC} is built with different \emph{Active Message ID}. So when \emph{PanC} receive a \emph{Publish} message only one of those \emph{receive} event will be signaled.\\Doing this kind of check at \emph{Active Message} level makes our code cleaner and more expandable. It's very easy to add another type of message. You only need to initialize a \emph{AMReceiverC} with a not used \emph{Active Message ID}.
+In this project we need to handle different kind of messages, with different content and different purposes. One of the possible choices was to add a \emph{packetType} field in the packet payload. Doing so we would have been able to understand the packet type just by simply looking at the first four bits of the payload. For example we could have used \emph{0010} as the type id for the \emph{PUBLISH} message and \emph{0011} as the type id for the \emph{SUBSCRIBE} message.\\We didn't particularly like the idea of having one single component doing this check passing through a single \emph{Receive}. So we decided to follow a different approach. We use as many components as the number of different packet we need to sort. For example in the \emph{PanC} we use three different modules (\emph{PublishModule}, \emph{SubscribeModule}, \emph{ConnectionModule}) that implements different \emph{Receive.receive} each. Every \emph{AMReceiverC} is built with different \emph{Active Message ID}. So when \emph{PanC} receive a \emph{Publish} message only one of those \emph{receive} event will be signaled.\\Doing this kind of check at \emph{Active Message} level makes our code cleaner and more expandable. It's very easy to add another type of message. You only need to initialize a \emph{AMReceiverC} with a not used \emph{Active Message ID}.
 
 \subsection{Events}
 Every component in our project heavily relies on events signaling in order to never wait for some data to be available. For example a publication is received in \emph{PublishModule} the \emph{PublishModule} itself will signal \emph{PublishModule.OnPublishReceive} that is implemented by the \emph{PanC} or the \emph{Client}. Doing so allow us to split some of the logic between modules and the main component without ever incurring in heavy coupling between components. For example in the \emph{PanC PublishModule.OnPublishReceive} publish message data is handled by \emph{SubscribeModule} to get the list of subcribed nodes and then sent to the proper nodes via \emph{PublishModule}.
 
 \subsection{Acks}
 
-We use explicit \emph{SUBACK} and \emph{CONNACK} messages in \emph{SubscribeModule} and \emph{ConnectionModule} but we have decided to use implicit \emph{Active Message} ack to easily handle ack request and check for messages with QoS 1.
+We use "explicit" \emph{SUBACK} and \emph{CONNACK} messages in \emph{SubscribeModule} and \emph{ConnectionModule} but we have decided to use "implicit" automatic lower level \emph{Active Message} acks to easily handle ack requests for messages with QoS 1.
 
 \subsection{Messages}
 
@@ -68,22 +68,19 @@ We use three different message structures. \emph{struct} details can be seen in 
 \item \textbf{pub\_msg\_t}: contains every information for \emph{PUBLISH} needed to handle publishes.
 \end{itemize}
 \section{Diagrams}
-Here we provide some example diagrams to give an idea on how our implementation works.
+Here we provide some example diagrams to give an idea on how our implementation works. You can find some insights on how \emph{QueueSender} works in \emph{Docs\/Diagram\/Send Procedure.jpg}.
 \begin{figure}[h]
 \caption{Component diagram: shows how components are linked to each other.}
 \centering
-\includegraphics[scale=0.3]{ComponentDiagram}
+\includegraphics[scale=0.35]{ComponentDiagram}
 \end{figure}
 \begin{figure}[h]
 \caption{Sequence diagram of \emph{Publish} procedure.}
 \centering
-\includegraphics[scale=0.3]{Publish}
+\includegraphics[scale=0.35]{Publish}
 \end{figure}
-\begin{figure}[h]
-\caption{Sequence diagram of the send procedure. It gives some insight on how \emph{QueueSender works}.}
-\centering
-\includegraphics[scale=0.3]{SendProcedure}
-\end{figure}
+
+
 
 
 \end{document}
